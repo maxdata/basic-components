@@ -16,5 +16,5 @@ module.exports = {
     		colors: {}
     	}
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"), require('tailwind-forms')],
 }
