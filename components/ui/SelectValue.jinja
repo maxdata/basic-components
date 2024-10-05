@@ -1,0 +1,12 @@
+{# def
+    id: str = "",
+    className: str = "",
+    placeholder: str = "Select an option"
+#}
+<span id="{{ id }}" class="line-clamp-1 {{ className }}" {{ attrs.render() }}>
+  {% if content %}
+    {{ content }}
+  {% else %}
+    {{ placeholder }}
+  {% endif %}
+</span>

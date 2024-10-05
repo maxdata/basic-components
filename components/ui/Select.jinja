@@ -1,0 +1,14 @@
+{# def
+    id: str = "",
+    className: str = "",
+    selected: str = "Select an option"
+#}
+<div
+    id="{{ id }}"
+    x-data="{ open: false, selected: '{{ selected }}' }"
+    class="relative z-50 {{ className }}"
+    @click.away="open = false"
+    {{ attrs.render() }}
+>
+  {{ content }}
+</div>

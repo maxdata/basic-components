@@ -1,0 +1,17 @@
+{# def
+    id: str = "",
+    className: str = "",
+    position: str = "popper"
+#}
+<div
+    id="{{ id }}"
+    class="relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-zinc-200 bg-white text-zinc-950 shadow-md dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 {{ className }}"
+    :class="{ 'animate-in': open, 'animate-out': !open }"
+    x-show="open"
+    style="display: none;"
+    {{ attrs.render() }}
+>
+  <div class="p-1 h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]">
+    {{ content }}
+  </div>
+</div>

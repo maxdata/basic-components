@@ -1,0 +1,13 @@
+{# def
+    id: str = "",
+    name: str = "",
+    className: str = "",
+    invert: bool = False
+#}
+<img
+    alt="{{ name }}"
+    src="/icons/{{ name }}.svg"
+    class="{{ className }} dark:invert"
+    :style="{% if invert %}darkMode ? 'filter: invert(0);' : 'filter: invert(1);'{% else %}''{% endif %}"
+    {{ attrs.render() }}
+/>
