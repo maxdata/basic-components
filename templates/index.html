@@ -1,0 +1,43 @@
+<!-- templates/textinput.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<Card className="sm:col-span-2">
+    <CardHeader className="pb-3">
+        <CardTitle>Your Orders</CardTitle>
+        <CardDescription className="max-w-lg text-balance leading-relaxed">
+            Introducing Our Dynamic Orders Dashboard for Seamless Management and
+            Insightful Analysis.
+        </CardDescription>
+    </CardHeader>
+    <CardFooter>
+        <Button>Create New Order</Button>
+    </CardFooter>
+</Card>
+
+<Button id="btn-default" >
+    Default
+</Button>
+
+<Button id="btn-destructive" variant="destructive" >
+    destructive
+</Button>
+
+<Button id="btn-outline" variant="outline" >
+    outline
+</Button>
+
+<Button id="btn-secondary" variant="secondary" >
+    secondary
+</Button>
+
+<Button id="btn-ghost" variant="ghost" >
+    ghost
+</Button>
+
+
+
+
+{% endblock %}

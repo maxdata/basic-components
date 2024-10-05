@@ -1,0 +1,7 @@
+{# def
+    id: str = "",
+    className: str = ""
+#}
+<div id="{{ id }}" class="flex flex-col space-y-1.5 p-6 {{ className }}" {{ attrs.render() }}>
+  {{ content }}
+</div>
