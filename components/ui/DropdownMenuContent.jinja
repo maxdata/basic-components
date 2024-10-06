@@ -1,13 +1,9 @@
-{# def
-    className: str = "",
-#}
+{# DropdownMenuContent.jinja #}
 <div
-    x-show="open"
-    x-transition:enter="transition ease-out duration-200"
-    x-transition:leave="transition ease-in duration-150"
-    @click.outside="open = false"
-    class="absolute z-50 mt-2 w-56 rounded-md bg-white shadow-md border border-zinc-200 dark:bg-zinc-950 dark:border-zinc-800 {{ className }}"
-    style="display: none;"
+    x-show="menuOpen"
+    @click.away="menuOpen = false"
+    x-transition
+    class="absolute left-0 mt-2 w-48 bg-white shadow-md rounded z-50"
 >
   {{ content }}
 </div>

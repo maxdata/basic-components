@@ -1,9 +1,4 @@
-{# def
-    className: str = "",
-#}
-<div
-    @click.stop="open = !open"
-    class="{{ className }}"
->
+{# DropdownMenuTrigger.jinja #}
+<button @click="menuOpen = !menuOpen" class="px-4 py-2 bg-gray-200 rounded">
   {{ content }}
-</div>
+</button>

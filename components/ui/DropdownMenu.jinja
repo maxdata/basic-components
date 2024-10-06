@@ -1,15 +1,4 @@
-{# def
-    className: str = "",
-#}
-<div
-    x-data="{ open: false }"
-    x-init="document.addEventListener('click', (event) => {
-        if (!event.target.closest('[data-dropdown]')) {
-            open = false;
-        }
-    })"
-    data-dropdown
-    class="relative inline-block {{ className }}"
->
+{# DropdownMenu.jinja #}
+<div x-data="{ menuOpen: false }" class="relative inline-block">
   {{ content }}
 </div>

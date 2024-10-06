@@ -1,10 +1,18 @@
 <h2 class="m-10">DropdownMenu</h2>
 
 <DropdownMenu>
-  <DropdownMenuTrigger class="btn btn-primary"><Button variant="outline">DropdownMenu here</Button></DropdownMenuTrigger>
-  <DropdownMenuContent class="mt-2">
-    <DropdownMenuItem>Action 1</DropdownMenuItem>
-    <DropdownMenuItem>Action 2</DropdownMenuItem>
-    <DropdownMenuItem>Action 3</DropdownMenuItem>
+  <DropdownMenuTrigger>Open Menu</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuSub>
+      <DropdownMenuSubTrigger>More Options</DropdownMenuSubTrigger>
+      <DropdownMenuSubContent>
+        <DropdownMenuItem>Email</DropdownMenuItem>
+        <DropdownMenuItem>Message</DropdownMenuItem>
+      </DropdownMenuSubContent>
+    </DropdownMenuSub>
+    <DropdownMenuItem>Logout</DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
