@@ -1,0 +1,7 @@
+{# def
+  id: str = "",
+  className: str = ""
+#}
+<td id="{{ id }}" class="p-4 align-middle [&:has([role=checkbox])]:pr-0 {{ className }}" {{ attrs.render() }}>
+  {{ content }}
+</td>
