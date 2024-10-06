@@ -4,13 +4,13 @@
 
 - [x] table
 - [x] Dialog
+- [x] alert dialog
+- [ ] popover
 - [ ] toast
-- [ ] Form?
+- [ ] Form
 - [ ] skeleton
-- [ ] popover or dropdown
 - [ ] pagination
 - [ ] badge
-- [ ] alert dialog
 - [ ] alert
 
 https://ui.shadcn.com/blocks

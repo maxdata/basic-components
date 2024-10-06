@@ -1,7 +1,8 @@
 <Dialog>
   <DialogTrigger>Open Dialog</DialogTrigger>
   <DialogOverlay />
-  <DialogContent>
+  <DialogContent @keydown.escape.window="open = false" @click.away="open = false">
+    <DialogClose/>
     <DialogHeader>
       <DialogTitle>Dialog Title</DialogTitle>
       <DialogDescription>
@@ -12,7 +13,8 @@
       This is the dialog body
     </DialogBody>
     <DialogFooter>
-      <Button variant="outline" @click="open = false">Cancel</Button>
+      <Button variant="outline"
+          @click="open = false">Cancel</Button>
       <Button>Confirm</Button>
     </DialogFooter>
   </DialogContent>
