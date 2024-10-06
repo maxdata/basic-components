@@ -1,0 +1,32 @@
+{#def
+    id: str = "",
+    className: str = "",
+#}
+
+<div id="{{ id }}" class="{{ className }}" {{ attrs.render() }}>
+  <!-- Dialog content -->
+  <div x-show="open"
+      class="fixed inset-0 z-50 overflow-y-auto"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:leave="transition ease-in duration-200"
+      role="dialog"
+      aria-modal="true"
+      style="display: none;"
+  >
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 bg-black opacity-50" @click="open = false"></div>
+
+    <!-- Dialog  -->
+    <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
+      <div class="relative inline-block align-bottom bg-white dark:bg-zinc-950 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full">
+
+        <!-- Slot for DialogContent -->
+        {{ content }}
+
+        <!-- Close button -->
+        <DialogClose/>
+      </div>
+    </div>
+  </div>
+</div>

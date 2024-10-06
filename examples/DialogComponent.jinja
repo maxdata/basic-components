@@ -1,0 +1,21 @@
+<!-- Example usage of the updated Dialog and DialogTrigger components -->
+<Dialog>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Dialog Title</DialogTitle>
+      <DialogDescription>
+        This is a description for the dialog content.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogBody>
+      This is the dialog body
+    </DialogBody>
+    <DialogFooter>
+      <Button variant="outline" @click="open = false">Cancel</Button>
+      <Button>Confirm</Button>
+    </DialogFooter>
+  </DialogContent>
+  <DialogTrigger>
+    Open Dialog
+  </DialogTrigger>
+</Dialog>

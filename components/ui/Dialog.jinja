@@ -1,0 +1,9 @@
+{# def
+    id: str = "",
+    className: str = "",
+    open: bool = False,
+#}
+<div class="{{ className }}" x-data="{ open: false }">
+  <!-- Dialog body content -->
+  {{ content }}
+</div>
