@@ -1,0 +1,10 @@
+{# def
+    className: str = "",
+#}
+<button
+    @click="alert('Action 1')"
+    @click.stop="@click"
+    class="block w-full text-left px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800 {{ className }}"
+>
+  {{ content }}
+</button>
