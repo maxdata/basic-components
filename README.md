@@ -5,8 +5,8 @@
 - [x] table
 - [x] Dialog
 - [x] alert dialog
-- [ ] popover
-- [ ] toast
+- [x] popover
+- [x] toast
 - [ ] Form
 - [ ] skeleton
 - [ ] pagination
