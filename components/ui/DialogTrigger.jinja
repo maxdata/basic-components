@@ -1,7 +1,9 @@
 {# def
+    id: str = "",
     className: str = "",
+    trigger: str = "",
 #}
 <!-- DialogTrigger -->
-<Button variant="outline" :class="{{ className }}" @click="open = true">
+<Button id="{{ id }}" class="{{ className }}" @click="open = true">
   {{ content }}
 </Button>

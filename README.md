@@ -3,7 +3,7 @@
 # TODO
 
 - [x] table
-- [ ] Dialog
+- [x] Dialog
 - [ ] toast
 - [ ] Form?
 - [ ] skeleton

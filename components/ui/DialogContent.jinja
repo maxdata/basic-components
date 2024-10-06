@@ -1,32 +1,17 @@
-{#def
+{# def
     id: str = "",
     className: str = "",
 #}
+<!-- DialogContent -->
+<div id="{{ id }}"
+    x-show="open"
+    @keydown.escape.window="open = false"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:leave="transition ease-in duration-300"
+    class="fixed left-[50%] top-[50%] w-full max-w-lg transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg z-50 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-950{{ className }}"
+    @click.away="open = false">
 
-<div id="{{ id }}" class="{{ className }}" {{ attrs.render() }}>
-  <!-- Dialog content -->
-  <div x-show="open"
-      class="fixed inset-0 z-50 overflow-y-auto"
-      x-transition:enter="transition ease-out duration-300"
-      x-transition:leave="transition ease-in duration-200"
-      role="dialog"
-      aria-modal="true"
-      style="display: none;"
-  >
+  <DialogClose/>
 
-    <!-- Overlay -->
-    <div class="fixed inset-0 bg-black opacity-50" @click="open = false"></div>
-
-    <!-- Dialog  -->
-    <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
-      <div class="relative inline-block align-bottom bg-white dark:bg-zinc-950 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full">
-
-        <!-- Slot for DialogContent -->
-        {{ content }}
-
-        <!-- Close button -->
-        <DialogClose/>
-      </div>
-    </div>
-  </div>
+  {{ content }}
 </div>
