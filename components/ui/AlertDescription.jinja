@@ -1,0 +1,12 @@
+{# def
+    id: str = "",
+    className: str = ""
+#}
+
+<div
+    id="{{ id }}"
+    class="text-sm leading-relaxed {{ className }}"
+    {{ attrs.render() }}
+>
+  {{ content }}
+</div>

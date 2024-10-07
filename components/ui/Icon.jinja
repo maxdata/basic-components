@@ -2,12 +2,21 @@
     id: str = "",
     name: str = "",
     className: str = "",
+    color: str = "",
     invert: bool = False
 #}
-<img
-    alt="{{ name }}"
-    src="/icons/{{ name }}.svg"
-    class="{{ className }} dark:invert"
-    :style="{% if invert %}darkMode ? 'filter: invert(0);' : 'filter: invert(1);'{% else %}''{% endif %}"
+
+<svg
+    id="{{ id }}"
+    class="{{ className }} {{ color }}"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
     {{ attrs.render() }}
-/>
+>
+  <use href="#{{ name }}" />
+</svg>

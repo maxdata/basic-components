@@ -1,0 +1,12 @@
+{# def
+    id: str = "",
+    className: str = ""
+#}
+
+<h5
+    id="{{ id }}"
+    class="mb-1 font-medium leading-none tracking-tight {{ className }}"
+    {{ attrs.render() }}
+>
+  {{ content }}
+</h5>

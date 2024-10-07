@@ -22,6 +22,7 @@ catalog.add_folder(f"{BASE_DIR}/examples")
 # Serve static files (CSS, etc.)
 app.mount("/dist", StaticFiles(directory="dist"), name="dist")
 app.mount("/icons", StaticFiles(directory="node_modules/lucide-static/icons"), name="icons")
+app.mount("/lucide-static", StaticFiles(directory="node_modules/lucide-static/"), name="lucide-static")
 
 
 @app.get("/", response_class=HTMLResponse)
