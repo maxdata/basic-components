@@ -1,5 +1,6 @@
 {# def
     id: str = "",
+    type: str = "",
     className: str = "",
     variant: str = "default",
     size: str = "default",
@@ -28,6 +29,7 @@
 
 <button
   id="{{ id }}"
+  {% if type %}type="{{ type }}"{% endif %}
   class="{{ baseclassName }} {{ variantclassName }} {{ sizeclassName }} {{ className }}"
   {% if disabled %}disabled{% endif %} {{ attrs.render() }}
 >
