@@ -1,8 +1,3 @@
-{# DropdownMenuItem.jinja #}
-<a
-    href="#"
-    @click="menuOpen = false; subMenuOpen = false"
-    class="block px-4 py-2 text-sm hover:bg-gray-100"
->
+<li @click="open = false" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
   {{ content }}
-</a>
+</li>

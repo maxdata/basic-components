@@ -1,8 +1,8 @@
 <div
-    @mouseenter="subMenuOpen = true"
-    @mouseleave="subMenuOpen = false"
-    class="relative flex items-center"
+    @mouseenter="subOpen = true"
+    @mouseleave="subOpen = false"
+    class="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
 >
   {{ content }}
-  <span class="ml-2">></span> <!-- You can replace this with an SVG icon -->
+  <span class="ml-2">&gt;</span>
 </div>

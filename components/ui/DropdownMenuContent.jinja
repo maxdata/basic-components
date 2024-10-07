@@ -1,9 +1,9 @@
-{# DropdownMenuContent.jinja #}
 <div
-    x-show="menuOpen"
-    @click.away="menuOpen = false"
-    x-transition
-    class="absolute left-0 mt-2 w-48 bg-white shadow-md rounded z-50"
+    x-show="open"
+    @click.away="open = false"
+    class="absolute mt-2 w-48 bg-white shadow-lg border rounded-md z-50"
 >
-  {{ content }}
+  <ul>
+    {{ content }}
+  </ul>
 </div>
