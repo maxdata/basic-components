@@ -12,7 +12,7 @@
 - [ ] skeleton
 - [-] pagination
 - [x] badge
-- [ ] alert
+- [x] alert
 
 https://ui.shadcn.com/blocks
 
