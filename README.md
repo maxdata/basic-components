@@ -7,10 +7,11 @@
 - [x] alert dialog
 - [x] popover
 - [x] toast
+- [x] darkmode
 - [ ] Form
 - [ ] skeleton
-- [ ] pagination
-- [ ] badge
+- [-] pagination
+- [x] badge
 - [ ] alert
 
 https://ui.shadcn.com/blocks
