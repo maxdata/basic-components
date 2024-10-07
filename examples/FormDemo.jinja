@@ -1,0 +1,31 @@
+<h2 class="m-10">Forms</h2>
+
+
+{% set error=True %}
+{% set error_message="invalid email" %}
+
+
+<Form method="POST" action="/submit">
+  <FormItem id="email-field">
+    <FormLabel for_id="email">Email Address</FormLabel>
+    <FormControl
+        id="email"
+        type="email"
+    />
+    <FormDescription id="email-description">We'll never share your email.</FormDescription>
+  </FormItem>
+</Form>
+
+
+<Form method="POST" action="/submit">
+  <FormItem id="email-field">
+    <FormLabel for_id="email" :error="{{ error }}">Email Address</FormLabel>
+    <FormControl
+        id="email"
+        type="email"
+        :error="{{ error }}"
+    />
+    <FormDescription id="email-description">We'll never share your email.</FormDescription>
+    <FormMessage id="email-message" :error="{{ error }}">{{ error_message }}</FormMessage>
+  </FormItem>
+</Form>

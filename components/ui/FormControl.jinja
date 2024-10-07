@@ -1,0 +1,13 @@
+{# def
+    id: str = "",
+    className: str = "",
+    error: bool = False,
+#}
+<div class="{{ className }}">
+  <Input
+      type="email"
+      id="email"
+      placeholder="Email"
+      :error="{{ error }}"
+  />
+</div>

@@ -1,0 +1,9 @@
+{# def
+    id: str = "",
+    error: bool = False,
+    message: str = "",
+    className: str = ""
+#}
+<p id="{{ id }}" class="text-sm font-medium {% if error %} text-red-500 dark:text-red-800 {% endif %} {{ className }}">
+  {{ content }}
+</p>

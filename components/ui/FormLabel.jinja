@@ -1,0 +1,9 @@
+{# def
+    for_id: str,
+    className: str = "",
+    error: bool = False
+#}
+
+<label for="{{ for_id }}" class="block text-sm font-medium leading-6 {% if error %} text-red-500 dark:text-red-800 {% endif %} {{ className }}">
+  {{ content }}
+</label>
