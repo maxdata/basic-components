@@ -1,8 +1,8 @@
 <div
     @mouseenter="subOpen = true"
     @mouseleave="subOpen = false"
-    class="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+    class="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
 >
   {{ content }}
-  <span class="ml-2">&gt;</span>
+  <span class="ml-2"><Icon name="chevron-right" className="h-4 w-4"/></span>
 </div>
