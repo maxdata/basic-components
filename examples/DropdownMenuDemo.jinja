@@ -1,7 +1,7 @@
 <h2 class="m-10">DropdownMenu</h2>
 <DropdownMenu>
   <DropdownMenuTrigger>
-    Open Menu
+    <Button>Open Menu</Button>
   </DropdownMenuTrigger>
 
   <DropdownMenuContent>
@@ -11,7 +11,7 @@
     <DropdownMenuItem>Settings</DropdownMenuItem>
     <DropdownMenuItem>Keyboard Shortcuts</DropdownMenuItem>
 
-    <DropdownMenuGroup>
+    <DropdownMenuGroup className="border-t">
       <DropdownMenuItem>Team</DropdownMenuItem>
       <DropdownMenuSub>
         <DropdownMenuSubTrigger>
@@ -25,12 +25,12 @@
       <DropdownMenuItem>New Team</DropdownMenuItem>
     </DropdownMenuGroup>
 
-    <DropdownMenuGroup>
+    <DropdownMenuGroup className="border-t">
       <DropdownMenuItem>GitHub</DropdownMenuItem>
       <DropdownMenuItem>Support</DropdownMenuItem>
       <DropdownMenuItem>API</DropdownMenuItem>
     </DropdownMenuGroup>
 
-    <DropdownMenuItem>Logout</DropdownMenuItem>
+    <DropdownMenuItem className="border-t">Logout</DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
