@@ -15,6 +15,8 @@ ruff = "^0.2.1"
 playwright = "^1.41.2"
 pytest-playwright = "^0.4.4"
 jinjax = "^0.46"
+wtforms = "^3.1.2"
+starlette-wtf = "^0.4.5"
 
 
 [build-system]
