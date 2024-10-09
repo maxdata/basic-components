@@ -1,0 +1,15 @@
+{# def
+    id: str = "",
+    className: str = "",
+    value: str = "",
+    placeholder: str = "",
+    disabled: bool = False,
+#}
+
+<textarea
+    id="{{ id }}"
+    class="block w-full rounded-md border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-900 shadow-sm placeholder-zinc-500 focus:ring-indigo-500 focus:border-indigo-500 disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:placeholder-zinc-400 {{ className }}"
+    placeholder="{{ placeholder }}"
+    {% if disabled %}disabled{% endif %}
+    {{ attrs.render() }}
+>{{ value }}</textarea>

@@ -32,3 +32,27 @@
   </FormItem>
   <Button type="submit">Submit</Button>
 </Form>
+
+<h2 class="m-10">Checkbox Example</h2>
+<Checkbox id="agree_terms" checked="true" className="mr-2" label="I agree to the terms and conditions" />
+
+
+<h2 class="m-10">Radio Group Example</h2>
+<RadioGroup
+    id="gender"
+    name="gender"
+    :options='[
+        {"id": "male", "value": "M", "label": "Male"},
+        {"id": "female", "value": "F", "label": "Female"},
+        {"id": "other", "value": "O", "label": "Other"}
+    ]'
+    value="M"
+/>
+
+<h2 class="m-10">Textarea Example</h2>
+<Textarea
+    id="bio"
+    placeholder="Write a brief bio..."
+    value="I love coding and coffee."
+    className="mb-4"
+/>

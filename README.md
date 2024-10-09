@@ -8,7 +8,7 @@
 - [x] popover
 - [x] toast
 - [x] darkmode
-- [ ] Form
+- [x] Form
 - [ ] skeleton
 - [-] pagination
 - [x] badge

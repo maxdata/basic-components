@@ -1,0 +1,21 @@
+{# def
+    id: str = "",
+    label: str = "",
+    className: str = "",
+    checked: bool = False,
+    disabled: bool = False
+#}
+
+<div x-data="{ isDark: window.matchMedia('(prefers-color-scheme: dark)').matches }">
+  <input
+      type="checkbox"
+      :id="id"
+      name="checkbox"
+      class="form-checkbox text-indigo-600 border-zinc-200 dark:border-zinc-700 dark:border-zinc-50 dark:ring-offset-zinc-950 dark:focus-visible:ring-zinc-300 dark:data-[state=checked]:bg-zinc-50 dark:data-[state=checked]:text-zinc-900 accent-black {{ className }}"
+      {% if checked %} checked {% endif %}
+      {% if disabled %} disabled {% endif %}
+  />
+  <label for="{{ id }}" class="ml-2 text-sm">
+    {{ label }}
+  </label>
+</div>
