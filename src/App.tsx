@@ -43,37 +43,41 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import {Popover, PopoverContent, PopoverTrigger,} from "@/components/ui/popover"
+import {DashboardHeader} from "@/components/dashboard-header.tsx";
 
-// import Link from "next/link"
+// import Link.jinja from "next/link"
 
 function App() {
     return (
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-            <ModeToggle/>
-            <CardWithForm/>
-            <ButtonDemo/>
-            <ButtonSecondary/>
-            <ButtonDestructive/>
-            <ButtonOutline/>
-            <ButtonGhost/>
-            <ButtonLink/>
-            <ButtonIcon/>
-            <ButtonWithIcon/>
-            <ButtonLoading/>
-            {/*<ButtonAsChild/>*/}
-            <CardComponent/>
-            <InputDemo/>
-            <InputFile/>
-            <InputWithLabel/>
-            <InputWithButton/>
-            <InputForm/>
-            <SelectDemo/>
-            <SelectScrollable/>
-            <TableDemo/>
-            <DialogDemo/>
-            <PopoverDemo/>
-        </ThemeProvider>
-    )
+        // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        //     {/*<ModeToggle/>*/}
+        //     {/*<CardWithForm/>*/}
+        //     {/*<ButtonDemo/>*/}
+        //     {/*<ButtonSecondary/>*/}
+        //     {/*<ButtonDestructive/>*/}
+        //     {/*<ButtonOutline/>*/}
+        //     {/*<ButtonGhost/>*/}
+        //     {/*<ButtonLink/>*/}
+        //     {/*<ButtonIcon/>*/}
+        //     {/*<ButtonWithIcon/>*/}
+        //     {/*<ButtonLoading/>*/}
+        //     {/*<ButtonAsChild/>*/}
+        //     {/*<CardComponent/>*/}
+        //     {/*<InputDemo/>*/}
+        //     {/*<InputFile/>*/}
+        //     {/*<InputWithLabel/>*/}
+        //     {/*<InputWithButton/>*/}
+        //     {/*<InputForm/>*/}
+        //     {/*<SelectDemo/>*/}
+        //     {/*<SelectScrollable/>*/}
+        //     {/*<TableDemo/>*/}
+        //     {/*<DialogDemo/>*/}
+        //     {/*<PopoverDemo/>*/}
+        // </ThemeProvider>
+
+    <DashboardHeader/>
+
+)
 }
 
 
@@ -442,7 +446,7 @@ export function ButtonLoading() {
 export function ButtonAsChild() {
     return (
         <Button asChild>
-            <Link href="/login">Login</Link>
+            <Link.jinja href="/login">Login</Link.jinja>
         </Button>
     )
 }

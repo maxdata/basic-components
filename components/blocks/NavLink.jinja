@@ -1,0 +1,12 @@
+{# Navigation.jinja #}
+{# def
+    id: str = "",
+    href: str ="",
+    isActive: bool = False,
+    className: str = "",
+#}
+<a id="{{ id }}"
+    href="{{ href }}"
+    class="text-muted-foreground transition-colors hover:text-foreground {{ className }}">
+  {{ content }}
+</a>

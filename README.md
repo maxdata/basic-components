@@ -9,7 +9,7 @@
 - [x] toast
 - [x] darkmode
 - [x] Form
-- [ ] skeleton
+- [-] skeleton
 - [-] pagination
 - [x] badge
 - [x] alert

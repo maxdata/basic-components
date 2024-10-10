@@ -1,0 +1,31 @@
+<Header>
+  <!-- Navigation Menu -->
+  <Navigation
+      id="main-navigation"
+      className="hidden md:flex md:items-center md:gap-5 md:text-sm lg:gap-6"
+  >
+    <NavLink href="#">Dashboard</NavLink>
+    <NavLink href="#">Orders</NavLink>
+    <NavLink href="#">Products</NavLink>
+    <NavLink href="#">Customers</NavLink>
+    <NavLink href="#">Settings</NavLink>
+  </Navigation>
+  <!-- Mobile Toggle Button -->
+  <MenuButton
+      id="mobile-menu-button"
+      ariaControls="mobile-navigation"
+      className="md:hidden"
+  />
+  <!-- Search Bar -->
+  <SearchBar
+      id="header-search"
+      placeholder="{{ searchPlaceholder }}"
+      className="ml-auto"
+  />
+  <!-- Avatar Dropdown -->
+  <AvatarDropdown
+      id="user-avatar-dropdown"
+      items="{{ avatarDropdownItems }}"
+      className="h-10 w-10 rounded-full"
+  />
+</Header>
