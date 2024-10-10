@@ -1,5 +1,5 @@
 {# def
-    id: str = "",
+    htmlFor: str = "",
     className: str = "",
     disabled: bool = False
 #}
@@ -7,7 +7,7 @@
 {% set baseclassName = "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" %}
 
 <label
-    id="{{ id }}"
+    for="{{ htmlFor }}"
     class="{{ baseclassName }} {{ className }}"
     {% if disabled %}disabled{% endif %}
     {{ attrs.render() }}

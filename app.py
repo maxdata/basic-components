@@ -31,9 +31,9 @@ templates.env.add_extension(DebugExtension)
 
 templates.env.add_extension(jinjax.JinjaX)  # pyright: ignore [reportPrivateImportUsage]
 catalog = jinjax.Catalog(jinja_env=templates.env)  # pyright: ignore [reportPrivateImportUsage]
+catalog.add_folder(f"{BASE_DIR}/components")
 catalog.add_folder(f"{BASE_DIR}/components/ui")
 catalog.add_folder(f"{BASE_DIR}/components/icons")
-catalog.add_folder(f"{BASE_DIR}/components/blocks")
 catalog.add_folder(f"{BASE_DIR}/examples")
 
 # Serve static files (CSS, etc.)
@@ -146,3 +146,7 @@ async def success(request: Request):
 @app.get("/dashboard", response_class=HTMLResponse)
 async def components(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
+
+@app.get("/login", response_class=HTMLResponse)
+async def components(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
