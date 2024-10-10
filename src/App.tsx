@@ -3,7 +3,6 @@ import {Button} from '@/components/ui/button';
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card"
 
 import {ThemeProvider} from "@/components/theme-provider"
-import {ModeToggle} from "@/components/mode-toggle.tsx";
 import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
 import {zodResolver} from "@hookform/resolvers/zod"
@@ -44,40 +43,41 @@ import {
 } from "@/components/ui/dialog"
 import {Popover, PopoverContent, PopoverTrigger,} from "@/components/ui/popover"
 import {DashboardHeader} from "@/components/dashboard-header.tsx";
+import {ModeToggle} from "@/components/mode-toggle.tsx";
 
 // import Link.jinja from "next/link"
 
 function App() {
     return (
-        // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        //     {/*<ModeToggle/>*/}
-        //     {/*<CardWithForm/>*/}
-        //     {/*<ButtonDemo/>*/}
-        //     {/*<ButtonSecondary/>*/}
-        //     {/*<ButtonDestructive/>*/}
-        //     {/*<ButtonOutline/>*/}
-        //     {/*<ButtonGhost/>*/}
-        //     {/*<ButtonLink/>*/}
-        //     {/*<ButtonIcon/>*/}
-        //     {/*<ButtonWithIcon/>*/}
-        //     {/*<ButtonLoading/>*/}
-        //     {/*<ButtonAsChild/>*/}
-        //     {/*<CardComponent/>*/}
-        //     {/*<InputDemo/>*/}
-        //     {/*<InputFile/>*/}
-        //     {/*<InputWithLabel/>*/}
-        //     {/*<InputWithButton/>*/}
-        //     {/*<InputForm/>*/}
-        //     {/*<SelectDemo/>*/}
-        //     {/*<SelectScrollable/>*/}
-        //     {/*<TableDemo/>*/}
-        //     {/*<DialogDemo/>*/}
-        //     {/*<PopoverDemo/>*/}
-        // </ThemeProvider>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+           <ModeToggle/>
+           {/*<CardWithForm/>*/}
+           {/*<ButtonDemo/>*/}
+           {/*<ButtonSecondary/>*/}
+           {/*<ButtonDestructive/>*/}
+           {/*<ButtonOutline/>*/}
+           {/*<ButtonGhost/>*/}
+           {/*<ButtonLink/>*/}
+           {/*<ButtonIcon/>*/}
+           {/*<ButtonWithIcon/>*/}
+           {/*<ButtonLoading/>*/}
+           {/*<ButtonAsChild/>*/}
+           {/*<CardComponent/>*/}
+           {/*<InputDemo/>*/}
+           {/*<InputFile/>*/}
+           {/*<InputWithLabel/>*/}
+           {/*<InputWithButton/>*/}
+           {/*<InputForm/>*/}
+           {/*<SelectDemo/>*/}
+           {/*<SelectScrollable/>*/}
+           {/*<TableDemo/>*/}
+           {/*<DialogDemo/>*/}
+           {/*<PopoverDemo/>*/}
+            <DashboardHeader/>
+        </ThemeProvider>
 
-    <DashboardHeader/>
 
-)
+    )
 }
 
 

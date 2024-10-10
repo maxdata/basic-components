@@ -1,10 +1,17 @@
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import inject from '@rollup/plugin-inject';
 import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
+    plugins: [
+        react(),
+        inject({
+            process: 'process',
+            Buffer: ['buffer', 'Buffer'],  // Buffer polyfill for any code using it
+        }),
+    ],
     build: {
         cssMinify: false,
         rollupOptions: {
@@ -25,5 +32,14 @@ export default defineConfig({
         alias: {
             '@': path.resolve(__dirname, './src'),  // This ensures that '@/components/ui' resolves correctly.
         },
+    },
+
+    optimizeDeps: {
+        // Ensure the dependencies that need the polyfill are properly optimized
+        include: ['process', 'util'],
+    },
+
+    define: {
+        'process.env': {}, // Provide an empty object for 'process.env'
     },
 });
