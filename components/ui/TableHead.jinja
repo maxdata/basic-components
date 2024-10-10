@@ -10,9 +10,9 @@
     {{ content }}
     <span class="ml-2 flex-none rounded text-zinc-400 group-hover:visible group-focus:visible {% if sorted %}opacity-100{% else %}opacity-25{% endif %}">
       {% if sortOrder == 'asc' %}
-        <Icon name="chevron-up" className="h-4 w-4" />
+        <ChevronUp className="h-4 w-4" />
       {% else %}
-        <Icon name="chevron-down" className="h-4 w-4" />
+        <ChevronDown className="h-4 w-4" />
       {% endif %}
     </span>
   </a>
