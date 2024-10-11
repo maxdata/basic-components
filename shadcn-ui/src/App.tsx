@@ -51,28 +51,28 @@ function App() {
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
            <ModeToggle/>
-           {/*<CardWithForm/>*/}
-           {/*<ButtonDemo/>*/}
-           {/*<ButtonSecondary/>*/}
-           {/*<ButtonDestructive/>*/}
-           {/*<ButtonOutline/>*/}
-           {/*<ButtonGhost/>*/}
-           {/*<ButtonLink/>*/}
-           {/*<ButtonIcon/>*/}
-           {/*<ButtonWithIcon/>*/}
-           {/*<ButtonLoading/>*/}
+           <CardWithForm/>
+           <ButtonDemo/>
+           <ButtonSecondary/>
+           <ButtonDestructive/>
+           <ButtonOutline/>
+           <ButtonGhost/>
+           <ButtonLink/>
+           <ButtonIcon/>
+           <ButtonWithIcon/>
+           <ButtonLoading/>
            {/*<ButtonAsChild/>*/}
-           {/*<CardComponent/>*/}
-           {/*<InputDemo/>*/}
-           {/*<InputFile/>*/}
-           {/*<InputWithLabel/>*/}
-           {/*<InputWithButton/>*/}
-           {/*<InputForm/>*/}
-           {/*<SelectDemo/>*/}
-           {/*<SelectScrollable/>*/}
-           {/*<TableDemo/>*/}
-           {/*<DialogDemo/>*/}
-           {/*<PopoverDemo/>*/}
+           <CardComponent/>
+           <InputDemo/>
+           <InputFile/>
+           <InputWithLabel/>
+           <InputWithButton/>
+           <InputForm/>
+           <SelectDemo/>
+           <SelectScrollable/>
+           <TableDemo/>
+           <DialogDemo/>
+           <PopoverDemo/>
             <DashboardHeader/>
         </ThemeProvider>
 
