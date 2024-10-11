@@ -1,5 +1,4 @@
 {# def
-    id: str = "",
     className: str = "",
     variant: str = "default"
 #}
@@ -11,7 +10,6 @@
 }[variant] %}
 
 <div
-    id="{{ id }}"
     class="{{ baseClassName }} {{ variantClassName }} {{ className }}"
     role="alert"
     {{ attrs.render() }}

@@ -1,7 +1,8 @@
 {# def
-    id: str = "",
     className: str = ""
 #}
-<p id="{{ id }}" class="text-sm text-zinc-500 dark:text-zinc-400 {{ className }}" {{ attrs.render() }}>
+<p  class="text-sm text-zinc-500 dark:text-zinc-400 {{ className }}"
+    {{ attrs.render() }}
+>
   {{ content }}
 </p>

@@ -28,10 +28,11 @@
 
 
 <button
-  id="{{ id }}"
+
   {% if type %}type="{{ type }}"{% endif %}
   class="{{ baseclassName }} {{ variantclassName }} {{ sizeclassName }} {{ className }}"
-  {% if disabled %}disabled{% endif %} {{ attrs.render() }}
+  {% if disabled %}disabled{% endif %}
+  {{ attrs.render() }}
 >
   {{ content }}
 </button>

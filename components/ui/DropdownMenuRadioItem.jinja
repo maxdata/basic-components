@@ -1,5 +1,4 @@
 {# def
-    id: str = "",
     name: str = "",
     className: str = "",
     options: list[str, str] = [],
@@ -9,8 +8,7 @@
 <DropdownMenuItem class="{{ className }}">
   <div class="relative flex items-center">
     <RadioGroup
-        id="{{ id }}"
-        :name="{{ name }}"
+            :name="{{ name }}"
         :options="{{ options }}"
         :value="{{ value }}"
     />

@@ -1,8 +1,9 @@
 {# def
-    id: str = "",
     className: str = "",
 #}
 <!-- Dialog -->
-<div id="{{ id }}" x-data="{ open: false }" {{ attrs.render() }}>
+<div  x-data="{ open: false }"
+    {{ attrs.render() }}
+>
   {{ content }}
 </div>

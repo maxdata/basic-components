@@ -1,9 +1,8 @@
 {# def
-    id: str = "",
     className: str = "",
 #}
 <!-- DialogContent -->
-<div id="{{ id }}"
+<div
     x-show="open"
     @keydown.escape.window="open = false"
     @click.away="open = false"

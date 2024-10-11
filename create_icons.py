@@ -3,13 +3,11 @@ import re
 
 # Template for the JinjaX component
 component_template = """{{# def
-    id: str = "",
     className: str = "h-4 w-4",
     color: str = ""
 #}}
 
 <svg
-    id="{{{{ id }}}}"
     class="{{{{ className }}}} {{{{ color }}}}"
     viewBox="0 0 24 24"
     fill="none"

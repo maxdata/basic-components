@@ -1,7 +1,8 @@
 {# def
-    id: str = "",
     className: str = ""
 #}
-<div id="{{ id }}" class="flex items-center p-6 pt-0 {{ className }}" {{ attrs.render() }}>
+<div  class="flex items-center p-6 pt-0 {{ className }}"
+    {{ attrs.render() }}
+>
   {{ content }}
 </div>
