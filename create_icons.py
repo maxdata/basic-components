@@ -62,8 +62,8 @@ def create_jinjax_components(svg_dir, output_dir):
             print(f"Component {component_name}.jinja created.")
 
 if __name__ == "__main__":
-    svg_dir = './node_modules/lucide-static/icons'  # Update this to your SVG files directory
-    output_dir = './components/icons'  # Update this to your desired output directory
+    svg_dir = 'shadcn-ui/node_modules/lucide-static/icons'
+    output_dir = 'components/icons'
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
