@@ -11,7 +11,7 @@
     <DropdownMenuItem>Settings</DropdownMenuItem>
     <DropdownMenuItem>Keyboard Shortcuts</DropdownMenuItem>
 
-    <DropdownMenuGroup className="border-t">
+    <DropdownMenuGroup class="border-t">
       <DropdownMenuItem>Team</DropdownMenuItem>
       <DropdownMenuSub>
         <DropdownMenuSubTrigger>
@@ -25,12 +25,34 @@
       <DropdownMenuItem>New Team</DropdownMenuItem>
     </DropdownMenuGroup>
 
-    <DropdownMenuGroup className="border-t">
+    <DropdownMenuGroup class="border-t">
       <DropdownMenuItem>GitHub</DropdownMenuItem>
       <DropdownMenuItem>Support</DropdownMenuItem>
       <DropdownMenuItem>API</DropdownMenuItem>
     </DropdownMenuGroup>
 
-    <DropdownMenuItem className="border-t">Logout</DropdownMenuItem>
+    <DropdownMenuGroup class="border-t">
+      <DropdownMenuCheckboxItem
+          id="notifications"
+          label="Enable Notifications"
+          :checked="{{ False }}"
+      />
+      <DropdownMenuCheckboxItem
+          id="auto-save"
+          label="Enable Auto-Save"
+          :checked="{{ False }}"
+      />
+      <DropdownMenuRadioItem
+          id="theme"
+          name="Theme"
+          :options='[
+              {"id": "light", "value": "l", "label": "Light"},
+              {"id": "dark", "value": "d", "label": "Dark"}
+          ]'
+          value="l"
+      />
+    </DropdownMenuGroup>
+
+    <DropdownMenuItem class="border-t">Logout</DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>

@@ -2,7 +2,7 @@
   id: str = "",
   className: str = ""
 #}
-<div class="relative w-full overflow-auto">
+<div class="relative w-full overflow-visible">
   <table id="{{ id }}" class="w-full caption-bottom text-sm {{ className }}" {{ attrs.render() }}>
     {{ content }}
   </table>
