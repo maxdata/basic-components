@@ -1,24 +1,13 @@
-[tool.poetry]
+[project]
 name = "basic-components"
 version = "0.1.0"
 description = ""
-authors = ["phernandez <phernandez@basicmachines.co>"]
+authors = [
+    {name = "phernandez", email = "phernandez@basicmachines.co"},
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-fastapi = { extras = ["standard"], version = "^0.112.0" }
-uvicorn = "^0.31.0"
-pyright = "^1.1.381"
-pytest = "^7.4.4"
-ruff = "^0.2.1"
-playwright = "^1.41.2"
-pytest-playwright = "^0.4.4"
-jinjax = "^0.46"
-wtforms = "^3.1.2"
-starlette-wtf = "^0.4.5"
-
+requires-python = ">=3.10"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
