@@ -11,6 +11,9 @@ _confirm:
 _templates_suffix: ""
 _subdirectory: components
 
+# Declare tasks as safe
+_tasks_unsafe: false
+
 # Tasks are now defined differently in Copier 9.x
 _tasks:
   - mkdir -p "{{ _copier_conf.dst_path }}/components"
