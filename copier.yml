@@ -2,7 +2,6 @@
 _min_copier_version: "9.0.0"
 
 # Copier configuration
-_templates_suffix: ""
 _subdirectory: components
 
 # Add any specific instructions or information for users
