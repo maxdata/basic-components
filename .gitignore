@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# python
 __pycache__/
+.python-version

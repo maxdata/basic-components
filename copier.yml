@@ -1,10 +1,5 @@
 # copier.yml
-_min_copier_version: "7.0"
-
-# Project information
-project_name:
-  type: str
-  help: Your project name
+_min_copier_version: "9.0.0"
 
 # Confirmation
 _confirm:
@@ -13,11 +8,13 @@ _confirm:
   default: yes
 
 # Specify the source and destination directories
+_templates_suffix: ""
+_subdirectory: components
+
+# Tasks are now defined differently in Copier 9.x
 _tasks:
-  - src: components
-    dst: "{{ _copier_conf.dst_path }}/components"
-  - src: VERSION.txt
-    dst: "{{ _copier_conf.dst_path }}/components-VERSION.txt"
+  - mkdir -p "{{ _copier_conf.dst_path }}/components"
+  - cp VERSION.txt "{{ _copier_conf.dst_path }}/components-VERSION.txt"
 
 # Exclude any files or directories you don't want to copy
 _exclude:
