@@ -32,7 +32,7 @@ These components have been vendored into your project using Copier. They provide
 To use a component in your templates:
 
 ```jinja
-<button variant="primary">Click me</button>
+<Button variant="primary">Click me</Button>
 
 <Accordion>
   <AccordionItem value="item-1">

@@ -5,4 +5,8 @@
 #}
 {% set click_action="$dispatch('show-toast', '" + toast_target + "')" %}
 
-<button :@click="{{ click_action }}" class="{{ className }}">{{ content }}</button>
+{# prettier-ignore-start #}
+<Button :@click="{{ click_action }}" class="{{ className }}">
+  {{ content }}
+</Button>
+{# prettier-ignore-end #}

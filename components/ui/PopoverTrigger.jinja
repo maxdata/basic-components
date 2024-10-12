@@ -1,4 +1,8 @@
 {# def
     className: str = "",
 #}
-<button class="{{ className }}" @click="open = !open">{{ content }}</button>
+{# prettier-ignore-start #}
+<Button class="{{ className }}" @click="open = !open">
+  {{ content }}
+</Button>
+{# prettier-ignore-end #}
