@@ -1,38 +1,20 @@
 # copier.yml
 _min_copier_version: "9.0.0"
 
-# Confirmation
-_confirm:
-  type: bool
-  help: Do you want to vendor basic-components into your project?
-  default: yes
-
-# Specify the source and destination directories
+# Copier configuration
 _templates_suffix: ""
 _subdirectory: components
 
-# Declare tasks as safe
-_tasks_unsafe: false
-
-# Tasks are now defined differently in Copier 9.x
-_tasks:
-  - mkdir -p "{{ _copier_conf.dst_path }}/components"
-  - cp VERSION.txt "{{ _copier_conf.dst_path }}/components-VERSION.txt"
-
-# Exclude any files or directories you don't want to copy
-_exclude:
-  - "*"
-  - "!{{ _subdirectory }}"
-  - "!{{ _subdirectory }}/**"
-  - "!VERSION.txt"
-
 # Add any specific instructions or information for users
 _message_after_copy: |
-  basic-components have been successfully vendored into your project.
+  basic-components have been vendored into your project.
   
   To use these components:
   1. Ensure JinjaX is installed in your project.
-  2. Update your templates to import components from the '{{ _copier_conf.dst_path }}/components' directory.
-  3. Refer to the README.md in the 'components' directory for usage instructions.
+  2. Update your templates to import components from the directory you specified.
+  3. Refer to the README.md in the components directory for usage instructions.
+  4. The version of basic-components you've vendored can be found in the version.txt file.
   
-  Enjoy using basic-components in your project!
+  Copier has preserved your existing files. Please review any changes or conflicts manually.
+  
+  Thanks for using basic-components in your project!

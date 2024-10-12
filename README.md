@@ -188,76 +188,56 @@ Check the component against our established rules:
 
 ## Vendoring Components
 
-You can vendor these components into your project using Copier. Copier works with both remote and local repositories.
+To vendor these components into your project using Copier:
 
 1. Ensure you have Copier installed:
    ```
    pip install copier
    ```
 
-2. Choose one of the following methods to vendor the components:
+2. Run the following command from your project directory, specifying the destination:
+   ```
+   copier copy https://github.com/basic-foundation/basic-components.git ./path/to/destination
+   ```
+   Replace `./path/to/destination` with the directory where you want the components to be vendored.
 
-   a. From a remote GitHub repository:
-      ```
-      copier copy  https://github.com/basicmachines-co/basic-components.git ./
-      ```
+3. To preview the operation without making any changes, use the `--pretend` flag:
+   ```
+   copier copy --pretend https://github.com/basic-foundation/basic-components.git ./path/to/destination
+   ```
 
-   b. From a local repository:
-      ```
-      copier copy /path/to/local/basic-components ./
-      ```
-
-   c. From a specific branch or tag:
-      ```
-      copier copy gh:your-username/basic-components@v1.0.0 ./
-      ```
-
-3. Follow the prompts to customize the vendoring process.
-
-4. After vendoring, refer to the README.md in the "components" directory for setup and usage instructions.
+4. After vendoring, refer to the README.md in the components directory for setup and usage instructions.
 
 **Notes:**
-- You can also fork this repo and use your own git url with copier.
+- Copier will preserve your existing files. It will show diffs for any conflicts and allow you to choose how to handle them.
+- You can specify a specific branch, tag, or commit by appending it to the repository URL, e.g., `...basic-components.git@v1.0.0 ./path/to/destination`
+- You can also fork this repo and use your own git url with copier or use a local copy of the repository. 
 - Using a local repository is particularly useful during development or when you've made custom modifications.
-- You can specify branches, tags, or commit hashes when copying from a Git repository.
 
 For more detailed information on Copier usage, refer to the [Copier documentation](https://copier.readthedocs.io/).
 
 ## Versioning and Updates
 
-When you vendor these components into your project, a `components-VERSION.txt` file will be created in your project root. This file contains the version number of the basic-components library that you've vendored.
-
-### Checking Your Version
-
-To check which version of basic-components you're using:
-
-1. Look for the `components-VERSION.txt` file in your project root.
-2. The content of this file indicates the version of basic-components you've vendored.
+When you vendor these components into your project, a `components/version.txt` file will be created. 
+This file contains the version number of the basic-components library that you've vendored.
 
 ### Updating Vendored Components
 
 To update your vendored components to the latest version:
 
-1. Ensure you have the latest version of Copier installed:
-   ```
-   uv pip install --upgrade copier
-   ```
-
-2. From your project root, run:
+1. From your project root, run:
    ```
    copier update
    ```
 
-3. Copier will detect the previous version used and prompt you about updates. It will show you the changes between your current version and the latest version.
+2. Copier will detect the previous version used and prompt you about updates. It will show you the changes between your current version and the latest version.
 
-4. Follow the prompts to complete the update process.
+3. Follow the prompts to complete the update process.
 
-5. After updating, check the `components-VERSION.txt` file to confirm the new version.
+4. After updating, check the `components/version.txt` file to confirm the new version.
 
 **Important Notes:**
 - Before updating, make sure to commit any changes in your project to avoid losing work.
 - If you've made modifications to the vendored components, Copier will ask how to handle conflicts. You may need to manually merge some changes.
-- Always test your project thoroughly after updating components to ensure compatibility.
-- It's recommended to review the changelog or release notes of basic-components (if available) before updating to understand any breaking changes or new features.
 
-When reporting issues or seeking support related to these components, always mention the version number found in your `components-VERSION.txt` file.
+When reporting issues or seeking support related to these components, always mention the version number found in your `components/version.txt` file.
