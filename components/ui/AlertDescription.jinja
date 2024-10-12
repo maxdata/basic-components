@@ -2,9 +2,4 @@
     className: str = ""
 #}
 
-<div
-    class="text-sm leading-relaxed {{ className }}"
-    {{ attrs.render() }}
->
-  {{ content }}
-</div>
+<div class="{{ className }} text-sm leading-relaxed" {{ attrs.render() }}>{{ content }}</div>

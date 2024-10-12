@@ -3,9 +3,6 @@
   className: str = "",
   toast_target: str = "",
 #}
+{% set click_action="$dispatch('show-toast', '" + toast_target + "')" %}
 
-{% set click_action="$dispatch('show-toast', '" + toast_target + "')"  %}
-
-<Button :@click="{{ click_action }}" class="{{ className }}">
-  {{ content }}
-</Button>
+<button :@click="{{ click_action }}" class="{{ className }}">{{ content }}</button>

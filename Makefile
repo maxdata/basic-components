@@ -37,4 +37,4 @@ type-check: $(VENV)/bin/uv
 	$(PYTHON) -m pyright
 
 dev: $(VENV)/bin/uv
-	$(PYTHON) -m uvicorn app:app --reload --port 10000
+	$(PYTHON) -m uvicorn app:app --reload

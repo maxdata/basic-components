@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "tailwind": "npx tailwindcss build -o dist/output.css",
+    "tailwind": "npx tailwindcss build -i src/index.css -o dist/output.css",
     "watch": "tailwindcss -i src/index.css -o ./dist/output.css --watch"
   },
   "dependencies": {

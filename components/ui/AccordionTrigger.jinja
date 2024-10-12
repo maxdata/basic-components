@@ -4,11 +4,11 @@ className: str = ""
 
 <h3 class="flex">
   <button
-      type="button"
-      class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline {{ className }}"
-      @click="toggleItem($el.closest('[value]').getAttribute('value'))"
-      :aria-expanded="isOpen"
-      {{ attrs.render() }}
+    type="button"
+    class="{{ className }} flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline"
+    @click="toggleItem($el.closest('[value]').getAttribute('value'))"
+    :aria-expanded="isOpen"
+    {{ attrs.render() }}
   >
     {{ content }}
     <template x-if="isOpen">

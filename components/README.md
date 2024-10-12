@@ -5,15 +5,17 @@ These components have been vendored into your project using Copier. They provide
 ## Setup
 
 1. Ensure you have JinjaX installed in your project:
+
    ```
    pip install jinjax
    ```
 
 2. In your FastAPI app, set up JinjaX:
+
    ```python
    from fastapi import FastAPI
    from jinjax import Jinja
-   
+
    app = FastAPI()
    jinjax = Jinja(app, path="path/to/jinjax_components")
    ```
@@ -30,14 +32,12 @@ These components have been vendored into your project using Copier. They provide
 To use a component in your templates:
 
 ```jinja
-<Button variant="primary">Click me</Button>
+<button variant="primary">Click me</button>
 
 <Accordion>
   <AccordionItem value="item-1">
     <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
+    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
   </AccordionItem>
 </Accordion>
 ```

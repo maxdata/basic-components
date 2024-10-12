@@ -1,7 +1,9 @@
 {# def
     className: str = "",
 #}
-<div class="py-1 border-zinc-100 dark:bg-zinc-950 dark:text-zinc-50 dark:border-zinc-700 {{ className }}">
+<div
+  class="{{ className }} border-zinc-100 py-1 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-50"
+>
   <ul>
     {{ content }}
   </ul>

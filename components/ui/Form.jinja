@@ -4,6 +4,11 @@
     className: str = ""
 #}
 
-<form  method="{{ method }}" action="{{ action }}" class="space-y-2 {{ className }}" {{ attrs.render() }}>
+<form
+  method="{{ method }}"
+  action="{{ action }}"
+  class="{{ className }} space-y-2"
+  {{ attrs.render() }}
+>
   {{ content }}
 </form>

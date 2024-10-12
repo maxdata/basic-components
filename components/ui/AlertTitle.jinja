@@ -2,9 +2,6 @@
     className: str = ""
 #}
 
-<h5
-    class="mb-1 font-medium leading-none tracking-tight {{ className }}"
-    {{ attrs.render() }}
->
+<h5 class="{{ className }} mb-1 font-medium leading-none tracking-tight" {{ attrs.render() }}>
   {{ content }}
 </h5>

@@ -4,14 +4,14 @@ className: str = ""
 #}
 
 <div
-    x-data="{
+  x-data="{
     get isOpen() {
       return activeItem === '{{ value }}';
     }
   }"
-    class="border-b {{ className }}"
-    value="{{ value }}"
-    {{ attrs.render() }}
+  class="{{ className }} border-b"
+  value="{{ value }}"
+  {{ attrs.render() }}
 >
   {{ content }}
 </div>

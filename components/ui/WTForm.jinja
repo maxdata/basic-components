@@ -12,18 +12,19 @@
   {%- endif -%}
 {% endmacro %}
 
-
 <form
-    method="{{ method }}"
-    action="{{ action }}"
-    enctype="{{ enctype }}"
-    class="{{ className }} space-y-4"
-    {{ attrs.render() }}
+  method="{{ method }}"
+  action="{{ action }}"
+  enctype="{{ enctype }}"
+  class="{{ className }} space-y-4"
+  {{ attrs.render() }}
 >
   {% for field in form %}
     <FormItem>
       {% if not field.flags.hidden %}
-        <FormLabel for_id="{{ field.label.field_id }}" :error="{{ field.errors }}">{{ field.label.text }}</FormLabel>
+        <FormLabel for_id="{{ field.label.field_id }}" :error="{{ field.errors }}">
+          {{ field.label.text }}
+        </FormLabel>
       {% endif %}
 
       <FormControl>
@@ -75,9 +76,7 @@
       <FormDescription>{{ field.description }}</FormDescription>
 
       {% if field.errors %}
-        <FormMessage>
-          {{ field.errors[0] }}
-        </FormMessage>
+        <FormMessage>{{ field.errors[0] }}</FormMessage>
       {% endif %}
     </FormItem>
   {% endfor %}

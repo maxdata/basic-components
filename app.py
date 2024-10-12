@@ -18,7 +18,7 @@ from wtforms import (
     BooleanField,
     RadioField,
     IntegerField,
-    validators
+    validators,
 )
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -38,8 +38,8 @@ catalog.add_folder(f"{BASE_DIR}/examples")
 
 # Serve static files (CSS, etc.)
 app.mount("/dist", StaticFiles(directory="shadcn-ui/dist"), name="dist")
-#app.mount("/icons", StaticFiles(directory="node_modules/lucide-static/icons"), name="icons")
-#app.mount("/lucide-static", StaticFiles(directory="node_modules/lucide-static/"), name="lucide-static")
+# app.mount("/icons", StaticFiles(directory="node_modules/lucide-static/icons"), name="icons")
+# app.mount("/lucide-static", StaticFiles(directory="node_modules/lucide-static/"), name="lucide-static")
 
 # CSRF Middleware
 app.add_middleware(SessionMiddleware, secret_key="session_key")
@@ -53,70 +53,73 @@ async def components(request: Request):
 
 class SampleForm(StarletteForm):
     username = StringField(
-        'Username',
+        "Username",
         [validators.InputRequired(), validators.Length(min=4, max=25)],
         id="username",
         render_kw={"placeholder": "username"},
-        description="Enter a unique username."
+        description="Enter a unique username.",
     )
     email = StringField(
-        'Email',
+        "Email",
         [validators.InputRequired(), validators.Email()],
         id="email",
         default="example@example.com",
-        description="Your primary email address."
+        description="Your primary email address.",
     )
     password = PasswordField(
-        'Password',
+        "Password",
         [validators.InputRequired(), validators.Length(min=6)],
         id="password",
-        description="Must be at least 6 characters."
+        description="Must be at least 6 characters.",
     )
     bio = TextAreaField(
-        'Bio',
+        "Bio",
         [validators.Optional(), validators.Length(max=200)],
         id="bio",
         description="Write a brief bio about yourself.",
-        default="I love coding and coffee."
+        default="I love coding and coffee.",
     )
     age = IntegerField(
-        'Age',
+        "Age",
         [validators.Optional(), validators.NumberRange(min=18, max=100)],
         id="age",
         default=25,
-        description="Your age (must be between 18 and 100)."
+        description="Your age (must be between 18 and 100).",
     )
     gender = RadioField(
-        'Gender',
-        choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')],
+        "Gender",
+        choices=[("M", "Male"), ("F", "Female"), ("O", "Other")],
         id="gender",
         description="Select your gender.",
-        default='M'
+        default="M",
     )
     country = SelectField(
-        'Country',
-        choices=[('US', 'United States'), ('CA', 'Canada'), ('UK', 'United Kingdom')],
+        "Country",
+        choices=[("US", "United States"), ("CA", "Canada"), ("UK", "United Kingdom")],
         id="country",
-        default='US',
-        description="Choose your country."
+        default="US",
+        description="Choose your country.",
     )
     agree_terms = BooleanField(
-        'I agree to the terms and conditions',
+        "I agree to the terms and conditions",
         [validators.InputRequired()],
         id="agree_terms",
-        description="You must agree before submitting."
+        description="You must agree before submitting.",
     )
     profile_picture = FileField(
-        'Profile Picture',
+        "Profile Picture",
         [validators.Optional()],
         id="profile_picture",
-        description="Upload your profile picture (optional)."
+        description="Upload your profile picture (optional).",
     )
+
 
 @app.get("/form", response_class=HTMLResponse)
 async def display_form(request: Request):
     form = SampleForm(request)
-    return templates.TemplateResponse("sample_form.html", {"request": request, "form": form})
+    return templates.TemplateResponse(
+        "sample_form.html", {"request": request, "form": form}
+    )
 
 
 @app.post("/form", response_class=HTMLResponse)
@@ -135,7 +138,9 @@ async def post_sample_form(request: Request):
         return RedirectResponse(url="/success", status_code=303)
     else:
         # If form validation fails, re-render the form with errors
-        return templates.TemplateResponse("sample_form.html", {"request": request, "form": form})
+        return templates.TemplateResponse(
+            "sample_form.html", {"request": request, "form": form}
+        )
 
 
 # Success endpoint
@@ -143,9 +148,11 @@ async def post_sample_form(request: Request):
 async def success(request: Request):
     return {"message": "Form submitted successfully!"}
 
+
 @app.get("/dashboard", response_class=HTMLResponse)
 async def components(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
+
 
 @app.get("/login", response_class=HTMLResponse)
 async def components(request: Request):

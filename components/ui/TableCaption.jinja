@@ -2,6 +2,6 @@
   id: str = "",
   className: str = ""
 #}
-<caption  class="mt-4 text-sm text-zinc-500 dark:text-zinc-400 {{ className }}" {{ attrs.render() }}>
+<caption class="{{ className }} mt-4 text-sm text-zinc-500 dark:text-zinc-400" {{ attrs.render() }}>
   {{ content }}
 </caption>

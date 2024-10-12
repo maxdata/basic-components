@@ -1,65 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<style>
-    /* Light Mode Variables */
-    :root {
-        --input-border: #e5e7eb; /* Neutral-300 */
-        --input-background: #ffffff; /* White */
-        --focus-color: #000000; /* Black for focus and checked */
-        --hover-border: #9ca3af; /* Neutral-400 */
-    }
-
-    /* Dark Mode Variables */
-    [data-theme="dark"] {
-        --input-border: #4b5563; /* Neutral-700 */
-        --input-background: #1f2937; /* Neutral-800 */
-        --focus-color: #ffffff; /* White for focus and checked */
-        --hover-border: #6b7280; /* Neutral-500 */
-    }
-
-    /* Base Styles for Radio and Checkbox */
-    input.custom-input {
-        @apply w-4 h-4 border rounded transition-colors duration-200 cursor-pointer;
-        border-color: var(--input-border);
-        background-color: var(--input-background);
-    }
-
-    /* Hover State */
-    input.custom-input:hover {
-        border-color: var(--hover-border);
-    }
-
-    /* Focus State */
-    input.custom-input:focus {
-        @apply outline-none ring-2 ring-offset-2;
-        ring-color: var(--focus-color);
-        ring-offset-color: var(--input-background);
-    }
-
-    /* Checked State */
-    input.custom-input:checked {
-        background-color: var(--focus-color);
-        border-color: var(--focus-color);
-    }
-
-    /* Checkbox SVG */
-    input[type="checkbox"].custom-input:checked::before {
-        content: '✔';
-        @apply text-white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Radio SVG */
-    input[type="radio"].custom-input:checked::before {
-        content: '';
-        @apply block w-2 h-2 rounded-full;
-        background-color: var(--focus-color);
-    }
-</style>
-
 <Card>
   <CardHeader>
     <CardTitle>WtForm component</CardTitle>

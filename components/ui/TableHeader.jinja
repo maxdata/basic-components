@@ -2,6 +2,4 @@
   id: str = "",
   className: str = ""
 #}
-<thead  class="[&_tr]:border-b {{ className }}" {{ attrs.render() }}>
-{{ content }}
-</thead>
+<thead class="{{ className }} [&_tr]:border-b" {{ attrs.render() }}>{{ content }}</thead>
