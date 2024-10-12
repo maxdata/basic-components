@@ -186,33 +186,78 @@ Check the component against our established rules:
 2. Document the component usage, attributes, and any custom behavior directly in the template's documentation or README
    file.
 
----
+## Vendoring Components
 
-# TODO
+You can vendor these components into your project using Copier. Copier works with both remote and local repositories.
 
-- [x] table
-- [x] Dialog
-- [x] alert dialog
-- [x] popover
-- [x] toast
-- [x] darkmode
-- [x] Form
-- [-] skeleton
-- [-] pagination
-- [x] badge
-- [x] alert
+1. Ensure you have Copier installed:
+   ```
+   pip install copier
+   ```
 
-https://ui.shadcn.com/blocks
+2. Choose one of the following methods to vendor the components:
 
-- [ ] responsive header - dashboard-04/01
-- [ ] stats - dashboard-01
-- [ ] login form - authentication-02
+   a. From a remote GitHub repository:
+      ```
+      copier copy  https://github.com/basicmachines-co/basic-components.git ./
+      ```
 
-https://ui.shadcn.com/examples/tasks
+   b. From a local repository:
+      ```
+      copier copy /path/to/local/basic-components ./
+      ```
 
-- [ ] table layout
+   c. From a specific branch or tag:
+      ```
+      copier copy gh:your-username/basic-components@v1.0.0 ./
+      ```
 
-- [ ] claude
-- [ ] new note app - hn
-- [ ] uv
-- [ ] copier - https://copier.readthedocs.io/en/stable/
+3. Follow the prompts to customize the vendoring process.
+
+4. After vendoring, refer to the README.md in the "components" directory for setup and usage instructions.
+
+**Notes:**
+- You can also fork this repo and use your own git url with copier.
+- Using a local repository is particularly useful during development or when you've made custom modifications.
+- You can specify branches, tags, or commit hashes when copying from a Git repository.
+
+For more detailed information on Copier usage, refer to the [Copier documentation](https://copier.readthedocs.io/).
+
+## Versioning and Updates
+
+When you vendor these components into your project, a `components-VERSION.txt` file will be created in your project root. This file contains the version number of the basic-components library that you've vendored.
+
+### Checking Your Version
+
+To check which version of basic-components you're using:
+
+1. Look for the `components-VERSION.txt` file in your project root.
+2. The content of this file indicates the version of basic-components you've vendored.
+
+### Updating Vendored Components
+
+To update your vendored components to the latest version:
+
+1. Ensure you have the latest version of Copier installed:
+   ```
+   uv pip install --upgrade copier
+   ```
+
+2. From your project root, run:
+   ```
+   copier update
+   ```
+
+3. Copier will detect the previous version used and prompt you about updates. It will show you the changes between your current version and the latest version.
+
+4. Follow the prompts to complete the update process.
+
+5. After updating, check the `components-VERSION.txt` file to confirm the new version.
+
+**Important Notes:**
+- Before updating, make sure to commit any changes in your project to avoid losing work.
+- If you've made modifications to the vendored components, Copier will ask how to handle conflicts. You may need to manually merge some changes.
+- Always test your project thoroughly after updating components to ensure compatibility.
+- It's recommended to review the changelog or release notes of basic-components (if available) before updating to understand any breaking changes or new features.
+
+When reporting issues or seeking support related to these components, always mention the version number found in your `components-VERSION.txt` file.

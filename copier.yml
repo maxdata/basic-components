@@ -1,0 +1,38 @@
+# copier.yml
+_min_copier_version: "7.0"
+
+# Project information
+project_name:
+  type: str
+  help: Your project name
+
+# Confirmation
+_confirm:
+  type: bool
+  help: Do you want to vendor basic-components into your project?
+  default: yes
+
+# Specify the source and destination directories
+_tasks:
+  - src: components
+    dst: "{{ _copier_conf.dst_path }}/components"
+  - src: VERSION.txt
+    dst: "{{ _copier_conf.dst_path }}/components-VERSION.txt"
+
+# Exclude any files or directories you don't want to copy
+_exclude:
+  - "*"
+  - "!components"
+  - "!components/**"
+  - "!VERSION.txt"
+
+# Add any specific instructions or information for users
+_message_after_copy: |
+  basic-components have been successfully vendored into your project.
+  
+  To use these components:
+  1. Ensure JinjaX is installed in your project.
+  2. Update your templates to import components from the '{{ _copier_conf.dst_path }}/components' directory.
+  3. Refer to the README.md in the 'components' directory for usage instructions.
+  
+  Enjoy using basic-components in your project!
