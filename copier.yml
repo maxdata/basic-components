@@ -22,8 +22,8 @@ _tasks:
 # Exclude any files or directories you don't want to copy
 _exclude:
   - "*"
-  - "!components"
-  - "!components/**"
+  - "!{{ _subdirectory }}"
+  - "!{{ _subdirectory }}/**"
   - "!VERSION.txt"
 
 # Add any specific instructions or information for users
