@@ -17,7 +17,7 @@ Features
 
 ## Example `Button` Component 
 
-The `Button` component wraps options and behaviors for buttons and provides variants for different styles. 
+The `Button` component wraps options and behaviors for buttons and provides variants for different styles, similar to the [shadcn/ui version](https://ui.shadcn.com/docs/components/button).
 
 ```jinja
 {# def
@@ -60,13 +60,14 @@ The `Button` component wraps options and behaviors for buttons and provides vari
 
 ## Using the `Button` Component
 
-Within a template or another component, declare the component, passing attributes as needed, without needing to define tailwind css attributes repeatedly. 
+Within a template or another component, declare the `Button`, passing attributes as needed, without needing to define tailwind css attributes repeatedly. 
 
 ```html
 <Button variant="secondary">Secondary</Button>
 
 <Button>
-  <Mail className="mr-2 h-4 w-4" invert="True" />
+  <!-- include and svg icon -->
+  <Mail className="mr-2 h-4 w-4" invert="True" /> 
   Login with Email
 </Button>
 
@@ -155,4 +156,6 @@ This file contains the version number of the basic-components library that you'v
 
 For more detailed information on Copier usage, refer to the [Copier documentation](https://copier.readthedocs.io/).
 
-When reporting issues or seeking support related to these components, always mention the version number found in your `components/components-version.txt` file.
+## In progress
+
+This project is a work in progress, see the `components/ui` directory for a list of all components that have been ported. 
