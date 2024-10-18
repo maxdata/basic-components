@@ -1,38 +1,68 @@
 # JinjaX Component Library
 
-This project is a library of UI components which use [JinjaX](https://jinjax.scaletti.dev/guide/), an extension of
-Jinja templates. It directly ports components from [shadcn/ui](https://ui.shadcn.com/) to JinjaX,
-maintaining compatibility in usage and style, using [Alpine.js](https://alpinejs.dev/) for interactivity and [Tailwwind.css](https://tailwindcss.com/) for styling. 
+This project provides a collection of UI components using JinjaX, an enhanced version of Jinja templates. 
+It directly ports components from shadcn/ui to JinjaX, maintaining compatibility in usage and style. 
+Client side interactivity is implemented via Alpine.js and styling via Tailwind.css. 
 
-The goal is to provide developers using server-side rendering frameworks (with FastAPI or Flask) access to
-high-quality, accessible components similar or identical to those available in shadcn/ui. They can be easily extended
-via [htmx](https://htmx.org/) to create dynamic html interfaces easily.
+The goal is to equip developers using server-side rendering frameworks, such as FastAPI or Flask, with high-quality, 
+accessible components that behave similarly to their React counterparts. Components can be further extended with HTMX to create dynamic interfaces.
 
-- **Framework**: JinjaX (Jinja2 extension)
-- **Styling**: Tailwind CSS
-- **Interactivity**: Alpine.js
-- **Compatibility**: Direct port of shadcn/ui components
-- **Purpose**: Enable use of shadcn/ui-style components in server-side rendered applications
+Features
 
-## Example Component 
+- JinjaX: Components are implemented with JinjaX for use with server-rendered applications
+- Tailwind CSS Styling: All components use Tailwind’s utility-based styling
+- Alpine.js Interactivity: lightweight state management and dynamic client side behaviors 
+- Direct shadcn/ui Ports: The structure and design of components closely match their React equivalents
+- HTMX Support: Dynamic behavior such as content swaps and asynchronous updates is achieved with HTMX
+
+## Example `Button` Component 
+
+The `Button` component wraps options and behaviors for buttons and provides variants for different styles. 
 
 ```jinja
 {# def
-    id: str = "",
+    id: str = "button",
+    type: str = "",
     className: str = "",
+    variant: str = "default",
+    size: str = "default",
     disabled: bool = False
 #}
+{% set baseclassName = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-zinc-950 dark:focus-visible:ring-zinc-300" %}
+{%
+  set variantclassName = {
+    'default': 'bg-zinc-900 text-zinc-50 hover:bg-zinc-900/90 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90',
+    'destructive': 'bg-red-500 text-zinc-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-zinc-50 dark:hover:bg-red-900/90',
+    'outline': 'border border-zinc-200 bg-white hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50',
+    'secondary': 'bg-zinc-100 text-zinc-900 hover:bg-zinc-100/80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80',
+    'ghost': 'hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50',
+    'link': 'text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-50'
+  }[variant]
+%}
+{%
+  set sizeclassName = {
+    'default': 'h-10 px-4 py-2',
+    'sm': 'h-9 rounded-md px-3',
+    'lg': 'h-11 rounded-md px-8',
+    'icon': 'h-10 w-10'
+  }[size]
+%}
 
-<div id="{{ id }}" class="{{ className }}" {{ attrs.render() }}>
-    {{ content }}
-</div>
+<button
+  {% if type %}type="{{ type }}"{% endif %}
+  class="{{ baseclassName }} {{ variantclassName }} {{ sizeclassName }} {{ className }}"
+  {% if disabled %}disabled{% endif %}
+  {{ attrs.render() }}
+>
+  {{ content }}
+</button>
 ```
 
-## Usage: Using the `Button` Component
+## Using the `Button` Component
 
-Within a template or another component, declare the component, passing attributes as needed.
+Within a template or another component, declare the component, passing attributes as needed, without needing to define tailwind css attributes repeatedly. 
 
-```jinja
+```html
 <Button variant="secondary">Secondary</Button>
 
 <Button>
@@ -53,11 +83,32 @@ Within a template or another component, declare the component, passing attribute
 - **Dynamic Attributes**: The `{{ attrs.render() }}` in the component allows passing additional
   attributes dynamically when the component is used.
 
+## Composing components
+
+Components can be composed to create ui elements. 
+
+```html
+<Card className="sm:col-span-2">
+  <CardHeader className="pb-3">
+    <CardTitle>Your Orders</CardTitle>
+    <CardDescription className="max-w-lg text-balance leading-relaxed">
+      Introducing Our Dynamic Orders Dashboard for Seamless Management and
+      Insightful Analysis.
+    </CardDescription>
+  </CardHeader>
+  <CardFooter>
+    <Button>Create New Order</Button>
+  </CardFooter>
+</Card>
+
+```
+See the related shadcn/ui [example](https://ui.shadcn.com/blocks).
+
 ## Adding htmx
 
-Htmx attributes can be added to components when they are declared to add behavior. 
+Htmx attributes can be added to components when they are declared to add behavior.
 
-```jinja
+```html
 <Button
   hx-get="/some/url"
   hx-target="this"
@@ -66,101 +117,6 @@ Htmx attributes can be added to components when they are declared to add behavio
   variant="outline"
 >Click me
 </Button>
-```
-
-# Porting Components with AI
-
-The components in this repo have been ported primarily using AI from React to JinjaX implementations.
-
-The following guide outlines the process for porting React components from **shadcn/ui** to **JinjaX** templates using
-an LLM.
-
-## Porting Process
-
-1. **Select** a component from shadcn/ui to port.
-2. **Gather** information about the component (name, description, React code, usage examples).
-3. **Use AI** to assist with the initial port (see Part 2 for AI prompting guidelines).
-4. **Implement** the AI-provided JinjaX version in your project.
-5. **Test and iterate** on the implementation.
-6. **Refine** the component based on testing results.
-7. **Document** the component's usage and any differences from the React version.
-8. **Review** to ensure adherence to project guidelines and consistency with other components.
-
-## AI Assistance Guidelines
-
-The following section is a reference for prompting AI models when porting components. It includes rules,
-guidelines, and example prompts to ensure consistent and effective component creation.
-
-## Rules for Creating Components
-
-1. **Props Definition**:
-    - Use `{# def ... #}` to declare props.
-    - Include `id`, `className`, and other relevant attributes.
-
-2. **Dynamic Attributes**:
-    - Always include `{{ attrs.render() }}` for additional attributes.
-
-3. **Content Slots**:
-    - Use `{{ content }}` as the default slot for main content.
-    - Create separate components for additional slots instead of using multiple slots in a single component.
-
-4. **Class Handling**:
-    - Use `className` for component props.
-    - Convert `className` to `class` for native HTML elements in the output.
-
-5. **Event Handlers and Interactivity**:
-    - Use Alpine.js for dynamic behaviors (e.g., `@click`, `x-show`).
-    - Set attributes like `onclick` directly as props.
-
-6. **ID Handling**:
-    - Generally, an id may be passed as an extra arg when the component is declared.
-    - The component should behave correctly if `id` is not provided, preventing any invalid HTML output.
-    - Always include `{{ attrs.render() }}` for attributes that might be passed dynamically when the component is
-      declared (including `id`).
-
-7. **Conditional Classes and States**:
-    - Use Alpine.js for managing conditional classes and states.
-    - Limit the scope of Alpine `x-data` to the component.
-
-8. **Component Structure**:
-    - Components should be standalone units without relying on includes or macros.
-
-9. **Logic**
-    - Components can use Jinja logic, conditionals and macros internally when needed.
-    - Components should not have any external jinja template dependencies (extends, includes).
-
-   
-## Effective AI Prompting
-
-When providing a new component for porting, copy/paste this README into a chat to give context. Then, use the following
-template to port a component:
-
-```
-I'm porting the [Component Name] from shadcn/ui to JinjaX. Here's the relevant information:
-
-1. Component Name: [Name]
-   Documentation: [Link to shadcn/ui docs]
-
-2. Description:
-   [Brief description of component functionality]
-
-3. React Source Code:
-   
-   [Paste React component code here]
-   
-4. Example Usage:
-   
-   [Copy/paste shadnc component usage example]
-   
-Please create a JinjaX version of this component that:
-
-1. Uses Tailwind CSS for styling
-2. Implements interactivity using Alpine.js
-3. Follows the project guidelines for component creation (as detailed in the Rules section)
-4. Maintains the same functionality and accessibility features as the original
-
-Explain any complex logic or Alpine.js implementations in your response.
-
 ```
 
 ## Vendoring Components
@@ -172,51 +128,33 @@ and then update them later if needed.
 To vendor these components into your project using copier:
 
 1. Ensure you have Copier installed:
-   ```
-   pip install copier
+```
+pip install copier
    ```
 
 2. Run the following command from your project directory, specifying the destination:
-   ```
-   copier copy https://github.com/basic-foundation/basic-components.git ./path/to/destination
-   ```
-   Replace `./path/to/destination` with the directory where you want the components to be vendored.
+```
+copier copy https://github.com/basic-foundation/basic-components.git ./path/to/destination
+```
+Replace `./path/to/destination` with the directory where you want the components to be vendored.
 
 3. To preview the operation without making any changes, use the `--pretend` flag:
-   ```
-   copier copy --pretend https://github.com/basic-foundation/basic-components.git ./path/to/destination
-   ```
+```
+copier copy --pretend https://github.com/basic-foundation/basic-components.git ./path/to/destination
+```
 
-**Notes:**
-- If updating, copier will preserve your existing files. It will show diffs for any conflicts and allow you to choose how to handle them.
-- You can specify a specific branch, tag, or commit by appending it to the repository URL, e.g., `...basic-components.git@v1.0.0 ./path/to/destination`
-- You can also fork this repo and use your own git url with copier or use a local copy of the repository. 
-- Using a local repository is particularly useful during development or when you've made custom modifications.
-
-For more detailed information on Copier usage, refer to the [Copier documentation](https://copier.readthedocs.io/).
-
-## Versioning and Updates
+### Versioning and Updates
 
 When you vendor these components into your project, a `components/components-version.txt` file will be created. 
 This file contains the version number of the basic-components library that you've vendored.
 
-### Updating Vendored Components
 
-To update your vendored components to the latest version:
+**Notes:**
+- If updating, copier will preserve your existing files. It will show diffs for any conflicts and allow you to choose how to handle them.
+- You can specify a specific branch, tag, or commit by appending it to the repository URL, e.g., `...basic-components.git@v1.0.0 ./path/to/destination`
+- You can also fork this repo and use your own git url with copier or use a local copy of the repository.
+- Using a local repository is particularly useful during development or when you've made custom modifications.
 
-1. From your project root, run:
-   ```
-   copier update
-   ```
-
-2. Copier will detect the previous version used and prompt you about updates. It will show you the changes between your current version and the latest version.
-
-3. Follow the prompts to complete the update process.
-
-4. After updating, check the `components/version.txt` file to confirm the new version.
-
-**Important Notes:**
-- Before updating, make sure to commit any changes in your project to avoid losing work.
-- If you've made modifications to the vendored components, Copier will ask how to handle conflicts. You may need to manually merge some changes.
+For more detailed information on Copier usage, refer to the [Copier documentation](https://copier.readthedocs.io/).
 
 When reporting issues or seeking support related to these components, always mention the version number found in your `components/components-version.txt` file.
