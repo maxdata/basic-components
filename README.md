@@ -4,8 +4,9 @@ This project is a library of UI components which use [JinjaX](https://jinjax.sca
 Jinja templates. It directly ports components from [shadcn/ui](https://ui.shadcn.com/) to JinjaX,
 maintaining compatibility in usage and style, using [Alpine.js](https://alpinejs.dev/) for interactivity and [Tailwwind.css](https://tailwindcss.com/) for styling. 
 
-The goal is to provide developers using server-side rendering frameworks (like FastAPI or Flask) with access to
-high-quality, accessible components similar or identical to those available in shadcn/ui.
+The goal is to provide developers using server-side rendering frameworks (with FastAPI or Flask) access to
+high-quality, accessible components similar or identical to those available in shadcn/ui. They can be easily extended
+via [htmx](https://htmx.org/) to create dynamic html interfaces easily.
 
 - **Framework**: JinjaX (Jinja2 extension)
 - **Styling**: Tailwind CSS
@@ -52,15 +53,29 @@ Within a template or another component, declare the component, passing attribute
 - **Dynamic Attributes**: The `{{ attrs.render() }}` in the component allows passing additional
   attributes dynamically when the component is used.
 
+## Adding htmx
 
-## Porting Components with AI
+Htmx attributes can be added to components when they are declared to add behavior. 
+
+```jinja
+<Button
+  hx-get="/some/url"
+  hx-target="this"
+  hx-swap="outerHTML"
+  type="button"
+  variant="outline"
+>Click me
+</Button>
+```
+
+# Porting Components with AI
 
 The components in this repo have been ported primarily using AI from React to JinjaX implementations.
 
 The following guide outlines the process for porting React components from **shadcn/ui** to **JinjaX** templates using
 an LLM.
 
-### Porting Process
+## Porting Process
 
 1. **Select** a component from shadcn/ui to port.
 2. **Gather** information about the component (name, description, React code, usage examples).
@@ -71,12 +86,12 @@ an LLM.
 7. **Document** the component's usage and any differences from the React version.
 8. **Review** to ensure adherence to project guidelines and consistency with other components.
 
-### AI Assistance Guidelines
+## AI Assistance Guidelines
 
 The following section is a reference for prompting AI models when porting components. It includes rules,
 guidelines, and example prompts to ensure consistent and effective component creation.
 
-### Rules for Creating Components
+## Rules for Creating Components
 
 1. **Props Definition**:
     - Use `{# def ... #}` to declare props.
@@ -115,7 +130,7 @@ guidelines, and example prompts to ensure consistent and effective component cre
     - Components should not have any external jinja template dependencies (extends, includes).
 
    
-### Effective AI Prompting
+## Effective AI Prompting
 
 When providing a new component for porting, copy/paste this README into a chat to give context. Then, use the following
 template to port a component:
