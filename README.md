@@ -1,11 +1,11 @@
 # JinjaX Component Library
 
-This project provides a collection of UI components using JinjaX, an enhanced version of Jinja templates. 
-It directly ports components from shadcn/ui to JinjaX, maintaining compatibility in usage and style. 
-Client side interactivity is implemented via Alpine.js and styling via Tailwind.css. 
+This project provides a collection of UI components using [JinjaX](https://jinjax.scaletti.dev/), a component library for Jinja templates. 
+It directly ports components from [shadcn/ui](https://ui.shadcn.com/) to JinjaX, maintaining compatibility in usage and style. 
+Client side interactivity is implemented via [Alpine.js](https://alpinejs.dev/) and styling via [Tailwind.css](https://tailwindcss.com/). 
 
 The goal is to equip developers using server-side rendering frameworks, such as FastAPI or Flask, with high-quality, 
-accessible components that behave similarly to their React counterparts. Components can be further extended with HTMX to create dynamic interfaces.
+responsive components that behave similarly to their React counterparts. Components can be further extended with [HTMX](https://htmx.org/) to create dynamic interfaces.
 
 Features
 
@@ -122,15 +122,14 @@ Htmx attributes can be added to components when they are declared to add behavio
 ## Vendoring Components
 
 The components in this project can be copied (vendored) directly into your project and customized further. 
-Using a tool like [Copier](https://copier.readthedocs.io/en/stable/), you can copy the components into your project
-and then update them later if needed. 
+Using a tool like [Copier](https://copier.readthedocs.io/en/stable/), you can copy and then update them later if needed. 
 
 To vendor these components into your project using copier:
 
 1. Ensure you have Copier installed:
 ```
 pip install copier
-   ```
+```
 
 2. Run the following command from your project directory, specifying the destination:
 ```
@@ -147,7 +146,6 @@ copier copy --pretend https://github.com/basic-foundation/basic-components.git .
 
 When you vendor these components into your project, a `components/components-version.txt` file will be created. 
 This file contains the version number of the basic-components library that you've vendored.
-
 
 **Notes:**
 - If updating, copier will preserve your existing files. It will show diffs for any conflicts and allow you to choose how to handle them.
