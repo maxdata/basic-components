@@ -1,4 +1,4 @@
-.PHONY: clean lint lint-fix format-python format-prettier format type-check dev install update
+.PHONY: install update demo shadcn-ui tailwind
 
 VENV := .venv
 PYTHON := $(VENV)/bin/python
@@ -15,26 +15,11 @@ update: $(VENV)/bin/uv
 	$(UV) pip compile requirements.txt -o requirements.lock
 	$(UV) pip sync requirements.lock
 
-clean:
-	find . -type f -name '*.pyc' -delete
-	find . -type d -name '__pycache__' -exec rm -r {} +
+demo : $(VENV)/bin/uv
+	$(PYTHON) -m uvicorn demo.app:app --reload
 
-lint: $(VENV)/bin/uv
-	$(PYTHON) -m ruff check .
+shadcn-ui:
+	cd shadcn-ui && npm run dev
 
-lint-fix: $(VENV)/bin/uv
-	$(PYTHON) -m ruff check --fix --unsafe-fixes .
-
-format-python: $(VENV)/bin/uv
-	$(PYTHON) -m ruff format .
-
-format-prettier:
-	npx prettier components --write
-
-format: format-python format-prettier
-
-type-check: $(VENV)/bin/uv
-	$(PYTHON) -m pyright
-
-dev: $(VENV)/bin/uv
-	$(PYTHON) -m uvicorn app:app --reload
+tailwind:
+	cd shadcn-ui && npm run tailwind

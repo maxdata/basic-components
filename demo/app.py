@@ -21,12 +21,13 @@ from wtforms import (
     validators,
 )
 
-BASE_DIR = Path(__file__).resolve().parent
+# project root
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = FastAPI()
 
 print(f"BASE_DIR={BASE_DIR}")
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=f"{BASE_DIR}/demo/templates")
 templates.env.add_extension(DebugExtension)
 
 templates.env.add_extension(jinjax.JinjaX)  # pyright: ignore [reportPrivateImportUsage]
@@ -34,14 +35,12 @@ catalog = jinjax.Catalog(jinja_env=templates.env)  # pyright: ignore [reportPriv
 catalog.add_folder(f"{BASE_DIR}/components")
 catalog.add_folder(f"{BASE_DIR}/components/ui")
 catalog.add_folder(f"{BASE_DIR}/components/icons")
-catalog.add_folder(f"{BASE_DIR}/examples")
+catalog.add_folder(f"{BASE_DIR}/demo/examples")
 
-# Serve static files (CSS, etc.)
-app.mount("/dist", StaticFiles(directory="shadcn-ui/dist"), name="dist")
-# app.mount("/icons", StaticFiles(directory="node_modules/lucide-static/icons"), name="icons")
-# app.mount("/lucide-static", StaticFiles(directory="node_modules/lucide-static/"), name="lucide-static")
+# Serve static files (CSS, etc.) from shad-cn
+app.mount("/dist", StaticFiles(directory=f"{BASE_DIR}/shadcn-ui/dist"), name="dist")
 
-# CSRF Middleware
+# CSRF Middleware for form handling
 app.add_middleware(SessionMiddleware, secret_key="session_key")
 app.add_middleware(CSRFProtectMiddleware, csrf_secret="your_secret_key_here")
 
