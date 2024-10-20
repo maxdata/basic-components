@@ -71,7 +71,7 @@ Within a template or another component, declare the `Button`, passing attributes
   Login with Email
 </Button>
 
-<Button id="submitBtn" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="alert('Button Clicked!')">
+<Button id="submitBtn"  onclick="alert('Button Clicked!')">
     Click Me
 </Button>
 ```
@@ -122,8 +122,8 @@ Htmx attributes can be added to components when they are declared to add behavio
 
 ## Vendoring Components
 
-The components in this project can be copied (vendored) directly into your project and customized further. 
-Using a tool like [Copier](https://copier.readthedocs.io/en/stable/), you can copy and then update them later if needed. 
+The components in this project can be copied (vendored) directly into your project and customized further using [Copier](https://copier.readthedocs.io/en/stable/). 
+You can then customize them as needed. 
 
 To vendor these components into your project using copier:
 
