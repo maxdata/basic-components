@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./documentation/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - my_network
+
+  backend:
+    image: python:3.12-slim
+    command: uvicorn documentation.backend.app:app --host 0.0.0.0 --port 10000 --reload
+    volumes:
+      - .:/app
+      - ./requirements.txt:/app/requirements.txt
+    working_dir: /app
+    environment:
+      - CORS_ALLOW_ORIGINS=*
+    ports:
+      - "10000:10000"
+    depends_on:
+      - frontend
+    entrypoint: |
+      sh -c "
+      pip install -r requirements.txt &&
+      uvicorn documentation.backend.app:app --host 0.0.0.0 --port 10000 --reload
+      "
+    networks:
+      - my_network
+
+  frontend:
+    image: squidfunk/mkdocs-material:latest
+    volumes:
+      - ./documentation:/docs
+    working_dir: /docs
+    command: serve -a 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

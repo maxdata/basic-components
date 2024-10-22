@@ -22,16 +22,16 @@ from wtforms import (
 )
 
 # project root
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 app = FastAPI()
 
 print(f"BASE_DIR={BASE_DIR}")
-templates = Jinja2Templates(directory=f"{BASE_DIR}/demo/templates")
+templates = Jinja2Templates(directory=f"{BASE_DIR}/documentation/backend/templates")
 templates.env.add_extension(DebugExtension)
 
-templates.env.add_extension(jinjax.JinjaX)  # pyright: ignore [reportPrivateImportUsage]
-catalog = jinjax.Catalog(jinja_env=templates.env)  # pyright: ignore [reportPrivateImportUsage]
+templates.env.add_extension(jinjax.JinjaX)
+catalog = jinjax.Catalog(jinja_env=templates.env)
 catalog.add_folder(f"{BASE_DIR}/components")
 catalog.add_folder(f"{BASE_DIR}/components/ui")
 catalog.add_folder(f"{BASE_DIR}/components/icons")
@@ -48,6 +48,10 @@ app.add_middleware(CSRFProtectMiddleware, csrf_secret="your_secret_key_here")
 @app.get("/", response_class=HTMLResponse)
 async def components(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/components/{component_name}", response_class=HTMLResponse)
+async def render_component(component_name: str, request: Request):
+    return templates.TemplateResponse(f"{component_name}.html", {"request": request})
 
 
 class SampleForm(StarletteForm):

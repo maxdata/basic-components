@@ -1,0 +1,23 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./docs/dist/output.css",
+    "build-prod": "tailwindcss -i ./input.css -o ./docs/dist/output.css --minify",
+    "watch": "tailwindcss -i ./input.css -o ./docs/dist/output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "prettier": "^3.3.3",
+    "prettier-plugin-jinja-template": "^1.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "prettier-plugin-twig-melody": "^0.4.6",
+    "tailwindcss": "3.4.10",
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
