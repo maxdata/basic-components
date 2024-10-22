@@ -40,6 +40,11 @@ markdown_extensions:
       alternate_style: true
 nav:
   - Home: index.md
+  - Installation:
+      - Fastapi: installation/fastapi.md
+  - Usage:
+      - Copy/Paste: usage/copy_paste.md
+      - Vendoring: usage/vendoring.md
   - Components:
       - Button: components/button.md
       - Card: components/card.md
