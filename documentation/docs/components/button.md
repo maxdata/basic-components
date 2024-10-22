@@ -1,27 +1,91 @@
-# Button Component
+# Button
 
-The Button component renders a clickable button using Tailwind CSS.
+Displays a button or a component that looks like a button.
 
 
 ## Button 
 
-<div class="preview-container mb-8">
-  <div 
-    hx-get="/backend/components/button" 
-    hx-target="#button-preview" 
-    hx-swap="outerHTML"
-  >
-    <button class="inline-flex items-center px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-700">
-      Loading Preview...
-    </button>
-  </div>
+=== "Preview"
+    <iframe
+    src="http://localhost:10000/components/button"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
 
-  <div id="button-preview" class="mt-4"></div>
-</div>
-
+=== "Button.jinja"
+    ```jinja
+    {% include-markdown "../../../components/ui/Button.jinja" %}
+    ```
+    
 
 ## Usage
 
 ```html
-<Button variant="primary">Click Me</Button>
+{% include-markdown "../../backend/templates/button.html" %}
 ```
+
+## Examples
+
+### Destructive
+
+=== "Preview"
+    <iframe
+    src="http://localhost:10000/components/button?option=destructive"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/button_destructive.html" %}
+    ```
+
+### Outline
+
+=== "Preview"
+    <iframe
+    src="http://localhost:10000/components/button?option=outline"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/button_outline.html" %}
+    ```
+
+### Secondary
+
+=== "Preview"
+    <iframe
+    src="http://localhost:10000/components/button?option=secondary"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/button_secondary.html" %}
+    ```
+
+### Ghost
+
+=== "Preview"
+    <iframe
+    src="http://localhost:10000/components/button?option=ghost"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/button_ghost.html" %}
+    ```
+
+### Link
+
+=== "Preview"
+    <iframe
+    src="http://localhost:10000/components/button?option=link"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/button_link.html" %}
+    ```

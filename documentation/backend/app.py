@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Optional
 
 import jinjax
 from fastapi import FastAPI, Request
@@ -49,9 +50,13 @@ app.add_middleware(CSRFProtectMiddleware, csrf_secret="your_secret_key_here")
 async def components(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+
 @app.get("/components/{component_name}", response_class=HTMLResponse)
-async def render_component(component_name: str, request: Request):
-    return templates.TemplateResponse(f"{component_name}.html", {"request": request})
+async def render_component(request: Request, component_name: str, option: Optional[str] = None):
+    return templates.TemplateResponse(
+        f"component.html",
+        {
+            "request": request, "component_name": component_name, "option": option})
 
 
 class SampleForm(StarletteForm):
