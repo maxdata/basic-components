@@ -7,7 +7,7 @@ Displays a button or a component that looks like a button.
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/button"
+    src="https://basic-components.onrender.com/components/button"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
@@ -29,7 +29,7 @@ Displays a button or a component that looks like a button.
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/button?option=destructive"
+    src="https://basic-components.onrender.com/components/button?option=destructive"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
@@ -42,7 +42,7 @@ Displays a button or a component that looks like a button.
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/button?option=outline"
+    src="https://basic-components.onrender.com/components/button?option=outline"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
@@ -55,7 +55,7 @@ Displays a button or a component that looks like a button.
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/button?option=secondary"
+    src="https://basic-components.onrender.com/components/button?option=secondary"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
@@ -68,7 +68,7 @@ Displays a button or a component that looks like a button.
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/button?option=ghost"
+    src="https://basic-components.onrender.com/components/button?option=ghost"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
@@ -81,7 +81,7 @@ Displays a button or a component that looks like a button.
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/button?option=link"
+    src="https://basic-components.onrender.com/components/button?option=link"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
