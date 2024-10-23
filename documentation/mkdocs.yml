@@ -49,5 +49,24 @@ nav:
       - Copy/Paste: usage/copy_paste.md
       - Vendoring: usage/vendoring.md
   - Components:
+      - Accordion: components/accordion.md
+      - Alert: components/alert.md
+      - Badge: components/badge.md
       - Button: components/button.md
       - Card: components/card.md
+      - Checkbox: components/checkbox.md
+      - Dialog: components/dialog.md
+      - DropdownMenu: components/dropdown_menu.md
+      - Form: components/form.md
+      - Input: components/input.md
+      - Label: components/label.md
+      - Link: components/link.md
+      - ModeToggle: components/mode_toggle.md
+      - Popover: components/popover.md
+      - RadioGroup: components/radio_group.md
+      - Select: components/select.md
+      - Sheet: components/sheet.md
+      - Table: components/table.md
+      - TextArea: components/text_area.md
+      - Toast: components/toast.md
+      - WTForm: components/wtform.md
