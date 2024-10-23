@@ -1,4 +1,7 @@
 site_name: Basic Components
+
+repo_url: https://github.com/basicmachines-co/basic-components
+
 theme:
   name: material
   font:
