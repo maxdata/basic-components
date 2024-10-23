@@ -44,5 +44,6 @@ jobs:
 
       # Step 6: Build and deploy MkDocs site
       - run: |
+          source .venv/bin/activate
           cd documentation
           mkdocs gh-deploy --force
