@@ -1,25 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*@layer base {*/
-/*  :root {*/
-/*    --radius: 0.5rem;*/
-/*  }*/
-/*}*/
-
-/* Scoped Tailwind Styles */
-.tailwind-preview {
-  @apply p-4 border border-gray-300 rounded-lg bg-white dark:bg-black shadow-md;
-}
-
-/* Prevent global resets from interfering */
-.tailwind-preview * {
-  all: unset;
-  display: revert; /* Restore expected block/inline layouts */
-}
-
-@layer base, components, utilities {
-  .tailwind-preview & {
-    @apply p-4 border border-gray-300 rounded-lg bg-white dark:bg-black shadow-md;
+@layer base {
+  :root {
+    --radius: 0.5rem;
   }
 }
