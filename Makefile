@@ -13,7 +13,7 @@ install: $(VENV)/bin/uv
 	$(UV) sync
 
 docs-backend-dev: $(VENV)/bin/uv
-	$(PYTHON) -m muvicorn documentation.backend.app:app --reload --port 10000
+	$(PYTHON) -m uvicorn documentation.backend.app:app --reload --port 10000
 
 docs-frontend-dev: $(MKDOCS)
 	cd documentation && $(MKDOCS) serve

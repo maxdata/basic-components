@@ -1,6 +1,4 @@
 {# def
-type: str = "single",
-collapsible: bool = True,
 className: str = ""
 #}
 
@@ -13,8 +11,6 @@ className: str = ""
     }"
   x-init="console.log('initial state:', activeItem);"
   class="{{ className }} w-full"
-  data-accordion="{{ type }}"
-  {{ 'data-collapsible="true"' if collapsible else "" }}
   {{ attrs.render() }}
 >
   {{ content }}
