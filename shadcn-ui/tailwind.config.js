@@ -3,9 +3,9 @@ module.exports = {
   darkMode: ["class"],
   content: [
     "index.html",
-    "../templates/*.html",
     "../components/**/*.jinja",
-    "../examples/**/*.jinja",
+    "../demo/templates/*.html",
+    "../demo/examples/**/*.jinja",
     "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
