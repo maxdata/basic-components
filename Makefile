@@ -24,7 +24,7 @@ shadcn-ui:
 shadcn-ui-tailwind:
 	cd shadcn-ui && npm run tailwind
 
-documentation-tailwind:
+docs-tailwind:
 	cd documentation && npm install && npx tailwindcss init && npm run build
 
 docs-backend-prod:
