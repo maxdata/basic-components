@@ -6,7 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./docs/dist/output.css",
+    "build": "tailwindcss -i ./input.css -o ./docs/dist/output.css",
     "build-prod": "tailwindcss -i ./input.css -o ./docs/dist/output.css --minify",
     "watch": "tailwindcss -i ./input.css -o ./docs/dist/output.css --watch"
   },
