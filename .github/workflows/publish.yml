@@ -1,30 +1,48 @@
 name: ci
+
 on:
   push:
     branches:
       - main
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Check out the repository
       - uses: actions/checkout@v4
+
+      # Step 2: Configure GitHub Actions bot credentials
       - name: Configure Git Credentials
         run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Step 3: Set up Python environment
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+
+      # Step 4: Cache dependencies
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: uv-${{ env.cache_id }}
           path: .cache
           restore-keys: |
-            mkdocs-material-
-      - run: pip install -r requirements.txt
+            uv-
+
+      # Step 5: Install uv and project dependencies
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install project dependencies with uv
+        run: uv install
+
+      # Step 6: Build and deploy MkDocs site
       - run: |
           cd documentation
           mkdocs gh-deploy --force

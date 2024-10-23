@@ -8,9 +8,19 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 
-packages = ["demo"]
+packages = ["components"]
 dependencies = [
+    "fastapi[standard]>=0.115.3",
+    "jinjax>=0.46",
     "mkdocs-include-markdown-plugin>=7.0.0",
+    "mkdocs-material>=9.5.42",
+    "playwright>=1.48.0",
+    "pyright>=1.1.385",
+    "pytest-playwright>=0.5.2",
+    "pytest>=8.3.3",
+    "starlette-wtf>=0.4.5",
+    "uvicorn>=0.32.0",
+    "wtforms>=3.2.1",
 ]
 
 [build-system]
