@@ -3,6 +3,7 @@ from typing import Optional
 
 import jinjax
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from jinja2.ext import DebugExtension
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import HTMLResponse, RedirectResponse
@@ -27,6 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://basicmachines-co.github.io"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 print(f"BASE_DIR={BASE_DIR}")
 templates = Jinja2Templates(directory=f"{BASE_DIR}/documentation/backend/templates")
 templates.env.add_extension(DebugExtension)
@@ -39,7 +47,7 @@ catalog.add_folder(f"{BASE_DIR}/components/icons")
 catalog.add_folder(f"{BASE_DIR}/demo/examples")
 
 # Serve static files (CSS, etc.) from shad-cn
-app.mount("/dist", StaticFiles(directory=f"{BASE_DIR}/shadcn-ui/dist"), name="dist")
+app.mount("/dist", StaticFiles(directory=f"{BASE_DIR}/documentation/docs/dist"), name="dist")
 
 # CSRF Middleware for form handling
 app.add_middleware(SessionMiddleware, secret_key="session_key")

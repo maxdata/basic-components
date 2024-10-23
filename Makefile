@@ -10,26 +10,22 @@ $(VENV)/bin/uv:
 	$(PYTHON) -m pip install uv
 
 install: $(VENV)/bin/uv
-	$(UV) pip install -r requirements.txt
+	$(UV) sync
 
-update: $(VENV)/bin/uv
-	$(UV) pip compile requirements.txt -o requirements.lock
-	$(UV) pip sync requirements.lock
+docs-backend-dev: $(VENV)/bin/uv
+	$(PYTHON) -m muvicorn documentation.backend.app:app --reload --port 10000
 
-docs-backend: $(VENV)/bin/uv
-	$(PYTHON) -m uvicorn documentation.backend.app:app --reload --port 10000
-
-docs-frontend: $(MKDOCS)
+docs-frontend-dev: $(MKDOCS)
 	cd documentation && $(MKDOCS) serve
 
 shadcn-ui:
 	cd shadcn-ui && npm run dev
 
-tailwind-shadcn-ui:
+shadcn-ui-tailwind:
 	cd shadcn-ui && npm run tailwind
 
-setup-tailwind:
-	cd documentation && npm install && npx tailwindcss init
+documentation-tailwind:
+	cd documentation && npm install && npx tailwindcss init && npm run build
 
-build-css:
-	cd documentation && npx run build
+docs-backend-prod:
+	$(UV) run fastapi run documentation/backend/app.py  --port 10000
