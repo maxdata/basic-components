@@ -13,6 +13,7 @@ dependencies = [
     "fastapi[standard]>=0.115.3",
     "jinjax>=0.46",
     "mkdocs-include-markdown-plugin>=7.0.0",
+    "mkdocs-macros-plugin>=1.3.6",
     "mkdocs-material>=9.5.42",
     "playwright>=1.48.0",
     "pyright>=1.1.385",

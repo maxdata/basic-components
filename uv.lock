@@ -46,6 +46,7 @@ dependencies = [
     { name = "fastapi", extra = ["standard"] },
     { name = "jinjax" },
     { name = "mkdocs-include-markdown-plugin" },
+    { name = "mkdocs-macros-plugin" },
     { name = "mkdocs-material" },
     { name = "playwright" },
     { name = "pyright" },
@@ -61,6 +62,7 @@ requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.3" },
     { name = "jinjax", specifier = ">=0.46" },
     { name = "mkdocs-include-markdown-plugin", specifier = ">=7.0.0" },
+    { name = "mkdocs-macros-plugin", specifier = ">=1.3.6" },
     { name = "mkdocs-material", specifier = ">=9.5.42" },
     { name = "playwright", specifier = ">=1.48.0" },
     { name = "pyright", specifier = ">=1.1.385" },
@@ -322,6 +324,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz", hash = "sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d", size = 100418 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/95/04/ff642e65ad6b90db43e668d70ffb6736436c7ce41fcc549f4e9472234127/h11-0.14.0-py3-none-any.whl", hash = "sha256:e3fe4ac4b851c468cc8363d500db52c2ead036020723024a109d37346efaa761", size = 58259 },
+]
+
+[[package]]
+name = "hjson"
+version = "3.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/82/e5/0b56d723a76ca67abadbf7fb71609fb0ea7e6926e94fcca6c65a85b36a0e/hjson-3.1.0.tar.gz", hash = "sha256:55af475a27cf83a7969c808399d7bccdec8fb836a07ddbd574587593b9cdcf75", size = 40541 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1f/7f/13cd798d180af4bf4c0ceddeefba2b864a63c71645abc0308b768d67bb81/hjson-3.1.0-py3-none-any.whl", hash = "sha256:65713cdcf13214fb554eb8b4ef803419733f4f5e551047c9b711098ab7186b89", size = 54018 },
 ]
 
 [[package]]
@@ -588,6 +599,26 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/61/00/0809a87912b7018669bb4d909ab88aafd78c048dcf74a72c06a46707c15f/mkdocs_include_markdown_plugin-7.0.0.tar.gz", hash = "sha256:a8eac8f2e6aa391d82d1d5e473b819b52393d91464060c02db5741834fe9008b", size = 21275 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a3/62/c085d8744d7f8c93741b439d0ecfd44e6da9859d09a257c8a66c42c611ec/mkdocs_include_markdown_plugin-7.0.0-py3-none-any.whl", hash = "sha256:bf8d19245ae3fb2eea395888e80c60bc91806a0d879279707d707896c24319c3", size = 24916 },
+]
+
+[[package]]
+name = "mkdocs-macros-plugin"
+version = "1.3.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "hjson" },
+    { name = "jinja2" },
+    { name = "mkdocs" },
+    { name = "packaging" },
+    { name = "pathspec" },
+    { name = "python-dateutil" },
+    { name = "pyyaml" },
+    { name = "super-collections" },
+    { name = "termcolor" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e8/6d/354bf129bdc08b8db778ae5e1de77139cdc0f1cf42731519b54a94c51e00/mkdocs_macros_plugin-1.3.6.tar.gz", hash = "sha256:074bc072cac14c28724037b6988743cd9425752bdd35ae05fbf96b1b2457f3b7", size = 32825 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fb/9c/ae4a7c99cef3832d863be009aad49ff0603182ef1d4660a895e47f4ccd41/mkdocs_macros_plugin-1.3.6-py3-none-any.whl", hash = "sha256:74fd418c8e1f9f021b7a45bb1c7d7461d8ae09ccec241787f3971e733374da8c", size = 36753 },
 ]
 
 [[package]]
@@ -1112,6 +1143,27 @@ dependencies = [
     { name = "wtforms" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a6/15/e20a9eb32c1e51c08bec4b37859f49b5d70c76cd93d925862627d271cbd3/Starlette-WTF-0.4.5.tar.gz", hash = "sha256:411e94c19f47302fe3b12752b3c531581c0bad4cbe603a730bbe516733a99527", size = 15990 }
+
+[[package]]
+name = "super-collections"
+version = "0.5.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "hjson" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b8/05/d1b50919a0d206d77255217d96dea9ab34bd1eb965a21559380c48f9517e/super_collections-0.5.3.tar.gz", hash = "sha256:94c1ec96c0a0d5e8e7d389ed8cde6882ac246940507c5e6b86e91945c2968d46", size = 10178 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/6d/58de58c521e7fb79bceb4da90d55250070bb4adfa3c870b82519a561c79d/super_collections-0.5.3-py3-none-any.whl", hash = "sha256:907d35b25dc4070910e8254bf2f5c928348af1cf8a1f1e8259e06c666e902cff", size = 8436 },
+]
+
+[[package]]
+name = "termcolor"
+version = "2.5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/37/72/88311445fd44c455c7d553e61f95412cf89054308a1aa2434ab835075fc5/termcolor-2.5.0.tar.gz", hash = "sha256:998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f", size = 13057 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/be/df630c387a0a054815d60be6a97eb4e8f17385d5d6fe660e1c02750062b4/termcolor-2.5.0-py3-none-any.whl", hash = "sha256:37b17b5fc1e604945c2642c872a3764b5d547a48009871aea3edd3afa180afb8", size = 7755 },
+]
 
 [[package]]
 name = "text-unidecode"

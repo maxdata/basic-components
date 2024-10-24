@@ -27,6 +27,11 @@ theme:
 plugins:
   - search
   - include-markdown
+  - macros:
+      include_dir: docs/components
+
+extra:
+  preview_url: !ENV [PREVIEW_URL, "http://localhost:10000"]
 
 extra_javascript:
   - javascript/sync-theme.js

@@ -6,26 +6,37 @@ The Accordion component is used to display collapsible sections of content. It a
 
 === "Preview"
     <iframe
-    src="http://localhost:10000/components/accordion"
+    src="{{ preview_url}}/components/accordion"
     style="width: 100%; height: 300px; border: none;">
     </iframe>
 
 === "Accordion.jinja"
+{% raw %}
     ```jinja
     {% include '../../../components/ui/Accordion.jinja' %}
     ```
+{% endraw %}
+
 === "AccordionContent.jinja"
+{% raw %}
     ```jinja
     {% include '../../../components/ui/AccordionContent.jinja' %}
     ```
+{% endraw %}
+
 === "AccordionItem.jinja"
+{% raw %}
     ```jinja
     {% include '../../../components/ui/AccordionItem.jinja' %}
     ```
+{% endraw %}    
+
 === "AccordionTrigger.jinja"
+{% raw %}
     ```jinja
     {% include '../../../components/ui/AccordionTrigger.jinja' %}
     ```
+{% endraw %}
 
 ## Usage
 
