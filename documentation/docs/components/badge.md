@@ -2,13 +2,14 @@
 
 Displays a badge or a component that looks like a badge.
 
-## Badge 
 
-=== "Preview"
-    <iframe
-    src="{{ preview_url}}/components/badge"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+## Preview
+<iframe
+src="{{ preview_url}}/components/badge"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
+
+## Components
 
 === "Badge.jinja"
 {% raw %}

@@ -2,13 +2,15 @@
 
 Displays a card with header, content, and footer.
 
-## Card
 
-=== "Preview"
-    <iframe
-    src="{{ preview_url}}/components/card"
-    style="width: 100%; height: 300px; border: none;">
-    </iframe>
+## Preview
+
+<iframe
+src="{{ preview_url}}/components/card"
+style="width: 100%; height: 300px; border: none;">
+</iframe>
+
+## Components
 
 === "Card.jinja"
     {% raw %}

@@ -3,13 +3,14 @@
 Displays a button or a component that looks like a button.
 
 
-## Button 
+## Preview
 
-=== "Preview"
-    <iframe
-    src="{{ preview_url}}/components/button"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/button"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
+
+## Components
 
 === "Button.jinja"
 {% raw %}

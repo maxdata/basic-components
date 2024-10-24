@@ -2,13 +2,15 @@
 
 Displays a callout for user attention.
 
-## Alert
 
-=== "Preview"
-    <iframe
-    src="{{ preview_url}}/components/alert"
-    style="width: 100%; height: 300px; border: none;">
-    </iframe>
+## Preview
+
+<iframe
+src="{{ preview_url}}/components/alert"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
+
+## Components
 
 === "Alert.jinja"
 {% raw %}
