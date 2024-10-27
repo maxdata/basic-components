@@ -1,4 +1,4 @@
-# Form
+# Input
 
 Displays a form input field.
 
@@ -78,4 +78,43 @@ style="width: 100%; height: 200px; border: none;">
 === "Code"
     ```html
     {% include-markdown "../../backend/templates/input_label.html" %}
+    ```
+
+### File
+
+=== "Preview"
+    <iframe
+    src="{{ preview_url}}/components/input?option=file"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/input_file.html" %}
+    ```
+
+### Button
+
+=== "Preview"
+    <iframe
+    src="{{ preview_url}}/components/input?option=button"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/input_button.html" %}
+    ```
+
+### Peer Disabled
+
+=== "Preview"
+    <iframe
+    src="{{ preview_url}}/components/input?option=peer_disabled"
+    style="width: 100%; height: 200px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/input_peer_disabled.html" %}
     ```
