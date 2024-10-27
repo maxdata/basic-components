@@ -9,6 +9,12 @@ src="{{ preview_url}}/components/accordion"
 style="width: 100%; height: 300px; border: none;">
 </iframe>
 
+## Props
+
+| Name        | Type    | Default     | Description                                            |
+|-------------|---------|-------------|--------------------------------------------------------|
+| `className` | String  |             | Additional tailwind classes to apply to the component. |
+
 ## Components
 
 === "Accordion.jinja"

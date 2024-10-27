@@ -10,6 +10,12 @@ src="{{ preview_url}}/components/alert"
 style="width: 100%; height: 200px; border: none;">
 </iframe>
 
+## Props
+
+| Name        | Type    | Default     | Description                                            |
+|-------------|---------|-------------|--------------------------------------------------------|
+| `className` | String  |             | Additional tailwind classes to apply to the component. |
+
 ## Components
 
 === "Alert.jinja"

@@ -2,21 +2,28 @@
 
 Displays a badge or a component that looks like a badge.
 
-
 ## Preview
+
 <iframe
 src="{{ preview_url}}/components/badge"
 style="width: 100%; height: 200px; border: none;">
 </iframe>
 
+## Props
+
+| Name        | Type   | Default     | Description                                                       |
+|-------------|--------|-------------|-------------------------------------------------------------------|
+| `className` | String |             | Additional tailwind classes to apply to the component.            |
+| `variant`   | String | `"default"` | Sets the component style. Available: `default`, `secondary`, etc. |
+
 ## Components
 
 === "Badge.jinja"
 {% raw %}
-    ```jinja
-    {% include-markdown "../../../components/ui/Badge.jinja" %}
-    ```
-{% endraw %}    
+```jinja
+{% include-markdown "../../../components/ui/Badge.jinja" %}
+```
+{% endraw %}
 
 ## Usage
 
@@ -29,38 +36,38 @@ style="width: 100%; height: 200px; border: none;">
 ### Destructive
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/badge?option=destructive"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/badge?option=destructive"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/badge_destructive.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/badge_destructive.html" %}
+```
 
 ### Outline
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/badge?option=outline"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/badge?option=outline"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/badge_outline.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/badge_outline.html" %}
+```
 
 ### Secondary
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/badge?option=secondary"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/badge?option=secondary"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/badge_secondary.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/badge_secondary.html" %}
+```

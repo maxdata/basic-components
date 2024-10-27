@@ -2,7 +2,6 @@
 
 Displays a button or a component that looks like a button.
 
-
 ## Preview
 
 <iframe
@@ -12,22 +11,21 @@ style="width: 100%; height: 200px; border: none;">
 
 ## Props
 
-| Name        | Type    | Default | Description                                                           |
-|-------------|---------|------|-----------------------------------------------------------------------|
-| `className` | String  |  | Additional tailwind classes to apply to the button.                   |
+| Name        | Type    | Default     | Description                                                           |
+|-------------|---------|-------------|-----------------------------------------------------------------------|
+| `className` | String  |             | Additional tailwind classes to apply to the component.                |
 | `variant`   | String  | `"default"` | Sets the button style. Available: `default`, `outline`, `ghost`, etc. |
 | `size`      | String  | `"default"` | Size of the button: `sm`, `lg`, `icon`.                               |
-| `disabled`  | Boolean | `False` | Disables the button if `True`.                                        |
+| `disabled`  | Boolean | `False`     | Disables the button if `True`.                                        |
 
 ## Components
 
 === "Button.jinja"
 {% raw %}
-    ```jinja
-    {% include-markdown "../../../components/ui/Button.jinja" %}
-    ```
+```jinja
+{% include-markdown "../../../components/ui/Button.jinja" %}
+```
 {% endraw %}
-    
 
 ## Usage
 
@@ -40,64 +38,64 @@ style="width: 100%; height: 200px; border: none;">
 ### Destructive
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/button?option=destructive"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/button?option=destructive"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/button_destructive.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/button_destructive.html" %}
+```
 
 ### Outline
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/button?option=outline"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/button?option=outline"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/button_outline.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/button_outline.html" %}
+```
 
 ### Secondary
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/button?option=secondary"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/button?option=secondary"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/button_secondary.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/button_secondary.html" %}
+```
 
 ### Ghost
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/button?option=ghost"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/button?option=ghost"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/button_ghost.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/button_ghost.html" %}
+```
 
 ### Link
 
 === "Preview"
-    <iframe
-    src="{{ preview_url}}/components/button?option=link"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
+<iframe
+src="{{ preview_url}}/components/button?option=link"
+style="width: 100%; height: 200px; border: none;">
+</iframe>
 
 === "Code"
-    ```html
-    {% include-markdown "../../backend/templates/button_link.html" %}
-    ```
+```html
+{% include-markdown "../../backend/templates/button_link.html" %}
+```
