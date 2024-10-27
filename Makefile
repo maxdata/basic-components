@@ -27,5 +27,8 @@ shadcn-ui-tailwind:
 docs-tailwind:
 	cd documentation && npm install && npx tailwindcss init && npm link tailwindcss && npm run build
 
+docs-tailwind-watch:
+	cd documentation && npm install && npx tailwindcss init && npm link tailwindcss && npm run watch
+
 docs-backend-prod:
 	$(UV) run fastapi run documentation/backend/app.py  --port 10000

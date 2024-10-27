@@ -5,15 +5,20 @@
     disabled: bool = False
 #}
 <div
-  x-data="{ isDark: window.matchMedia('(prefers-color-scheme: dark)').matches }"
-  {{ attrs.render() }}
+    {{ attrs.render() }}
 >
   <input
-    type="checkbox"
-    name="checkbox"
-    class="form-checkbox {{ className }} border-zinc-200 text-indigo-600 accent-black dark:border-zinc-50 dark:border-zinc-700 dark:ring-offset-zinc-950 dark:focus-visible:ring-zinc-300 dark:data-[state=checked]:bg-zinc-50 dark:data-[state=checked]:text-zinc-900"
-    {% if checked %}checked{% endif %}
-    {% if disabled %}disabled{% endif %}
+      type="checkbox"
+      id="{{ attrs.get('id', '') }}"
+      class="{{ className }}
+      text-black accent-black rounded
+      border-zinc-200 dark:border-zinc-50
+      focus:ring-2 focus:ring-offset-2
+      focus:ring-black dark:focus:ring-white
+      dark:focus:ring-2 dark:focus:ring-offset-2
+      "
+      {% if checked %}checked{% endif %}
+      {% if disabled %}disabled{% endif %}
   />
-  <label for="{{ attrs.get("id", "") }}" class="ml-2 text-sm">{{ label }}</label>
+  <label for="{{ attrs.get('id', '') }}" class="ml-2 text-sm">{{ label }}</label>
 </div>
