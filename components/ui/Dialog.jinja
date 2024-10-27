@@ -1,5 +1,4 @@
 {#def
-    className: str = "",
+    open: bool = False
 #}
-<!-- Dialog -->
-<div x-data="{ open: false }" {{ attrs.render() }}>{{ content }}</div>
+<div x-data="{ open: {{ open|tojson }} }" {{ attrs.render() }}>{{ content }}</div>
