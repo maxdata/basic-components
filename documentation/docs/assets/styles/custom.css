@@ -1,0 +1,44 @@
+.md-header {
+    box-shadow: none !important;
+}
+
+/* Font and typography adjustments */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+    font-family: 'Inter', sans-serif !important; /* ShadCN's default font */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraph and link styles */
+.md-typeset p {
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1.6;
+}
+
+.md-typeset a {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.md-nav__item .md-nav__link--active, .md-nav__item .md-nav__link--active code {
+    text-decoration: underline;
+}
+
+
+/* Override dark mode background to pure black */
+@media (prefers-color-scheme: dark) {
+    [data-md-color-scheme='slate'] {
+        --md-default-bg-color: #000 !important; /* Main background */
+        --md-default-bg-color--light: #111 !important; /* Light variants */
+        --md-default-bg-color--lighter: #1a1a1a !important;
+        --md-default-bg-color--lightest: #222 !important;
+
+        --md-footer-bg-color: #000 !important;
+        --md-code-bg-color: #111 !important; /* Code blocks */
+    }
+}
