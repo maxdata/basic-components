@@ -24,7 +24,7 @@ guidelines, and example prompts to ensure consistent and effective component cre
 ## Rules for Creating Components
 
 1. **Props Definition**:
-    - Use `{# def ... #}` to declare props.
+    - Use `{#def ... #}` to declare props.
     - Include `id`, `className`, and other relevant attributes.
 
 2. **Dynamic Attributes**:

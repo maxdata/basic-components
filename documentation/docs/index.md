@@ -22,7 +22,7 @@ Features
 The `Button` component wraps options and behaviors for buttons and provides variants for different styles, similar to the [shadcn/ui version](https://ui.shadcn.com/docs/components/button).
 
 ```jinja
-{# def
+{#def
     type: str = "",
     className: str = "",
     variant: str = "default",
@@ -80,7 +80,7 @@ Within a template or another component, declare the `Button`, passing attributes
 - The `Button` component is inserted directly into the template without macros or includes.
 - Props like `className`, and `onclick` are set directly, and any additional attributes can be passed as needed.
 
-- **Props**: Props are declared using `{# def ... #}` and define attributes such as `id`, `className`, and any booleans
+- **Props**: Props are declared using `{#def ... #}` and define attributes such as `id`, `className`, and any booleans
   like `disabled`.
 - **Dynamic Attributes**: The `{{ attrs.render() }}` in the component allows passing additional
   attributes dynamically when the component is used.

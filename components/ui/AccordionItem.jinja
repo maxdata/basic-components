@@ -1,17 +1,16 @@
-{# def
-value: str = "",
-className: str = ""
+{#def
+    value: str = "",
+    className: str = ""
 #}
-
 <div
-  x-data="{
+    x-data="{
     get isOpen() {
       return activeItem === '{{ value }}';
     }
   }"
-  class="{{ className }} border-b"
-  value="{{ value }}"
-  {{ attrs.render() }}
+    class="{{ className }} border-b"
+    value="{{ value }}"
+    {{ attrs.render() }}
 >
   {{ content }}
 </div>

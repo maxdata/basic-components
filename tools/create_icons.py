@@ -2,7 +2,7 @@ import os
 import re
 
 # Template for the JinjaX component
-component_template = """{{# def
+component_template = """{{#def
     className: str = "h-4 w-4",
     color: str = ""
 #}}
