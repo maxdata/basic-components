@@ -1,4 +1,4 @@
-# Dialog Component
+# Dialog
 
 The `Dialog` component provides a modal interface for important interactions, confirmations, or notifications.
 
