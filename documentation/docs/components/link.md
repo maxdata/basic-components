@@ -6,7 +6,7 @@ Displays a link.
 
 <iframe
 src="{{ preview_url}}/components/link"
-style="width: 100%; height: 200px; border: none;">
+style="width: 100%; height: 100px; border: none;">
 </iframe>
 
 ## Props
@@ -38,7 +38,7 @@ style="width: 100%; height: 200px; border: none;">
 === "Preview"
     <iframe
     src="{{ preview_url}}/components/link?option=icon"
-    style="width: 100%; height: 200px; border: none;">
+    style="width: 100%; height: 100px; border: none;">
     </iframe>
 
 === "Code"
