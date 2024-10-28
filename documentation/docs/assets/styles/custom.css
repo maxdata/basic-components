@@ -1,3 +1,7 @@
+.md-grid {
+    max-width: 1920px !important;
+}
+
 .md-header {
     box-shadow: none !important;
 }

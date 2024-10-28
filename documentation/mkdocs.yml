@@ -23,7 +23,7 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
-
+    - disable-responsive-fonts
 plugins:
   - search
   - include-markdown
@@ -35,10 +35,10 @@ extra:
 
 extra_css:
   - assets/styles/custom.css
+  - https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap
 
 extra_javascript:
   - javascript/sync-theme.js
-  - https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap
 
 markdown_extensions:
   - pymdownx.highlight:
