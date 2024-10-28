@@ -1,9 +1,9 @@
 {#def
-    id: str = "sheet-content",
     side: str = "right",
     className: str = "",
 #}
 <SheetOverlay/>
+<!-- SheetContent -->
 <div
     x-show="open"
     @keydown.escape.window="open = false"
@@ -21,6 +21,7 @@
   {% endif %} {% if side == 'right' %}
     inset-y-0 right-0 h-full w-3/4 border-l slide-in-from-right sm:max-w-sm
   {% endif %} {{ className }} fixed z-50 gap-4 bg-white p-6 shadow-lg transition ease-in-out dark:bg-zinc-950"
+  {{ attrs.render() }}
 >
   {{ content }}
   <SheetClose/>

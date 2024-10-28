@@ -2,4 +2,4 @@
     id: str = "sheet",
 #}
 <!-- Sheet -->
-<div x-data="{ open: false }">{{ content }}</div>
+<div x-data="{ open: false }" {{ attrs.render() }}>{{ content }}</div>
