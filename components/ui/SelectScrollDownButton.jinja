@@ -1,0 +1,6 @@
+<div
+    x-show="$refs.viewport.scrollHeight > $refs.viewport.clientHeight + $refs.viewport.scrollTop"
+    @mouseenter="$refs.viewport.scrollBy({ top: 30, behavior: 'smooth' })"
+    class="flex items-center justify-center py-1 cursor-pointer">
+  <ChevronDown class="h-4 w-4" />
+</div>

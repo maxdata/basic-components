@@ -1,0 +1,97 @@
+# Select
+
+Displays a list of options for the user to pick from—triggered by a button.
+
+## Preview
+
+<iframe
+src="{{ preview_url}}/components/select"
+style="width: 100%; height: 400px; border: none;">
+</iframe>
+
+## Components
+
+=== "Select.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/Select.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectContent.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectContent.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectGroup.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectGroup.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectItem.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectItem.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectLabel.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectLabel.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectScrollDownButton.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectScrollDownButton.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectScrollUpButton.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectScrollUpButton.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectTrigger.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectTrigger.jinja' %}
+    ```
+    {% endraw %}
+
+=== "SelectValue.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/SelectValue.jinja' %}
+    ```
+    {% endraw %}
+
+## Usage
+
+```html
+{% include-markdown "../../backend/templates/select.html" %}
+
+```
+
+## Example
+
+### Scrollable
+
+=== "Preview"
+    <iframe
+    src="{{ preview_url}}/components/select?option=scrollable"
+    style="width: 100%; height: 400px; border: none;">
+    </iframe>
+
+=== "Code"
+    ```html
+    {% include-markdown "../../backend/templates/select_scrollable.html" %}
+    ```

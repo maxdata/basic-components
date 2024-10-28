@@ -1,0 +1,42 @@
+<div
+    x-show="open"
+    @click.away="open = false"
+    @keydown.escape.window="open = false"
+    x-data="{
+        canScrollUp: false,
+        canScrollDown: false,
+        checkScroll() {
+            const el = this.$refs.viewport;
+            this.canScrollUp = el.scrollTop > 0;
+            this.canScrollDown = el.scrollHeight > el.clientHeight + el.scrollTop;
+        }
+    }"
+    class="relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-zinc-200 bg-white text-zinc-950 shadow-md dark:border-zinc-800 dark:bg-zinc-950"
+>
+  <!-- Scroll Up Button -->
+  <SelectScrollUpButton
+      x-show="canScrollUp"
+      @mouseenter="$refs.viewport.scrollBy({ top: -40, behavior: 'smooth' }); checkScroll()"
+      class="flex items-center justify-center py-1 cursor-pointer"
+  >
+    <ChevronUp class="h-4 w-4" />
+  </SelectScrollUpButton>
+
+  <!-- Viewport -->
+  <div
+      x-ref="viewport"
+      @scroll="checkScroll()"
+      class="p-1 max-h-80 overflow-y-auto"
+  >
+    {{ content }}
+  </div>
+
+  <!-- Scroll Down Button -->
+  <SelectScrollDownButton
+      x-show="canScrollDown"
+      @mouseenter="$refs.viewport.scrollBy({ top: 40, behavior: 'smooth' }); checkScroll()"
+      class="flex items-center justify-center py-1 cursor-pointer"
+  >
+    <ChevronDown class="h-4 w-4" />
+  </SelectScrollDownButton>
+</div>
