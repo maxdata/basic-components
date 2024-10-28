@@ -1,6 +1,6 @@
 # Sheet
 
-Extends the Dialog component to display content that complements the main content of the screen.
+Displays content one side of the screen in a modal dialog.
 
 ## Preview
 
@@ -9,16 +9,14 @@ src="{{ preview_url}}/components/Sheet"
 style="width: 100%; height: 400px; border: none;">
 </iframe>
 
-The value of the Sheeted item is stored in a hidden input field. 
-
 ## Props
 
 | Component        | Prop        | Type   | Default           | Description                                    |
 |------------------|-------------|--------|-------------------|------------------------------------------------|
-| Sheet            | `id`        | String | `"sheet"`         | Unique identifier for the sheet component.     |
-| SheetClose       | `id`        | String | `"sheet-close"`   | Unique identifier for the close button.        |
+| Sheet            | `className` | String | `"sheet"`         | Additional CSS classes for customization.      |
+| SheetClose       | `className` | String | `"sheet-close"`   | Additional CSS classes for customization.      |
 | SheetClose       | `className` | String | `""`              | Additional CSS classes for customization.      |
-| SheetContent     | `id`        | String | `"sheet-content"` | Unique identifier for the content.             |
+| SheetContent     | `className` | String | `"sheet-content"` | Additional CSS classes for customization.      |
 | SheetContent     | `side`      | String | `"right"`         | Position of the sheet (top/bottom/left/right). |
 | SheetContent     | `className` | String | `""`              | Additional CSS classes for customization.      |
 | SheetDescription | `className` | String | `""`              | Additional CSS classes for customization.      |

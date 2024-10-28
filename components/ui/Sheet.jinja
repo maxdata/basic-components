@@ -1,5 +1,4 @@
 {#def
-    id: str = "sheet",
+    className: str = "",
 #}
-<!-- Sheet -->
-<div x-data="{ open: false }" {{ attrs.render() }}>{{ content }}</div>
+<div x-data="{ open: false }" {{ attrs.render() }} class="{{ className }}">{{ content }}</div>
