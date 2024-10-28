@@ -11,6 +11,16 @@ style="width: 100%; height: 500px; border: none;">
 
 The value of the selected item is stored in a hidden input field. 
 
+## Props
+| Component     | Prop          | Type           | Default  | Description                               |
+|---------------|---------------|----------------|----------|-------------------------------------------|
+| Select        | `name`        | String         | `""`     | The name attribute for the input field.   |
+| Select        | `className`   | String         | `""`     | Additional CSS classes for customization. |
+| SelectItem    | `value`       | String         | `""`     | The form value for the item.              |
+| SelectLabel   | `className`   | String         | `""`     | Additional CSS classes for customization. |
+| SelectTrigger | `className`   | String         | `""`     | Additional CSS classes for customization. |
+| SelectValue   | `placeholder` | String         | `""`     | The placeholder text.                     |
+
 ## Components
 
 === "Select.jinja"

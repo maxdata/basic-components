@@ -6,11 +6,6 @@
             const el = this.$refs.viewport;
             this.canScrollUp = el.scrollTop > 0;
             this.canScrollDown = el.scrollHeight > el.clientHeight + el.scrollTop;
-            console.log('Viewport scrollTop:', el.scrollTop);
-            console.log('Viewport scrollHeight:', el.scrollHeight);
-            console.log('Viewport clientHeight:', el.clientHeight);
-            console.log('Can scroll up:', this.canScrollUp);
-            console.log('Can scroll down:', this.canScrollDown);
         }
     }"
     x-show="open"

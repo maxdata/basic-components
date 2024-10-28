@@ -2,9 +2,9 @@
     x-show="canScrollUp"
     @mouseenter="
         scrollInterval = setInterval(() => {
-            $refs.viewport.scrollBy({ top: -40, behavior: 'smooth' });  // Faster scroll amount
+            $refs.viewport.scrollBy({ top: -40, behavior: 'smooth' });
             checkScroll();
-        }, 30);  // Faster interval
+        }, 30);
     "
     @mouseleave="clearInterval(scrollInterval)"
     class="flex items-center justify-center py-1 cursor-pointer"
