@@ -1,8 +1,8 @@
 {#def
-    className: str = "",
+    variant: str = "default",
 #}
 {# prettier-ignore-start #}
-<Button class="{{ className }}" @click="open = !open">
+<Button :variant="{{ variant }}" @click="open = !open">
   {{ content }}
 </Button>
 {# prettier-ignore-end #}
