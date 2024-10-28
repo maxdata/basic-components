@@ -3,8 +3,9 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   darkMode: "class",
   content: [
-    "./backend/templates/**/*.html",
-    "../components/**/*.jinja",
+    "../components/ui/*.jinja",
+    "../components/icons/*.jinja",
+    "./backend/templates/*.html",
   ],
   plugins: [
     require("@tailwindcss/forms"),
