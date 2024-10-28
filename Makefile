@@ -16,7 +16,7 @@ docs-backend-dev: $(VENV)/bin/uv
 	$(PYTHON) -m uvicorn documentation.backend.app:app --reload --port 10000
 
 docs-frontend-dev: $(MKDOCS)
-	cd documentation && $(MKDOCS) serve
+	PREVIEW_URL="http://localhost:10000" && cd documentation && $(MKDOCS) serve
 
 shadcn-ui:
 	cd shadcn-ui && npm run dev

@@ -31,7 +31,7 @@ plugins:
       include_dir: docs/components
 
 extra:
-  preview_url: !ENV [PREVIEW_URL, "http://localhost:10000"]
+  preview_url: !ENV [PREVIEW_URL, "https://basic-components.onrender.com"]
 
 extra_css:
   - assets/styles/custom.css
