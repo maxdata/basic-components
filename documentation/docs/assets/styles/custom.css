@@ -1,3 +1,4 @@
+
 .md-grid {
     max-width: 1920px !important;
 }
@@ -15,8 +16,9 @@
     margin-bottom: 0.5rem;
 }
 
+
 /* Paragraph and link styles */
-.md-typeset p {
+.md-typeset  {
     font-family: 'Inter', sans-serif !important;
     line-height: 1.6;
 }

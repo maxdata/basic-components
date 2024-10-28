@@ -6,7 +6,7 @@ Displays a list of options for the user to pick from—triggered by a button.
 
 <iframe
 src="{{ preview_url}}/components/select"
-style="width: 100%; height: 500px; border: none;">
+style="width: 100%; height: 400px; border: none;">
 </iframe>
 
 The value of the selected item is stored in a hidden input field. 

@@ -6,7 +6,7 @@ Displays a menu to the user — such as a set of actions or functions — trigge
 
 <iframe
 src="{{ preview_url}}/components/dropdown_menu"
-style="width: 100%; height: 600px; border: none;">
+style="width: 100%; height: 400px; border: none;">
 </iframe>
 
 ## Components
