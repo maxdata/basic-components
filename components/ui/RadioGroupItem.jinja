@@ -1,0 +1,15 @@
+{#def
+    name: str = "",
+    value: str = "",
+    className: str = "",
+#}
+<input
+    type="radio"
+    :checked="selectedValue === '{{ value }}'"
+    @change="selectedValue = '{{ value }}'"
+    name="{{ name }}"
+    value="{{ value }}"
+    class="border-zinc-200 text-black accent-black focus:ring-black dark:border-zinc-700 dark:bg-zinc-950 dark:focus:ring-zinc-300"
+
+    {{ attrs.render() }}
+/>
