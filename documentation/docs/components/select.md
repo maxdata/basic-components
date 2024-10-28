@@ -6,7 +6,7 @@ Displays a list of options for the user to pick from—triggered by a button.
 
 <iframe
 src="{{ preview_url}}/components/select"
-style="width: 100%; height: 400px; border: none;">
+style="width: 100%; height: 500px; border: none;">
 </iframe>
 
 ## Components
@@ -88,7 +88,7 @@ style="width: 100%; height: 400px; border: none;">
 === "Preview"
     <iframe
     src="{{ preview_url}}/components/select?option=scrollable"
-    style="width: 100%; height: 400px; border: none;">
+    style="width: 100%; height: 900px; border: none;">
     </iframe>
 
 === "Code"
