@@ -1,18 +1,23 @@
 <div
     x-data="{
-        selectedValue: '{{ defaultValue | default('') }}',
         canScrollUp: false,
         canScrollDown: false,
         checkScroll() {
             const el = this.$refs.viewport;
             this.canScrollUp = el.scrollTop > 0;
             this.canScrollDown = el.scrollHeight > el.clientHeight + el.scrollTop;
+            console.log('Viewport scrollTop:', el.scrollTop);
+            console.log('Viewport scrollHeight:', el.scrollHeight);
+            console.log('Viewport clientHeight:', el.clientHeight);
+            console.log('Can scroll up:', this.canScrollUp);
+            console.log('Can scroll down:', this.canScrollDown);
         }
     }"
     x-show="open"
     x-cloak
     @click.away="open = false"
     @scroll="checkScroll()"
+    x-init="checkScroll()"
     class="absolute left-0 z-50 mt-2 max-h-96 w-full overflow-hidden rounded-md border border-zinc-200 bg-white shadow-md dark:border-zinc-800 dark:bg-zinc-950"
     style="top: 100%;"
 >
@@ -26,6 +31,7 @@
 
   <div
       x-ref="viewport"
+      @scroll="checkScroll()"
       class="p-1 max-h-80 overflow-y-auto"
   >
     {{ content }}

@@ -1,6 +1,13 @@
 <div
-    x-show="$refs.viewport.scrollTop > 0"
-    @mouseenter="$refs.viewport.scrollBy({ top: -30, behavior: 'smooth' })"
-    class="flex items-center justify-center py-1 cursor-pointer">
+    x-show="canScrollUp"
+    @mouseenter="
+        scrollInterval = setInterval(() => {
+            $refs.viewport.scrollBy({ top: -40, behavior: 'smooth' });  // Faster scroll amount
+            checkScroll();
+        }, 30);  // Faster interval
+    "
+    @mouseleave="clearInterval(scrollInterval)"
+    class="flex items-center justify-center py-1 cursor-pointer"
+>
   <ChevronUp class="h-4 w-4" />
 </div>

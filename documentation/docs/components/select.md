@@ -9,6 +9,8 @@ src="{{ preview_url}}/components/select"
 style="width: 100%; height: 500px; border: none;">
 </iframe>
 
+The value of the selected item is stored in a hidden input field. 
+
 ## Components
 
 === "Select.jinja"
@@ -88,7 +90,7 @@ style="width: 100%; height: 500px; border: none;">
 === "Preview"
     <iframe
     src="{{ preview_url}}/components/select?option=scrollable"
-    style="width: 100%; height: 900px; border: none;">
+    style="width: 100%; height: 500px; border: none;">
     </iframe>
 
 === "Code"
