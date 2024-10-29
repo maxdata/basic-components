@@ -1,10 +1,10 @@
 {#def
   className: str = "",
+  variant: str = "default",
   toast_target: str = "",
 #}
+
 {% set click_action="$dispatch('show-toast', '" + toast_target + "')" %}
-{# prettier-ignore-start #}
-<Button :@click="{{ click_action }}" class="{{ className }}">
+<Button :@click="{{ click_action }}" class="{{ className }}" :variant="{{ variant }}">
   {{ content }}
 </Button>
-{# prettier-ignore-end #}

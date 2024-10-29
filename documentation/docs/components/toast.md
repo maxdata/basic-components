@@ -1,11 +1,11 @@
-# Textarea
+# Toast
 
-Displays a resizable form textarea.
+A succinct message that is displayed temporarily.
 
 ## Preview
 
 <iframe
-src="{{ preview_url}}/components/textarea"
+src="{{ preview_url}}/components/toast"
 style="width: 100%; height: 200px; border: none;">
 </iframe>
 
@@ -20,10 +20,22 @@ style="width: 100%; height: 200px; border: none;">
 
 ## Components
 
-=== "TextArea.jinja"
+=== "Toast.jinja"
     {% raw %}
     ```jinja
-    {% include '../../../components/ui/Textarea.jinja' %}
+    {% include '../../../components/ui/Toast.jinja' %}
+    ```
+    {% endraw %}
+=== "ToastContent.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/ToastContent.jinja' %}
+    ```
+    {% endraw %}
+=== "ToastTrigger.jinja"
+    {% raw %}
+    ```jinja
+    {% include '../../../components/ui/ToastTrigger.jinja' %}
     ```
     {% endraw %}
 
@@ -32,83 +44,68 @@ style="width: 100%; height: 200px; border: none;">
 {% raw %}   
 
 ```html
-{% include-markdown "../../backend/templates/textarea.html" %}
+{% include-markdown "../../backend/templates/toast.html" %}
 ```
 {% endraw %}
 
-## Examples   
+## Examples
 
-## Disabled 
-
-=== "Preview"
-    <iframe
-    src="{{ preview_url}}/components/textarea?option=disabled"
-    style="width: 100%; height: 200px; border: none;">
-    </iframe>
-
-=== "Code"
-{% raw %}   
-    ```html
-    {% include-markdown "../../backend/templates/textarea_disabled.html" %}
-    ```
-{% endraw %}   
-
-## With Label
+## Success
 
 === "Preview"
     <iframe
-    src="{{ preview_url}}/components/textarea?option=label"
+    src="{{ preview_url}}/components/toast?option=success"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
 === "Code"
     {% raw %}   
     ```html
-    {% include-markdown "../../backend/templates/textarea_label.html" %}
+    {% include-markdown "../../backend/templates/toast_success.html" %}
     ```
     {% endraw %}   
 
-## With Text
+## Warning
 
 === "Preview"
     <iframe
-    src="{{ preview_url}}/components/textarea?option=text"
+    src="{{ preview_url}}/components/toast?option=warning"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
 === "Code"
     {% raw %}   
     ```html
-    {% include-markdown "../../backend/templates/textarea_text.html" %}
+    {% include-markdown "../../backend/templates/toast_warning.html" %}
     ```
     {% endraw %}   
 
-## With Button
+## Error
 
 === "Preview"
     <iframe
-    src="{{ preview_url}}/components/textarea?option=button"
+    src="{{ preview_url}}/components/toast?option=error"
     style="width: 100%; height: 200px; border: none;">
     </iframe>
 
 === "Code"
     {% raw %}   
     ```html
-    {% include-markdown "../../backend/templates/textarea_button.html" %}
+    {% include-markdown "../../backend/templates/toast_error.html" %}
     ```
     {% endraw %}   
 
-## Form
+## Destructive
 
 === "Preview"
     <iframe
-    src="{{ preview_url}}/components/textarea?option=form"
-    style="width: 100%; height: 400px; border: none;">
+    src="{{ preview_url}}/components/toast?option=destructive"
+    style="width: 100%; height: 200px; border: none;">
     </iframe>
 
 === "Code"
     {% raw %}   
     ```html
-    {% include-markdown "../../backend/templates/textarea_form.html" %}
+    {% include-markdown "../../backend/templates/toast_destructive.html" %}
     ```
     {% endraw %}   

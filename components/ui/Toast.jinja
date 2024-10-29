@@ -1,25 +1,39 @@
 {#def
     id: str = "",
     className: str = "",
-    duration: int = 5000,  # duration in milliseconds
+    duration: int = 30000,  # duration in milliseconds
 #}
 <div
     x-data="{
     show: false,
+    timeoutId: null,
     resetTimeout() {
       clearTimeout(this.timeoutId);
       this.timeoutId = setTimeout(() => { this.show = false }, {{ duration }});
+    },
+    handleShow() {
+      // If already showing, briefly hide and show again to restart animation
+      if (this.show) {
+        this.show = false;
+        setTimeout(() => {
+          this.show = true;
+          this.resetTimeout();
+        }, 100);
+      } else {
+        this.show = true;
+        this.resetTimeout();
+      }
     }
   }"
-    @show-toast.window="if($event.detail === '{{ id }}') { show = true; resetTimeout(); }"
+    @show-toast.window="if($event.detail === '{{ id }}') { handleShow(); }"
     x-show="show"
     x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 transform -translate-y-2"
+    x-transition:enter-start="opacity-0 transform translate-y-full"
     x-transition:enter-end="opacity-100 transform translate-y-0"
     x-transition:leave="transition ease-in duration-200"
-    x-transition:leave-start="opacity-100 transform translate-y-0"
-    x-transition:leave-end="opacity-0 transform -translate-y-2"
-    class="{{ className }} fixed inset-x-0 top-5 z-50 flex justify-center"
+    x-transition:leave-start="opacity-100 transform translate-x-0"
+    x-transition:leave-end="opacity-0 transform translate-x-full"
+    class="{{ className }} fixed bottom-5 right-5 z-50"
     role="alert"
 >
   {{ content }}
