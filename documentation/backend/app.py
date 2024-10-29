@@ -62,9 +62,20 @@ async def components(request: Request):
 @app.get("/components/{component_name}", response_class=HTMLResponse)
 async def render_component(request: Request, component_name: str, option: Optional[str] = None):
     return templates.TemplateResponse(
-        f"component.html",
-        {
-            "request": request, "component_name": component_name, "option": option})
+        request=request,
+        name="component.html",
+        context = {
+            "component_name": component_name,
+            "option": option
+        }
+    )
+
+@app.get("/table", response_class=HTMLResponse)
+async def table_sort(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="table_sorting.html",
+    )
 
 
 class SampleForm(StarletteForm):

@@ -1,6 +1,7 @@
 {#def
     className: str = ""
 #}
-<td class="{{ className }} p-4 align-middle [&:has([role=checkbox])]:pr-0" {{ attrs.render() }}>
+<td class="p-4 align-middle [&:has([role=checkbox])]:pr-0 {{ className }} "
+    {{ attrs.render() }}>
   {{ content }}
 </td>

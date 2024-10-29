@@ -5,7 +5,7 @@ Displays content one side of the screen in a modal dialog.
 ## Preview
 
 <iframe
-src="{{ preview_url}}/components/Sheet"
+src="{{ preview_url}}/components/sheet"
 style="width: 100%; height: 400px; border: none;">
 </iframe>
 
