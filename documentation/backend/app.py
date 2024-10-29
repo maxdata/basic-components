@@ -141,16 +141,21 @@ class SampleForm(StarletteForm):
     )
 
 
-@app.get("/form", response_class=HTMLResponse)
-async def display_form(request: Request):
+@app.get("/wtform", response_class=HTMLResponse)
+async def display_wtform(request: Request):
     form = SampleForm(request)
     return templates.TemplateResponse(
-        "sample_form.html", {"request": request, "form": form}
+        request=request,
+        name="component.html",
+        context = {
+            "component_name": "wtform",
+            "form": form
+        }
     )
 
 
-@app.post("/form", response_class=HTMLResponse)
-async def post_sample_form(request: Request):
+@app.post("/wtform", response_class=HTMLResponse)
+async def post_wtform(request: Request):
     form = await SampleForm.from_formdata(request)
     if await form.validate():
         # Form is valid, process the form data
@@ -166,7 +171,12 @@ async def post_sample_form(request: Request):
     else:
         # If form validation fails, re-render the form with errors
         return templates.TemplateResponse(
-            "sample_form.html", {"request": request, "form": form}
+            request=request,
+            name="component.html",
+            context = {
+                "component_name": "wtform",
+                "form": form
+            }
         )
 
 
@@ -174,13 +184,3 @@ async def post_sample_form(request: Request):
 @app.get("/success")
 async def success(request: Request):
     return {"message": "Form submitted successfully!"}
-
-
-@app.get("/dashboard", response_class=HTMLResponse)
-async def components(request: Request):
-    return templates.TemplateResponse("dashboard.html", {"request": request})
-
-
-@app.get("/login", response_class=HTMLResponse)
-async def components(request: Request):
-    return templates.TemplateResponse("login.html", {"request": request})
