@@ -1,11 +1,25 @@
 {#def
     className: str = "",
     value: str = "",
+    size: str = "min-h-[80px] w-full",
     placeholder: str = "",
     disabled: bool = False,
+    required: bool = False,
+    error: bool = False,
 #}
+{% macro error_classes() %}
+  {%- if error -%}
+    border-red-600 dark:border-red-300 ring-red-600 dark:ring-red-300
+  {%- else -%}
+    border-zinc-200 dark:border-zinc-800
+  {%- endif -%}
+{% endmacro %}
+
+
 <textarea
-    class="{{ className }} block w-full rounded-md border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-900 placeholder-zinc-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:placeholder-zinc-400"
+    {% if required %}required{% endif %}
+    class="{{ className }} flex {{ size }} rounded-md border bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-zinc-950 placeholder:text-zinc-500 outline-none focus:outline-none focus:border-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-950 dark:ring-offset-zinc-950 dark:file:text-zinc-50 dark:placeholder:text-zinc-400 dark:focus-visible:ring-zinc-300 dark:focus:border-zinc-300 {{ error_classes() }}"
+    {% if disabled %}disabled{% endif %}
     placeholder="{{ placeholder }}"
     {% if disabled %}disabled{% endif %}
     {{ attrs.render() }}

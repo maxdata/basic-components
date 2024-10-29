@@ -1,4 +1,4 @@
-# ModeToggle
+# Mode Toggle
 
 A dropdown menu with options to switch between light and dark modes.
 
