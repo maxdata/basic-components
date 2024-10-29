@@ -4,11 +4,15 @@ The Accordion component is used to display collapsible sections of content. It a
 
 ## Preview
 
-<iframe
-src="{{ preview_url}}/components/accordion"
-style="width: 100%; height: 300px; border: none;">
-</iframe>
-
+<div class="preview-component">
+  <!-- This div will have reset styles and Tailwind available -->
+  <div 
+    class="rounded-lg border p-4"
+    hx-get="{{ preview_url}}/components/accordion"
+    hx-trigger="load"
+  >
+  </div>
+</div>
 ## Props
 
 | Name        | Type    | Default     | Description                                            |
