@@ -1,0 +1,25 @@
+header {
+    z-index: 100;
+}
+
+.toc a {
+    font-size: 0.875rem; /* equivalent to text-sm */
+    color: #71717a; /* equivalent to text-zinc-500 */
+    transition: color 0.2s;
+}
+
+.toc a:hover {
+    color: #1f2937; /* equivalent to text-zinc-900 */
+    text-decoration: underline;
+}
+
+.dark .toc a {
+    color: #a1a1aa; /* equivalent to dark:text-zinc-200 */
+}
+
+pre {
+    white-space: pre-wrap; /* Allow code wrapping */
+    word-wrap: break-word; /* Break long words */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    max-width: 100%; /* Keep within parent container width */
+}

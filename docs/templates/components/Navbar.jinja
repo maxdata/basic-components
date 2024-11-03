@@ -1,0 +1,59 @@
+{# def
+    title: str,
+    nav: List,
+    current_path: str,
+#}
+{% macro logo() %}
+    <!-- logo icon -->
+    <Link href="/">
+        <LayoutDashboard className="h-8 w-8"/>
+        <span class="sr-only">Components</span>
+    </Link>
+{% endmacro %}
+
+{%- macro current_nav(item) -%}
+    {{ "text-black dark:text-white font-bold IF" if item.group in current_path else "text-zinc-500 ELSE" }}
+{%- endmacro -%}
+
+
+<header class="sticky top-0 flex h-16 items-center gap-4 border-b bg-white px-4 md:px-6 dark:bg-zinc-950 dark:border-b-zinc-700">
+    <nav class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+
+        {{ logo() }}
+
+        <!-- title -->
+        <Link href="/"
+              className="text-black transition-colors hover:text-zinc-950 dark:text-white dark:hover:text-zinc-50 font-semibold uppercase">
+        Basic Components</Link>
+
+        <!-- nav -->
+        {% for item in nav %}
+            {% set class = current_nav(item) + "transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"%}
+            <Link :href="{{ item.href }}"
+                  :className="{{ class }}" >{{ item.title }}</Link>
+        {% endfor  %}
+    </nav>
+    <Sheet>
+        <SheetTrigger>
+            <Button variant="outline" size="icon" className="shrink-0 md:hidden">
+                <Menu className="h-5 w-5"/>
+                <span class="sr-only">Toggle navigation menu</span></Button>
+        </SheetTrigger>
+        <SheetContent side="left">
+            <nav class="grid gap-6 text-lg font-medium">
+
+                {{ logo() }}
+
+                {% for item in nav %}
+                    <Link :href="{{ item.href }}" className="text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">{{ item.title }}</Link>
+                {% endfor %}
+            </nav>
+        </SheetContent>
+    </Sheet>
+    <div class="ml-auto">
+        <Button variant="ghost" size="icon" className="ml-2" @click="toggleMode(mode === 'dark' ? 'light' : 'dark')">
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"/>
+            <span class="sr-only">Toggle theme</span></Button>
+    </div>
+</header>

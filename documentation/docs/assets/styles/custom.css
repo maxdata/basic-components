@@ -62,3 +62,12 @@ body[data-md-color-scheme="slate"] {
     text-decoration: underline;
     color: inherit !important; /* Maintain the same color as the theme */
 }
+
+/* In your custom.css */
+.style-reset {
+    all: revert;
+    /* Re-enable Tailwind inside this zone */
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+}
