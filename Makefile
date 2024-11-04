@@ -1,4 +1,4 @@
-.PHONY: install update shadcn-ui tailwind-shadcn-ui
+.PHONY: install docs-tailwind docs-tailwind-watch docs-dev docs-run
 
 VENV := $(shell pwd)/.venv
 PYTHON := $(VENV)/bin/python
@@ -9,26 +9,22 @@ $(VENV)/bin/uv:
 	python -m venv $(VENV)
 	$(PYTHON) -m pip install uv
 
-install: $(VENV)/bin/uv
+install: install-python install-node
+
+install-python: $(VENV)/bin/uv
 	$(UV) sync
 
-docs-backend-dev: $(VENV)/bin/uv
-	$(PYTHON) -m uvicorn documentation.backend.app:app --reload --port 10000
-
-docs-frontend-dev: $(MKDOCS)
-	 cd documentation && PREVIEW_URL="http://localhost:10000" $(MKDOCS) serve
-
-shadcn-ui:
-	cd shadcn-ui && npm run dev
-
-shadcn-ui-tailwind:
-	cd shadcn-ui && npm run tailwind
+install-node:
+	cd docs && npm install
 
 docs-tailwind:
-	cd documentation && npm install && npx tailwindcss init && npm link tailwindcss && npm run build
+	npx tailwindcss init && npm link tailwindcss && npm run build
 
 docs-tailwind-watch:
-	cd documentation && npm install && npx tailwindcss init && npm link tailwindcss && npm run watch
+	npx tailwindcss init && npm link tailwindcss && npm run watch
 
-docs-backend-prod:
-	$(UV) run fastapi run documentation/backend/app.py  --port 10000
+docs-dev:
+	$(UV) run fastapi dev docs/app.py --reload --reload-include *.yml
+
+docs-run:
+	$(UV) run fastapi run docs/app.py --port 10000
