@@ -13,3 +13,16 @@
 - [ ] table sorting example
 - [ ] toast min width
 - [ ] wtform demo
+- [ ] toc indent
+
+- docs
+- [x] Introduction
+- [ ] Installation
+- [ ] JinjaX
+- [ ] HTMX
+- [ ] Dark Mode
+- [ ] CLI
+- [ ] Typography
+- [ ] About
+- [ ] Contribution
+- [ ] Changelog

@@ -10,6 +10,7 @@ from starlette_wtf import CSRFProtectMiddleware
 
 from docs.config import BASE_DIR, settings
 from docs.routes import router
+from docs.demo import router as demo
 from docs.templates import hotreload
 
 # delete all existing default loggers
@@ -45,4 +46,5 @@ app.mount(
 
 
 # include routes for docs
+app.include_router(demo, prefix="/demo")
 app.include_router(router)

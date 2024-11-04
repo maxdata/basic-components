@@ -2,7 +2,7 @@
     components: List[str]
 #}
 
-<div x-data="{ activeTab: '{{ components[0] }}' }" class="max-w-screen-xl overflow-x-scroll">
+<div x-data="{ activeTab: '{{ components[0] }}' }" class="max-w-screen-xl overflow-x-scroll mb-8">
     <!-- Tab Navigation -->
     <nav class="flex border-b border-zinc-200 dark:border-zinc-800 mb-4 ">
         {% for template in components %}

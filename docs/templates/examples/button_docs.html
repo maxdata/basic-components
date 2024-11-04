@@ -1,0 +1,20 @@
+<!-- style variants defined in the component -->
+<Button variant="default">Default</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+
+<!-- use alpine.js -->
+<Button
+        x-on:click="alert('So easy!')"
+        variant="default">Alpine enabled</Button>
+
+<!-- use htmx -->
+<Button
+        variant="outline"
+        hx-get="/demo/button"
+        hx-trigger="click"
+        hx-target="this"
+        hx-swap="outerHTML">htmx enabled</Button>
