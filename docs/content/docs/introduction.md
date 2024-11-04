@@ -7,10 +7,8 @@ description: Re-usable server-side components based on shadcn/ui, built with Jin
 
 ## Modern Server-Side Components
 
-This project brings the elegant design patterns of [shadcn/ui](https://ui.shadcn.com) to the Python ecosystem, enabling
-developers to build beautiful, accessible server-side interfaces. It's an unofficial port that leverages modern tools like
-[JinjaX](https://jinjax.scaletti.dev/), [Alpine.js](https://alpinejs.dev/), and [htmx](https://htmx.org/) to create dynamic, responsive components
-while maintaining the benefits of server-side rendering.
+This project brings the component design patterns of [shadcn/ui](https://ui.shadcn.com) to the Python ecosystem. It's an unofficial port that leverages modern tools like
+[JinjaX](https://jinjax.scaletti.dev/), [Alpine.js](https://alpinejs.dev/), and [htmx](https://htmx.org/) to create dynamic, responsive components with server-side rendering.
 
 **Note:** This project is not affiliated with [shadcn](https://twitter.com/shadcn).
 
