@@ -1,8 +1,8 @@
 - [ ] dialog scroll 
 - [ ] checkbox disabled example
-- [ ] only add example if examples
-- [ ] center demo h/v
-- [ ] copy/paste button position
+- [-] only add example if examples
+- [x] center demo h/v
+- [x] copy/paste button position
 - [ ] component tab scroll 
 - [ ] site heading
 - [ ] smaller font for code blocks
@@ -13,7 +13,8 @@
 - [ ] table sorting example
 - [ ] toast min width
 - [ ] wtform demo
-- [ ] toc indent
+- [x] toc indent
+- [ ] example names
 
 - docs
 - [x] Introduction

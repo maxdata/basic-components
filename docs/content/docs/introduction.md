@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Re-usable server-side components based on shadcn/ui, built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
+description: Re-usable server-side components based on shadcn/ui. <br />Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 ---
 
 <Prose>
@@ -12,7 +12,7 @@ This project brings the component design patterns of [shadcn/ui](https://ui.shad
 
 **Note:** This project is not affiliated with [shadcn](https://twitter.com/shadcn).
 
-## Key Features
+## Features
 
 - **Modern Stack**: Combines JinjaX for components, Alpine.js for reactivity, and htmx for dynamic updates
 - **Server-First**: Built specifically for Python web frameworks (FastAPI, Django, Flask)
@@ -44,7 +44,7 @@ Components are implemented using JinjaX and contain all the info about styles an
 </Prose>
 <IncludeComponents :components="['Button.jinja']" />
 <Prose>
-Components are easily composable, allowing you to create complex layouts using Tailwind utility classes. 
+Components are easily composable, allowing you to combine them to create complex layouts using Tailwind utility classes. 
 </Prose>
 
 <TabPreview component="Example" template="examples/card.html"/>

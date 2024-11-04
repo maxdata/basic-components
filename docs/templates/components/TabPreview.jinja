@@ -26,8 +26,8 @@
     <div class="mt-4 p-2">
         <!-- preview  -->
         <div x-show="activeTab === 'Preview'" class="relative">
-            <Card className="border rounded-lg my-4 min-w-96 md:px-40 md:py-20">
-                <CardContent>
+            <Card className="border rounded-lg my-8 py-4 min-w-96 md:px-40 md:py-10">
+                <CardContent className="flex justify-center">
                     {% include template %}
                 </CardContent>
             </Card>
@@ -36,10 +36,22 @@
         <div x-show="activeTab === 'Code'" class="relative">
             <!-- code content with copy button -->
             <div class="relative">
-                <button @click="navigator.clipboard.writeText($refs.code.textContent)"
-                        class="absolute top-2 right-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-sm px-2 py-1 border rounded-md transition">
-                    <ClipboardCopy className="h-4- w-4 bg-zinc-100"/>
-                </button><IncludeTemplate :template="{{ template }}" />
+                <button
+                        x-data="{ copied: false }"
+                        @click="
+                                navigator.clipboard.writeText($refs.code.textContent);
+                                copied = true;
+                                setTimeout(() => copied = false, 2000)
+                                "
+                        class="absolute top-3 right-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-sm px-2 py-1 border rounded-md transition">
+                    <template x-if="!copied">
+                        <ClipboardCopy className="h-4 w-4"/>
+                    </template>
+                    <template x-if="copied">
+                        <ClipboardCheck className="h-4 w-4"/>
+                    </template>
+                </button>
+                <IncludeTemplate :template="{{ template }}" />
             </div>
         </div>
     </div>

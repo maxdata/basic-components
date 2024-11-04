@@ -17,6 +17,10 @@ header {
     color: #a1a1aa; /* equivalent to dark:text-zinc-200 */
 }
 
+.toc ul ul {
+    padding-left: 2rem;
+}
+
 pre {
     white-space: pre-wrap; /* Allow code wrapping */
     word-wrap: break-word; /* Break long words */
