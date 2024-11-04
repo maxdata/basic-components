@@ -16,12 +16,12 @@ while maintaining the benefits of server-side rendering.
 
 ## Key Features
 
-- **Server-First**: Built specifically for Python web frameworks (FastAPI, Django, Flask)
 - **Modern Stack**: Combines JinjaX for components, Alpine.js for reactivity, and htmx for dynamic updates
-- **Zero Dependencies**: Copy only the components you need - no package to install
+- **Server-First**: Built specifically for Python web frameworks (FastAPI, Django, Flask)
 - **Customizable**: Every component is yours to modify and extend
-- **Light and Dark**: Built-in theming support with light and dark modes
+- **Minimal Dependencies**: Copy only the components you need - no package to install. You'll need to set up Tailwind CSS and include Alpine.js, htmx, and JinjaX in your project.
 - **Accessibility**: Maintains the accessibility features of shadcn/ui
+- **Light and Dark**: Built-in theming support with light and dark modes
 
 ## Not a Traditional Component Library
 
@@ -30,7 +30,7 @@ This is **not a traditional component library** that you install as a dependency
 1. Choose the components you need
 2. Use the [CLI](docs/cli) to add them to your project (or copy/paste manually)
 3. Customize the code to match your needs
-4. Build your interface using JinjaX's component system and TailwindCSS's utility classes for styling and htmx for dynamic updates
+4. Build your interface using JinjaX's component system and Tailwind CSS's utility classes for styling and htmx for dynamic updates
 
 **Here's a simple example**
 
@@ -41,12 +41,12 @@ Additional behavior can be added via attributes for Alpine or htmx. Click the `A
 <TabPreview component="Button" template="examples/button_docs.html"/>
 <Prose>
 
-Components are implemented using JinjaX and contains all the info about styles and any logic required for behavior. 
+Components are implemented using JinjaX and contain all the info about styles and any logic required for behavior. 
  
 </Prose>
 <IncludeComponents :components="['Button.jinja']" />
 <Prose>
-Components are easily composable to create complex layouts using Tailwind utility classes. 
+Components are easily composable, allowing you to create complex layouts using Tailwind utility classes. 
 </Prose>
 
 <TabPreview component="Example" template="examples/card.html"/>
@@ -55,7 +55,7 @@ Components are easily composable to create complex layouts using Tailwind utilit
 
 ## Project Status 
 
-_This is an active project, with new components being added regularly. The list of components ported from shadcn/ui is not complete. See the [changelog](/docs/changelog) for details. [Contributions](/docs/contribution) are welcome!_
+_This is an active project, with new components being added regularly. We welcome your feedback and contributions! See the [changelog](/docs/changelog) for details and check out the [contribution guide](/docs/contribution) to get involved!_
 
 
 ## FAQ
@@ -64,15 +64,14 @@ _This is an active project, with new components being added regularly. The list 
 
 Traditional component libraries often couple style with implementation, making customization difficult. By providing
 components you can copy and modify:
-- You have complete control over the implementation
-- You can customize the components to suit your needs
-- You maintain full control, by copying the code directly  
-- You have ownership and control over the code
+- You have complete control over the implementation and styling.
+- You can customize the components to suit your needs.
+- You maintain full control by copying the code directly  
 
 ### Which frameworks are supported?
 
 Any Python web framework that supports Jinja templates works with these components. We provide specific setup guides for
-FastAPI, Django, and Flask.
+[FastAPI](https://fastapi.tiangolo.com/), [Django](https://www.djangoproject.com/), and [Flask](https://flask.palletsprojects.com/en/stable/).".
 
 ### Can I use this in my project?
 
@@ -80,7 +79,7 @@ Yes! This project is MIT licensed and free to use in personal and commercial pro
 
 ### Why did you create this?
 
-The project was created to provide a way to build full-stack applications using server-side rendering, with Alpine.js and htmx for interactivity and Tailwind CSS for styling. Traditional Jinja templates with standard patterns like extending and including templates can become messy, especially with numerous Tailwind utility classes. Using JinjaX, along with Tailwind CSS and htmx, enables a clean pattern of composing logic that is easy to extend and debug.
+The project was created to provide a way to build full-stack applications using server-side rendering, with Alpine.js and htmx for interactivity and Tailwind CSS for styling. Traditional Jinja templates with standard patterns like extending and including templates can become messy, especially with numerous Tailwind utility classes. Using JinjaX, along with Tailwind CSS and htmx, enables a clean and maintainable pattern for composing components that are easy to extend and debug.
 
 ### I want component X, but it's not here. Can you add it?
 
