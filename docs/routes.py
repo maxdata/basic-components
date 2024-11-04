@@ -2,6 +2,7 @@ from pathlib import Path
 from fastapi import APIRouter, Request, HTTPException
 from loguru import logger
 from starlette.responses import HTMLResponse
+from fastapi.responses import RedirectResponse
 
 from docs.config import BASE_DIR
 from docs.markdown import parse_jinja_markdown
@@ -51,7 +52,28 @@ async def render_content(path, md_file_path, request):
         "toc": toc,
     }
     # Render the template with the given context
-    return templates.TemplateResponse(request, "content2.html", context=context)
+    return templates.TemplateResponse(request, "content.html", context=context)
+
+
+@router.get("/")
+async def index(request: Request):
+    context = {
+        "config": site_config,
+    }
+    return templates.TemplateResponse(request, "index.html", context=context)
+
+
+@router.get("/docs")
+async def docs():
+    return RedirectResponse(url="/docs/introduction")
+
+
+@router.get("/examples")
+async def examples(request: Request):
+    context = {
+        "config": site_config,
+    }
+    return templates.TemplateResponse(request, "examples.html", context=context)
 
 
 @router.get("/{path:path}")

@@ -23,3 +23,14 @@ pre {
     overflow-x: auto; /* Enable horizontal scrolling */
     max-width: 100%; /* Keep within parent container width */
 }
+
+/* Override font size for Prism-styled code blocks */
+pre[class*="language-html"], code[class*="language-html"] {
+    font-size: 0.875rem !important; /* Adjust the size as needed */
+    /*line-height: 1.4 !important;*/
+}
+
+/* Optional: Adjust padding for a cleaner look */
+pre[class*="language-html"] {
+    padding: 0.5rem !important;
+}

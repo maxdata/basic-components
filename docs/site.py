@@ -46,13 +46,20 @@ config = {
                 {"title": "Installation", "href": "/docs/installation"},
                 {"title": "JinjaX", "href": "/docs/jinajx"},
                 {"title": "HTMX", "href": "/docs/htmx"},
-                {"title": "Dark mode", "href": "/docs/dark_mode"},
+                {"title": "Dark Mode", "href": "/docs/dark_mode"},
+                {"title": "CLI", "href": "/docs/cli"},
+                {"title": "Typography", "href": "/docs/typography"},
+                {"title": "About", "href": "/docs/about"},
+                {"title": "Contribution", "href": "/docs/contribution"},
+                {"title": "Changelog", "href": "/docs/changelog"},
             ],
         },
         {
             "title": "Installation",
             "items": [
                 {"title": "Fastapi", "href": "/docs/fastapi"},
+                {"title": "Flask", "href": "/docs/fastapi"},
+                {"title": "Django", "href": "/docs/django"},
             ],
         },
         {
@@ -77,6 +84,11 @@ config = {
                 {"title": "Table", "href": "/components/table"},
                 {"title": "Textarea", "href": "/components/textarea"},
                 {"title": "Toast", "href": "/components/toast"},
+            ],
+        },
+        {
+            "title": "Extras",
+            "items": [
                 {"title": "WTForm", "href": "/components/wtform"},
             ],
         },

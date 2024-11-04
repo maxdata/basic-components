@@ -1,0 +1,21 @@
+<SiteLayout :site_config="{{ config }}" current_path="/">
+    <div class="container relative">
+        <PageHeader>
+            <PageHeaderHeading>Build your component library</PageHeaderHeading>
+            <PageHeaderDescription>
+                Server-side components for your python web framework that you can copy and paste into your
+                apps, based on shadcn/ui. Made with JinjaX, HTML, Alpine.js and Tailwind CSS. Open source.
+            </PageHeaderDescription>
+            <PageActions>
+                <Button size="sm">
+                    <Link href="/docs">Get Started</Link>
+                </Button>
+                <Button asChild size="sm" variant="ghost">
+                    <Link target="_blank" :href="{{ config.repo_url }}">GitHub</Link>
+                </Button>
+            </PageActions>
+        </PageHeader>
+
+
+    </div>
+</SiteLayout>
