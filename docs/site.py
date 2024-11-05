@@ -43,9 +43,9 @@ config = {
             "title": "Getting Started",
             "items": [
                 {"title": "Introduction", "href": "/docs/introduction"},
-                {"title": "Installation", "href": "/docs/installation"},
+                {"title": "Modern Tools", "href": "/docs/modern_tools"},
                 {"title": "Components", "href": "/docs/components"},
-                {"title": "HTMX", "href": "/docs/htmx"},
+                {"title": "Installation", "href": "/docs/installation"},
                 {"title": "Dark Mode", "href": "/docs/dark_mode"},
                 {"title": "CLI", "href": "/docs/cli"},
                 {"title": "Typography", "href": "/docs/typography"},

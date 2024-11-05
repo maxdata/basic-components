@@ -8,13 +8,13 @@ description: How to install dependencies.
 
 ## JinjaX
 
-Install the required jinjax library into your project using your package manager.
+Install the required JinjaX library into your project using your package manager.
 
 ```bash
 pip install jinjax  
 ```
 
-Configure your jinja environment to load the components according to the [JinjaX docs](https://jinjax.scaletti.dev/guide/).   
+Configure your Jinja environment to load the components according to the [JinjaX docs](https://jinjax.scaletti.dev/guide/).   
 
 ## Tailwind CSS
 
