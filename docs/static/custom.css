@@ -18,7 +18,7 @@ header {
 }
 
 .toc ul ul {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 /* Base styles for all pre elements */
@@ -30,8 +30,10 @@ pre {
 }
 
 /* Style all code blocks with language class */
+/* Style all code blocks with language class */
 pre[class*="language-"] {
     max-height: 300px !important;
+    max-width: 100% !important;  /* Default for mobile */
     width: 100% !important;
     overflow: auto !important;
     padding: 1rem !important;
@@ -40,30 +42,27 @@ pre[class*="language-"] {
     font-size: 0.875rem !important;
 }
 
-/* Dark mode for code blocks */
-.dark pre[class*="language-"] {
-    background-color: rgb(24 24 27) !important;
-}
-
-/* Responsive heights */
+/* Responsive heights and widths */
 @media (min-width: 768px) {
     pre[class*="language-"] {
         max-height: 400px !important;
+        max-width: 600px !important;  /* md breakpoint */
     }
 }
 
 @media (min-width: 1024px) {
     pre[class*="language-"] {
         max-height: 500px !important;
+        max-width: 750px !important;  /* lg breakpoint */
     }
 }
 
 @media (min-width: 1280px) {
     pre[class*="language-"] {
         max-height: 600px !important;
+        max-width: 850px !important;  /* xl breakpoint */
     }
 }
-
 /* Scrollbar styling */
 pre[class*="language-"]::-webkit-scrollbar {
     width: 0.5rem;

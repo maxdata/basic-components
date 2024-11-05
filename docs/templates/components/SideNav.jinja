@@ -4,14 +4,12 @@
 #}
 
 {% set className = {
-    'left': 'hidden md:flex md:min-w-64 flex-col border-r bg-white dark:bg-zinc-950 dark:border-zinc-800 py-4 pl-8',
-    'right': 'hidden lg:flex lg:min-w-64 flex-col border-l bg-white dark:bg-zinc-950 dark:border-zinc-800 py-4 pr-8',
+    'left': 'hidden md:block h-[calc(100vh-3.5rem)] sticky top-14 w-[220px] overflow-y-auto border-r border-zinc-200 dark:border-zinc-800 py-6 pr-2',
+    'right': 'hidden lg:block h-[calc(100vh-3.5rem)] sticky top-14 w-[220px] overflow-y-auto border-l border-zinc-200 dark:border-zinc-800 py-6 pl-2'
 }[side] %}
 
-
 <aside class="{{ className }}">
-    <nav class="p-4">
+    <nav class="px-4">
         {{ content }}
     </nav>
 </aside>
-
