@@ -2,8 +2,9 @@
     components: List[str]
 #}
 
-<div x-data="{ activeTab: '{{ components[0] }}' }" class="max-w-screen-xl overflow-x-scroll mb-8">
+<div x-data="{ activeTab: '{{ components[0] }}' }" class="mb-8">
     <!-- Tab Navigation -->
+    <div class="max-w-lg overflow-x-scroll round">
     <nav class="flex border-b border-zinc-200 dark:border-zinc-800 mb-4 ">
         {% for template in components %}
             <button @click="activeTab = '{{ template }}'"
@@ -15,12 +16,14 @@
             </button>
         {% endfor %}
     </nav>
+    </div>
 
     <!-- Tab Content -->
     {% for template in components %}
         {% set template_file =  "components/ui/" + template %}
-        <div x-show="activeTab === '{{ template }}'" >
-        <pre class="language-html p-4 bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-html">{{ template_file | include_file | trim | e }}</code></pre>
+        <div x-show="activeTab === '{{ template }}'" class="relative">
+            <pre class="language-html p-4 bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-html">{{ template_file | include_file | trim | e }}</code></pre>
+            <CopyPasteButton/>
         </div>
     {% endfor %}
 </div>

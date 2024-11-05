@@ -15,6 +15,8 @@
 - [ ] wtform demo
 - [x] toc indent
 - [ ] example names
+- [ ] mobile nav
+- [ ] mobile content width
 
 - docs
 - [x] Introduction

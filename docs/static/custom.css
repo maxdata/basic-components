@@ -3,38 +3,87 @@ header {
 }
 
 .toc a {
-    font-size: 0.875rem; /* equivalent to text-sm */
-    color: #71717a; /* equivalent to text-zinc-500 */
+    font-size: 0.875rem;
+    color: #71717a;
     transition: color 0.2s;
 }
 
 .toc a:hover {
-    color: #1f2937; /* equivalent to text-zinc-900 */
+    color: #1f2937;
     text-decoration: underline;
 }
 
 .dark .toc a {
-    color: #a1a1aa; /* equivalent to dark:text-zinc-200 */
+    color: #a1a1aa;
 }
 
 .toc ul ul {
     padding-left: 2rem;
 }
 
+/* Base styles for all pre elements */
 pre {
-    white-space: pre-wrap; /* Allow code wrapping */
-    word-wrap: break-word; /* Break long words */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    max-width: 100%; /* Keep within parent container width */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
-/* Override font size for Prism-styled code blocks */
-pre[class*="language-html"], code[class*="language-html"] {
-    font-size: 0.875rem !important; /* Adjust the size as needed */
-    /*line-height: 1.4 !important;*/
+/* Style all code blocks with language class */
+pre[class*="language-"] {
+    max-height: 300px !important;
+    width: 100% !important;
+    overflow: auto !important;
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+    border-radius: 0.5rem !important;
+    font-size: 0.875rem !important;
 }
 
-/* Optional: Adjust padding for a cleaner look */
-pre[class*="language-html"] {
-    padding: 0.5rem !important;
+/* Dark mode for code blocks */
+.dark pre[class*="language-"] {
+    background-color: rgb(24 24 27) !important;
+}
+
+/* Responsive heights */
+@media (min-width: 768px) {
+    pre[class*="language-"] {
+        max-height: 400px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    pre[class*="language-"] {
+        max-height: 500px !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    pre[class*="language-"] {
+        max-height: 600px !important;
+    }
+}
+
+/* Scrollbar styling */
+pre[class*="language-"]::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+    border-radius: 0.25rem;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+}
+
+/* Firefox scrollbar */
+pre[class*="language-"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(212 212 216) rgb(244 244 245);
+}
+
+.dark pre[class*="language-"] {
+    scrollbar-color: rgb(82 82 91) rgb(39 39 42);
 }

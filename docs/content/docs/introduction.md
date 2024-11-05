@@ -58,7 +58,7 @@ _This is an active project, with new components being added regularly. We welcom
 
 ## FAQ
 
-### Why copy/paste and not package as a dependency?
+### Why copy/paste?
 
 Traditional component libraries often couple style with implementation, making customization difficult. By providing
 components you can copy and modify:
@@ -69,7 +69,7 @@ components you can copy and modify:
 ### Which frameworks are supported?
 
 Any Python web framework that supports Jinja templates works with these components. We provide specific setup guides for
-[FastAPI](https://fastapi.tiangolo.com/), [Django](https://www.djangoproject.com/), and [Flask](https://flask.palletsprojects.com/en/stable/).".
+[FastAPI](https://fastapi.tiangolo.com/), [Django](https://www.djangoproject.com/), and [Flask](https://flask.palletsprojects.com).
 
 ### Can I use this in my project?
 
@@ -79,7 +79,7 @@ Yes! This project is MIT licensed and free to use in personal and commercial pro
 
 The project was created to provide a way to build full-stack applications using server-side rendering, with Alpine.js and htmx for interactivity and Tailwind CSS for styling. Traditional Jinja templates with standard patterns like extending and including templates can become messy, especially with numerous Tailwind utility classes. Using JinjaX, along with Tailwind CSS and htmx, enables a clean and maintainable pattern for composing components that are easy to extend and debug.
 
-### I want component X, but it's not here. Can you add it?
+### Component X is missing
 
 We plan to port all components from shadcn/ui. However, you don't need to wait—feel free to contribute by adding it yourself! Most components are straightforward to port, and we've included a [guide](/docs/porting-guide) that we've followed, using AI to handle much of the heavy lifting. Your contributions are welcome and appreciated.
 

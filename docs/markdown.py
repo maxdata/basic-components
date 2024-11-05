@@ -22,7 +22,38 @@ def create_markdown(examples=None):
                     "name": "html",
                     "class": "language-html",
                     "format": superfences.fence_code_format,
-                }
+                },
+                {
+                    "name": "python",
+                    "class": "language-python",
+                    "format": superfences.fence_code_format,
+                },
+                {
+                    "name": "bash",
+                    "class": "language-bash",
+                    "format": superfences.fence_code_format,
+                },
+                {
+                    "name": "css",
+                    "class": "language-css",
+                    "format": superfences.fence_code_format,
+                },
+                {
+                    "name": "javascript",
+                    "class": "language-javascript",
+                    "format": superfences.fence_code_format,
+                },
+                {
+                    "name": "json",
+                    "class": "language-json",
+                    "format": superfences.fence_code_format,
+                },
+                # Optional: add a generic code fence that will use language hint from markdown
+                {
+                    "name": "code",
+                    "class": "language-",  # will be appended with the language
+                    "format": superfences.fence_code_format,
+                },
             ]
         },
     }

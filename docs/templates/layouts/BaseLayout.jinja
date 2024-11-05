@@ -48,13 +48,27 @@
     <!-- htmx -->
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/response-targets.js"></script>
+    <!-- Include Prism CSS theme -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script>
-        htmx.logAll();
-    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <!-- Include Prism core and language support -->
+    {#    <script> #}
+    {#        htmx.logAll(); #}
+    {#    </script> #}
 </head>
 <body class="min-h-screen bg-white dark:bg-black text-black dark:text-white" hx-ext="response-targets">
-    {{ content }}
+{{ content }}
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        Prism.highlightAll();
+    });
+</script>
 </html>

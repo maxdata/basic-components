@@ -1,0 +1,14 @@
+<button x-data="{ copied: false }"
+        @click="
+                        navigator.clipboard.writeText($refs.code.textContent);
+                        copied = true;
+                        setTimeout(() => copied = false, 2000)
+                    "
+        class="absolute top-1 right-1 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-sm px-2 py-1 border rounded-md transition">
+    <template x-if="!copied">
+        <ClipboardCopy className="h-4 w-4"/>
+    </template>
+    <template x-if="copied">
+        <ClipboardCheck className="h-4 w-4"/>
+    </template>
+</button>
