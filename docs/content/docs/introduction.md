@@ -36,7 +36,7 @@ You can include a component using simple html tags in a Jinja template.
 Additional behavior can be added via attributes for Alpine or htmx. Click the `Alpine enabled` and `htmx enabled` buttons below.   
 </Prose>
 
-<TabPreview component="Button" template="examples/button_docs.html"/>
+<TabPreview component="Button" template="examples/docs_button.html"/>
 <Prose>
 
 Components are implemented using JinjaX and contain all the info about styles and any logic required for behavior. 

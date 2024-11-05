@@ -44,7 +44,7 @@ config = {
             "items": [
                 {"title": "Introduction", "href": "/docs/introduction"},
                 {"title": "Installation", "href": "/docs/installation"},
-                {"title": "JinjaX", "href": "/docs/jinajx"},
+                {"title": "Components", "href": "/docs/components"},
                 {"title": "HTMX", "href": "/docs/htmx"},
                 {"title": "Dark Mode", "href": "/docs/dark_mode"},
                 {"title": "CLI", "href": "/docs/cli"},
@@ -90,6 +90,7 @@ config = {
             "title": "Extras",
             "items": [
                 {"title": "WTForm", "href": "/components/wtform"},
+                {"title": "Icons", "href": "/components/icons"},
             ],
         },
     ],
