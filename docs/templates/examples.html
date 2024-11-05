@@ -1,0 +1,22 @@
+<PageLayout :site_config="{{ config }}" current_path="/">
+    <div class="container relative">
+        <PageHeader>
+            <PageHeaderHeading>Check out some examples</PageHeaderHeading>
+            <PageHeaderDescription>
+                Dashboard, cards, authentication. Some examples built using the components. Use this as a guide to build your own.
+            </PageHeaderDescription>
+            <PageActions>
+                <Button size="sm">
+                    <Link href="/docs">Get Started</Link>
+                </Button>
+                <Button asChild size="sm" variant="ghost">
+                    <Link target="_blank" :href="{{ config.repo_url }}">GitHub</Link>
+                </Button>
+            </PageActions>
+        </PageHeader>
+
+        <div class="p-6">
+            Cool demo Coming soon.
+        </div>
+    </div>
+</PageLayout>
