@@ -82,7 +82,7 @@ The project was created to provide a way to build full-stack applications using 
 
 ### Component X is missing
 
-We plan to port all components from shadcn/ui. However, you don't need to wait—feel free to contribute by adding it yourself! Most components are straightforward to port, and we've included a [guide](/docs/porting-guide) that we've followed, using AI to handle much of the heavy lifting. Your contributions are welcome and appreciated.
+We plan to port all components from shadcn/ui. However, you don't need to wait—feel free to contribute by adding it yourself! Most components are straightforward to port, and we've included a [guide](/docs/ai) that we've followed, using AI to handle much of the heavy lifting. Your contributions are welcome and appreciated.
 
 </Prose>
 

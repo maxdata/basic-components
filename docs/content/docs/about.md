@@ -2,14 +2,16 @@
 title: About Basic Components
 description: Server-side components for your python web framework.
 ---
+<Prose>
 
 ## About 
 
-### Features
+Built by [paul@basicmachines.co](mailto:paul@basicmachines.co). The source code is available on [GitHub](https://github.com/basicmachines-co/basic-components). 
 
-- **[shadcn/ui](https://ui.shadcn.com/)**: Based on the component design and implementations in the React library 
-- **[JinjaX](https://jinjax.scaletti.dev/)**: Implemented with JinjaX to create reusable components via Jinja templates
-- **[Tailwind CSS]()**: All components use Tailwind’s utility-based styling
-- **Alpine.js Interactivity**: lightweight state management and dynamic client side behaviors
-- **Direct shadcn/ui Ports**: The structure and design of components match their React equivalents
-- **HTMX Support**: Dynamic behavior such as content swaps and asynchronous updates is achieved with HTMX
+Credit goes to [shadcn](https://twitter.com/shadcn) for creating [shadcn/ui](https://ui.shadcn.com/), which this project is based on. 
+
+All code is licensed MIT. 
+
+[Contributions](/docs/contributions) are welcome. 
+
+</Prose>

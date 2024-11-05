@@ -14,7 +14,7 @@ overview describes the basic composition of a component.
 
 ### Button
 
-The [Button](/components/button) component wraps options and behaviors for buttons and provides variants for different styles, similar to the [shadcn/ui version](https://ui.shadcn.com/docs/components/button).
+The [Button](/components/button) component wraps options and behaviors for html buttons and provides variants for different styles, similar to the [shadcn/ui version](https://ui.shadcn.com/docs/components/button).
 
 </Prose>
 <IncludeComponents :components="['Button.jinja']" />
@@ -27,16 +27,15 @@ Every component has similar qualities. They each:
 - Declare arguments in a block `{{ '{#def ... #}' }}` at the top of the file. 
 - Use regular Jinja syntax for conditionals, variables or other logic.
 - Can use the variables passed within the component template. 
-- Have a special slot variable called `{{ '{{ content }}'}}` that renders other components.
+- Have a special slot variable called `{{ '{{ content }}'}}` to render nested components or content.
 - Can invoke extra arguments passed to the declaration via `{{ '{{ attrs.render() }}' }}`  
-- Can have extra utility classes passed to it via the `className` argument.
+- Can have extra utility styles passed to it via the `className` argument.
 
 Arguments:
 
 - Arguments can have default values.
 - Arguments are passed via html attributes when a comonent is declared.
-- Arguments can pass objects via the `{{ ':attrValue={{ object }}' }}` notation, similar to vue (with a leading `:`).  
-Otherwise arguments are evaluated as Strings.
+- Arguments can pass objects via the `{{ ':attrValue={{ object }}' }}` notation, similar to vue (with a leading `:`). Otherwise arguments are evaluated as Strings.
 See [expressions](https://jinjax.scaletti.dev/guide/components/#s-expressions) in the JinaX docs. 
 
 ## Using components
@@ -73,6 +72,20 @@ Htmx attributes can be added to components when they are declared to add htmx be
 ```
 
 See the [using htmx](/docs/htmx) docs for further details. 
+
+## shadcn/ui components 
+
+The components in this project follow patterns from [shadcn/ui](https://ui.shadcn.com/) very closely, using identical names for each class (React) and template(JinjaX). 
+In many cases, it's possible to copy/paste code using the react versions directly into templates. There are a few notable differences:
+
+- JinjaX does not have the same semantics to refer to props from other components
+- React code contaning `className` on regular html elements (like `div`) should be changed to `class`. Eg `<div className="mt-0">` should be changed to `<div class="mt-0">` so Tailwind will apply styles correctly. 
+- Client side state needs to be implemented via Alpine.js
+- Interactivity can be added via htmx
+
+There are many sites that offer pre-built shadcn components (blocks)
+- https://ui.shadcn.com/blocks
+- https://www.shadcnblocks.com/
 
 
 </Prose>

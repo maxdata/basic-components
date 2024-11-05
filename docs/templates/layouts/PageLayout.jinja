@@ -1,0 +1,14 @@
+{# def
+    site_config: SiteConfig,
+    current_path: str = "",
+#}
+<BaseLayout :title="{{ site_config.site_name }}">
+    <!-- top navbar -->
+    <Navbar :title="{{ site_config.site_name }}" :nav="{{ site_config.mainNav }}"
+            :current_path="{{ current_path }}"/>
+    <main class="bg-white dark:bg-black text-black dark:text-white ">
+        {{ content }}
+    </main>
+</BaseLayout>
+
+

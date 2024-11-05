@@ -1,40 +1,4 @@
 
-## Vendoring Components
-
-The components in this project can be copied (vendored) directly into your project and customized further using [Copier](https://copier.readthedocs.io/en/stable/).
-You can then customize them as needed.
-
-To vendor these components into your project using copier:
-
-1. Ensure you have Copier installed:
-```
-pip install copier
-```
-
-2. Run the following command from your project directory, specifying the destination:
-```
-copier copy https://github.com/basic-foundation/basic-components.git ./path/to/destination
-```
-Replace `./path/to/destination` with the directory where you want the components to be vendored.
-
-3. To preview the operation without making any changes, use the `--pretend` flag:
-```
-copier copy --pretend https://github.com/basic-foundation/basic-components.git ./path/to/destination
-```
-
-### Versioning and Updates
-
-When you vendor these components into your project, a `components/components-version.txt` file will be created.
-This file contains the version number of the basic-components library that you've vendored.
-
-**Notes:**
-- If updating, copier will preserve your existing files. It will show diffs for any conflicts and allow you to choose how to handle them.
-- You can specify a specific branch, tag, or commit by appending it to the repository URL, e.g., `...basic-components.git@v1.0.0 ./path/to/destination`
-- You can also fork this repo and use your own git url with copier or use a local copy of the repository.
-- Using a local repository is particularly useful during development or when you've made custom modifications.
-
-For more detailed information on Copier usage, refer to the [Copier documentation](https://copier.readthedocs.io/).
-
 
 
 

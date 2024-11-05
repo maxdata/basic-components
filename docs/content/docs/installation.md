@@ -216,6 +216,6 @@ Assuming your main css file is `src/input.css`, You could use this `package.json
 
 ## Frameworks
 
-See the docs for setting your project with [FastAPI](https://fastapi.tiangolo.com/), [Django](https://www.djangoproject.com/), or [Flask](https://flask.palletsprojects.com).
+See the docs for setting your project with [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
 
 </Prose>
