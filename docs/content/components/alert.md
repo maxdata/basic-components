@@ -33,7 +33,10 @@ templates:
 
 <Prose>
 
-## Examples 
+## Examples
+
+### Destructive
+
 </Prose>
 
 <TabPreview component="Destructive" template="examples/alert_destructive.html"/>

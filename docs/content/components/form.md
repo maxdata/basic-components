@@ -32,4 +32,10 @@ templates:
 ## Examples
 </Prose>
 
+<Prose>
+
+### Errors
+
+</Prose>
+
 <TabPreview component="Errors" template="examples/form_errors.html"/>

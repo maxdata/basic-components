@@ -36,6 +36,12 @@ templates:
 ## Examples
 </Prose>
 
+<Prose>
+
+## Content
+
+</Prose>
+
 <TabPreview component="Content" template="examples/popover_content.html"/>
 
 

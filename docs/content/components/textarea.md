@@ -43,9 +43,38 @@ examples:
 ## Examples
 </Prose>
 
+<Prose>
+
+### Disabled
+
+</Prose>
 <TabPreview component="Disabled" template="examples/textarea_disabled.html"/>
+
+<Prose>
+
+### With Label
+
+</Prose>
 <TabPreview component="With Label" template="examples/textarea_label.html"/>
+
+<Prose>
+
+### With Text
+
+</Prose>
 <TabPreview component="With Text" template="examples/textarea_text.html"/>
+
+<Prose>
+
+### With Button
+
+</Prose>
 <TabPreview component="With Button" template="examples/textarea_button.html"/>
+
+<Prose>
+
+### With Form
+
+</Prose>
 <TabPreview component="With Form" template="examples/textarea_form.html"/>
 

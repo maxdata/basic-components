@@ -40,4 +40,10 @@ templates:
 ## Examples
 </Prose>
 
+<Prose>
+
+### Example
+
+</Prose>
+
 <TabPreview component="Example" template="examples/card_example.html"/>

@@ -1,31 +1,39 @@
-- [ ] dialog scroll 
-- [ ] checkbox disabled example
+- components
+- [ ] mode toggle dropdown link whole item
+- [ ] toast min width
+- [x] dialog scroll 
 - [-] only add example if examples
 - [x] center demo h/v
 - [x] copy/paste button position
-- [ ] component tab scroll 
-- [ ] site heading
-- [ ] smaller font for code blocks
-- [ ] mode toggle dropdown link whole item
-- [ ] code blocks scroll above nav
-- [ ] popover content demo
-- [ ] component arg descriptions
-- [ ] table sorting example
-- [ ] toast min width
-- [ ] wtform demo
+- [x] component tab scroll 
+- [x] site heading
+- [-] smaller font for code blocks
+- [x] code blocks scroll above nav
+- [x] component arg descriptions
 - [x] toc indent
+- [x] mobile nav
+- [x] mobile content width
+
+- examples
 - [ ] example names
-- [ ] mobile nav
-- [ ] mobile content width
+- [ ] card example - select is wonky on content example
+- [ ] popover content demo - compare to shadcn
+- [ ] select - dropdown width in example
+- [ ] wtform demo
+- [ ] table sorting example
+- [ ] checkbox disabled example
+- [ ] fastapi 
+- [ ] text area examples - spacing
+- [ ] icons
 
 - docs
 - [x] Introduction
-- [ ] Installation
-- [ ] JinjaX
-- [ ] HTMX
-- [ ] Dark Mode
-- [ ] CLI
-- [ ] Typography
-- [ ] About
-- [ ] Contribution
+- [x] Installation
+- [x] JinjaX
+- [x] HTMX
+- [x] Dark Mode
+- [x] CLI
+- [x] Typography
+- [x] About
+- [x] Contribution
 - [ ] Changelog

@@ -48,9 +48,44 @@ examples:
 ## Examples
 </Prose>
 
+<Prose>
+
+### Button
+
+</Prose>
 <TabPreview component="Button" template="examples/input_button.html"/>
+
+<Prose>
+
+### Disabled
+
+</Prose>
 <TabPreview component="Disabled" template="examples/input_disabled.html"/>
+
+<Prose>
+
+### Error
+
+</Prose>
 <TabPreview component="Error" template="examples/input_error.html"/>
+
+<Prose>
+
+### File
+
+</Prose>
 <TabPreview component="File" template="examples/input_file.html"/>
+
+<Prose>
+
+### Label
+
+</Prose>
 <TabPreview component="Label" template="examples/input_label.html"/>
+
+<Prose>
+
+### Peer Disabled
+
+</Prose>
 <TabPreview component="Peer Disabled" template="examples/input_peer_disabled.html"/>

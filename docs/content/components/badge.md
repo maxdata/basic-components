@@ -34,8 +34,31 @@ examples:
 <Prose>
 
 ## Examples
+
+</Prose>
+
+<Prose>
+
+### Destructive
+
 </Prose>
 
 <TabPreview component="Destructive" template="examples/badge_destructive.html"/>
+
+
+<Prose>
+
+### Outline
+
+</Prose>
+
 <TabPreview component="Outline" template="examples/badge_outline.html"/>
+
+
+<Prose>
+
+### Secondary
+
+</Prose>
+
 <TabPreview component="Secondary" template="examples/badge_secondary.html"/>

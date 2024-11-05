@@ -48,4 +48,10 @@ The value of the selected item is stored in a hidden input field.
 ## Examples
 </Prose>
 
+<Prose>
+
+## Scrollable
+
+</Prose>
+
 <TabPreview component="Scrollable" template="examples/select_scrollable.html"/>

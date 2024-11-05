@@ -67,4 +67,10 @@ Any component can call the `toggleMode` function to switch the mode.
 ## Examples
 </Prose>
 
+<Prose>
+
+### Button
+
+</Prose>
+
 <TabPreview component="Button" template="examples/mode_toggle_button.html"/>

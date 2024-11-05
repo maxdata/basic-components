@@ -42,4 +42,10 @@ templates:
 ## Examples
 </Prose>
 
+<Prose>
+
+## Sides
+
+</Prose>
+
 <TabPreview component="Sides" template="examples/sheet_side.html"/>

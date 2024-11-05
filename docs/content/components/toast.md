@@ -43,7 +43,30 @@ Toast components require an `id` so that the dispatch event can call the compone
 ## Examples
 </Prose>
 
+<Prose>
+
+### Success
+
+</Prose>
 <TabPreview component="Success" template="examples/toast_success.html"/>
+
+<Prose>
+
+### Warning
+
+</Prose>
 <TabPreview component="Warning" template="examples/toast_warning.html"/>
+
+<Prose>
+
+### Error
+
+</Prose>
 <TabPreview component="Error" template="examples/toast_error.html"/>
+
+<Prose>
+
+### Destructive
+
+</Prose>
 <TabPreview component="Destructive" template="examples/toast_destructive.html"/>
