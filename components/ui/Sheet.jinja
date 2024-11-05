@@ -1,4 +1,8 @@
 {#def
     className: str = "",
 #}
-<div x-data="{ open: false }" {{ attrs.render() }} class="{{ className }}">{{ content }}</div>
+<div x-data="{ open: false }"
+     x-init="$watch('open', value => document.body.classList.toggle('overflow-hidden', value))"
+     class="{{ className }}"
+     {{ attrs.render() }}
+>{{ content }}</div>

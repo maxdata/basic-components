@@ -13,7 +13,7 @@ templates:
   - SheetTrigger.jinja
 ---
 
-<TabPreview component="Alert" template="examples/alert.html"/>
+<TabPreview component="Alert" template="examples/sheet.html"/>
 
 <Prose>
 
