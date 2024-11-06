@@ -40,3 +40,6 @@
 - [ ] github link
 - [ ] site footer
 - [ ] favicon
+
+- [ ] package components in subdirs?
+- [ ] copier
