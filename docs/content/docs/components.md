@@ -20,6 +20,8 @@ The [Button](/components/button) component wraps options and behaviors for html 
 <IncludeComponents :components="['Button.jinja']" />
 <Prose>
 
+You can see there are a lot of utility styles required to render a simple HTML button with styling.
+
 ## Components
 
 Every component has similar qualities. They each: 
@@ -34,7 +36,7 @@ Every component has similar qualities. They each:
 Arguments:
 
 - Arguments can have default values.
-- Arguments are passed via html attributes when a comonent is declared.
+- Arguments are passed via HTML attributes when a component is declared.
 - Arguments can pass objects via the `{{ ':attrValue={{ object }}' }}` notation, similar to vue (with a leading `:`). Otherwise arguments are evaluated as Strings.
 See [expressions](https://jinjax.scaletti.dev/guide/components/#s-expressions) in the JinaX docs. 
 

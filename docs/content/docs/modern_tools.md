@@ -57,7 +57,7 @@ FastAPI serves as the backbone of our server-side architecture, seamlessly integ
 
 All of these can now be combined via AI power tools. 
 New LLMs like ChatGPT-4 and Claude understand how to use all of these tools really well. 
-Now, instead of having to start from scratch to combine all of these new technologies, one can use AI to perform a lot of the heavy lifting.
+Now, instead of having to start from scratch to combine all of these new technologies, one can use AI to perform a lot of the heavy lifting for implementation.
 
 For example, it's straightforward to port shadcn/ui React code to JinjaX after describing how JinjaX works to the LLM. 
 It can also add behavior and styles using Alpine.js and Tailwind CSS. 
@@ -77,8 +77,8 @@ This means that you can use [v0](https://v0.dev/) to prototype code then copy/pa
 
 ## The Future is Now
 
-Now we can create server-rendered web applications that are dynamic, responsive, and maintainable, 
-combining the best aspects of modern front-end and back-end development without the overhead of managing complex client-side codebases very quickly. 
+Now we can quickly create server-rendered web applications that are dynamic, responsive, and maintainable, 
+combining the best aspects of modern front-end and back-end development without the overhead of managing complex client-side codebases. 
 
 
 ## Epilogue

@@ -1,6 +1,6 @@
 - components
-- [ ] mode toggle dropdown link whole item
-- [ ] toast min width
+- [x] mode toggle dropdown link whole item
+- [x] toast min width
 - [x] dialog scroll 
 - [-] only add example if examples
 - [x] center demo h/v
@@ -15,7 +15,7 @@
 - [x] mobile content width
 
 - examples
-- [ ] example names
+- [x] example names
 - [ ] card example - select is wonky on content example
 - [ ] popover content demo - compare to shadcn
 - [ ] select - dropdown width in example
@@ -37,3 +37,6 @@
 - [x] About
 - [x] Contribution
 - [ ] Changelog
+- [ ] github link
+- [ ] site footer
+- [ ] favicon

@@ -6,7 +6,7 @@ module.exports = {
     "./components/ui/*.jinja",
     "./components/icons/*.jinja",
     "./docs/content/**/*.md",
-    "./docs/templates/*.html",
+    "./docs/templates/**/*.html",
     "./docs/templates/layouts/*.jinja",
     "./docs/templates/components/*.jinja",
   ],

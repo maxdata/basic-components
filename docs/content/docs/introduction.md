@@ -14,7 +14,7 @@ This project brings the component design patterns of [shadcn/ui](https://ui.shad
 
 ## Features
 
-- **Modern Stack**: Combines JinjaX for components, Alpine.js for reactivity, and htmx for dynamic updates
+- **Modern Stack**: Combines JinjaX for components, Alpine.js for reactivity, and htmx for dynamic behavior in HTML
 - **Server-First**: Built specifically for Python web frameworks (FastAPI, Django, Flask)
 - **Customizable**: Every component is yours to modify and extend
 - **Minimal Dependencies**: Copy only the components you need - no package to install. You'll need to set up Tailwind CSS and include Alpine.js, htmx, and JinjaX in your project.
@@ -32,8 +32,8 @@ This is **not a traditional component library** that you install as a dependency
 
 **Here's a simple example**
 
-You can include a component using simple html tags in a Jinja template. 
-Additional behavior can be added via attributes for Alpine or htmx. Click the `Alpine enabled` and `htmx enabled` buttons below.   
+You can include a component using simple HTML tags in a Jinja template. 
+Additional behavior can be added via attributes for Alpine.js or htmx. Click the `Alpine enabled` and `htmx enabled` buttons below.   
 </Prose>
 
 <TabPreview component="Button" template="examples/docs_button.html"/>
@@ -78,7 +78,7 @@ Yes! This project is MIT licensed and free to use in personal and commercial pro
 
 ### Why did you create this?
 
-The project was created to provide a way to build full-stack applications using server-side rendering, with Alpine.js and htmx for interactivity and Tailwind CSS for styling. Traditional Jinja templates with standard patterns like extending and including templates can become messy, especially with numerous Tailwind utility classes. Using JinjaX, along with Tailwind CSS and htmx, enables a clean and maintainable pattern for composing components that are easy to extend and debug.
+The project was created to provide a way to build full-stack applications using server-side rendering, with Alpine.js and htmx for interactivity and Tailwind CSS for styling. Traditional Jinja templates with standard patterns like extending and including templates can become messy, especially with numerous Tailwind utility classes. Using JinjaX, along with Tailwind CSS and htmx, enables a clean and maintainable pattern for composing components that are easy to extend and debug. Read more [here](/docs/modern_tools).
 
 ### Component X is missing
 
