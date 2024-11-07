@@ -29,19 +29,20 @@ Components are included for each of the icons in the <Link href="/https://lucide
 <Card className="p-4">
 
 <Input
+    id="search"
     type="search"
     name="query"
+    className="w-full"
+    placeholder="Search icons..."
     hx-get="/icons/search"
     hx-trigger="load, input changed delay:300ms, search"
     hx-target="#icons"
     hx-swap="outerHTML"
-    hx-indicator="#search-indicator"
-    className="w-full"
-    id="search"
-    placeholder="Search icons..."
 />
   <!-- search results -->
   <div id="icons" class="w-full">
-      <LoaderPinwheel/>
+    <div class="flex justify-center py-8 {{ className }}">
+        <LoaderCircle className="text-zinc-300 dark:text-zinc-600 h-24 w-24 animate-spin"/>
+    </div>
   </div>
 </Card>
