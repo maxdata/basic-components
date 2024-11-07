@@ -16,15 +16,15 @@
 
 - examples
 - [x] example names
-- [ ] card example - select is wonky on content example
-- [ ] popover content demo - compare to shadcn
-- [ ] select - dropdown width in example
+- [x] card example - select is wonky on content example
+- [x] popover content demo - compare to shadcn
+- [x] select - dropdown width in example
+- [x] checkbox disabled example
+- [x] text area examples - spacing
+- [ ] icons
 - [ ] wtform demo
 - [ ] table sorting example
-- [ ] checkbox disabled example
 - [ ] fastapi 
-- [ ] text area examples - spacing
-- [ ] icons
 
 - docs
 - [x] Introduction
@@ -40,6 +40,7 @@
 - [ ] github link
 - [ ] site footer
 - [ ] favicon
-
+- [ ] breadcrumb
 - [ ] package components in subdirs?
 - [ ] copier
+- [ ] copy/paste button on code blocks is sometimes off

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request
 from starlette.responses import HTMLResponse
 
 from docs.templates import template
-from docs.site import site_config
+from docs.site_config import site_config
 
 
 class HTMLRouter(APIRouter):

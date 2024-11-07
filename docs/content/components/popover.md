@@ -31,17 +31,5 @@ templates:
 
 <IncludeComponents :components="{{ metadata.templates }}" />
 
-<Prose>
-
-## Examples
-</Prose>
-
-<Prose>
-
-## Content
-
-</Prose>
-
-<TabPreview component="Content" template="examples/popover_content.html"/>
 
 

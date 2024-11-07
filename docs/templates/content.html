@@ -3,7 +3,7 @@
     {{ hotreload.script(url_for('hot-reload')) | safe }}
 {% endif %}
 
-<SiteLayout :site_config="{{ config }}" :current_path="{{ path }}" :toc="{{ toc }}">
+<DocLayout :site_config="{{ config }}" :current_path="{{ path }}" :toc="{{ toc }}">
 
     <!--component title -->
     <h1 class="text-2xl font-semibold leading-none tracking-tight pb-4">
@@ -17,4 +17,4 @@
 
     <!-- markdown content -->
     {{ content  }}
-</SiteLayout>
+</DocLayout>

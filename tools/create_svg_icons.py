@@ -1,29 +1,32 @@
 import os
 import re
+import typer
+import json
+
+app = typer.Typer()
 
 # Template for the JinjaX component
 component_template = """{{#def
     className: str = "h-4 w-4",
-    color: str = ""
 #}}
 
 <svg
-    class="{{{{ className }}}} {{{{ color }}}}"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-    {{{{ attrs.render() }}}}
+  class="{{{{ className }}}}"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  {{{{ attrs.render() }}}}
 >
 {svg_content}
 </svg>
 """
 
 
-def extract_svg_content(svg_text):
+def extract_svg_content(svg_text: str) -> str:
     """
     Extracts the content inside the SVG tags.
     """
@@ -36,7 +39,13 @@ def extract_svg_content(svg_text):
     return svg_text
 
 
-def create_jinjax_components(svg_dir, output_dir):
+@app.command()
+def creeate_icons(svg_dir: str, output_dir: str, json_output: str = "icons.json"):
+    """
+    Converts SVG files into JinjaX components and generates a JSON file with icon metadata.
+    """
+    icon_metadata = []
+
     # Iterate over each SVG file in the directory
     for filename in os.listdir(svg_dir):
         if filename.endswith(".svg"):
@@ -61,14 +70,19 @@ def create_jinjax_components(svg_dir, output_dir):
             with open(output_path, "w") as output_file:
                 output_file.write(component_content)
 
+            # Add metadata to the JSON
+            icon_metadata.append(
+                {"name": component_name, "file": f"{component_name}.jinja"}
+            )
+
             print(f"Component {component_name}.jinja created.")
+
+    output_path = os.path.join(output_dir, json_output)
+    # Write metadata to a JSON file
+    with open(output_path, "w") as json_file:
+        json.dump(icon_metadata, json_file, indent=2)
+        print(f"Icon metadata JSON file created at {output_path}.")
 
 
 if __name__ == "__main__":
-    svg_dir = "../shadcn-ui/node_modules/lucide-static/icons"
-    output_dir = "../components/icons"
-
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    create_jinjax_components(svg_dir, output_dir)
+    app()

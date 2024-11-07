@@ -32,3 +32,15 @@ templates:
 
 <IncludeComponents :components="{{ metadata.templates }}" />
 
+<Prose>
+
+## Examples
+</Prose>
+
+<Prose>
+
+### Disabled
+
+</Prose>
+
+<TabPreview component="Disabled" template="examples/checkbox_disabled.html"/>

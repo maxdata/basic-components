@@ -6,8 +6,8 @@ from fastapi.responses import RedirectResponse
 
 from docs.config import BASE_DIR
 from docs.markdown import parse_jinja_markdown
-from docs.templates import templates, hotreload
-from docs.site import site_config
+from docs.templates import templates, hotreload, template, catalog
+from docs.site_config import site_config
 
 
 class HTMLRouter(APIRouter):
@@ -74,6 +74,18 @@ async def examples(request: Request):
         "config": site_config,
     }
     return templates.TemplateResponse(request, "examples.html", context=context)
+
+
+@router.get("/icons/search")
+async def icons_search(request: Request, query: str = ""):
+    icons = site_config.icons
+    results = [
+        {"name": icon.name, "icon": catalog.render(icon.name, className="w-8 h-8")}
+        for icon in icons
+        if query.lower() in icon.name.lower()
+    ]
+
+    return template(request, "icons_search.html", context={"results": results})
 
 
 @router.get("/{path:path}")

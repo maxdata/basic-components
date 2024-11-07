@@ -1,0 +1,13 @@
+<div id="icons" class="w-full flex flex-wrap gap-4 py-4">
+  {% for result in results %}
+    <div class="group relative p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer">
+      {# Icon #}
+      {{ result.icon | safe }}
+
+      {# Tooltip #}
+      <div class="absolute hidden group-hover:block bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 text-xs text-white bg-gray-900 rounded whitespace-nowrap">
+        {{ result.name }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
