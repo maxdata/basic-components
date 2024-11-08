@@ -10,7 +10,7 @@ from wtforms import (
     PasswordField,
 )
 
-from docs.templates import template
+from docs.templates import template, catalog
 
 
 class HTMLRouter(APIRouter):
@@ -47,8 +47,11 @@ class SampleForm(StarletteForm):
     )
 
 
-@router.get("", response_class=HTMLResponse)
+@router.get("")
 async def display(request: Request):
+    """
+    display the form on the page via a template
+    """
     form = SampleForm(request)
     return template(
         request=request,
@@ -57,10 +60,15 @@ async def display(request: Request):
     )
 
 
-@router.post("", response_class=HTMLResponse)
+@router.post("")
 async def post(request: Request):
+    """
+    handle the form via post
+    """
     form = await SampleForm.from_formdata(request)
+
     if not await form.validate():
+        # return with a 422 response
         return template(
             request,
             "examples/wtform.html",
@@ -72,31 +80,13 @@ async def post(request: Request):
     username = form.username.data
     email = form.email.data
     password = form.password.data
-
     # Log or handle the data as needed (e.g., save to a database)
-    print(f"Name: {username}, Email: {email}, Password: {password}")
 
-    # trigger event via response header
-    return template(
-        request,
-        "examples/wtform.html",
-        context={"form": form},
-        status_code=status.HTTP_201_CREATED,
-        headers={
-            # "HX-Trigger": json.dumps(
-            #     {"show-toast": {"target": "window", "value": "form-info"}}
-            # )
-            # "HX-Trigger": json.dumps({"show-toast": "form-info"})  ## $event.detail: {value: 'form-info', elt: form.space-y-4.htmx-request}
-            # "HX-Trigger": json.dumps({"show-toast": {"target": "window"}})  ## $event.detail: {target: 'window', elt: form.space-y-4.htmx-request}
-            # "HX-Trigger": "show-toast:form-info"
-            "HX-Trigger": json.dumps(
-                {"show-toast": {"target": "window", "value": "form-info"}}
-            )
-        },
+    # return results to the page
+    component = catalog.render(
+        "FormResult",
+        _content=json.dumps(
+            {"username": username, "email": email, "password": password}
+        ),
     )
-
-
-# Success endpoint
-@router.get("/success")
-async def success(request: Request):
-    return {"message": "Form submitted successfully!"}
+    return HTMLResponse(component)
