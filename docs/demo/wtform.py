@@ -24,6 +24,10 @@ router = HTMLRouter()
 
 
 class SampleForm(StarletteForm):
+    """
+    Form object with declarative validation
+    """
+
     username = StringField(
         "Username",
         [validators.InputRequired(), validators.Length(min=4, max=25)],
@@ -47,7 +51,7 @@ class SampleForm(StarletteForm):
     )
 
 
-@router.get("")
+@router.get("/demo/wtform")
 async def display(request: Request):
     """
     display the form on the page via a template
@@ -60,7 +64,7 @@ async def display(request: Request):
     )
 
 
-@router.post("")
+@router.post("/demo/wtform")
 async def post(request: Request):
     """
     handle the form via post

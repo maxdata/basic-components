@@ -48,5 +48,5 @@ app.mount(
 
 # include routes for docs
 app.include_router(demo_button, prefix="/demo/button")
-app.include_router(demo_wtform, prefix="/demo/wtform")
+app.include_router(demo_wtform)
 app.include_router(router)

@@ -29,19 +29,20 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/wtform.html"/>
+<IncludeFiles :files="[
+{'name': 'wtform.html', 'file': 'docs/templates/examples/wtform.html', 'lang':'html'},
+{'name': 'wtform.py', 'file': 'docs/demo/wtform.py', 'lang':'python'}]"/>
 
 <Prose>
 
 The WTForm component makes it very easy to render, validate and handle form processing when using a form instance from  the [startlette-wtf](https://github.com/kubetail-org/starlette-wtf) lib. 
-Using `starlette-wtf` you can add CSRF protection and declaritive validation to your forms.
+`Starlette-WTF` adds CSRF protection and declarative validation to your forms.
+
+With the [htmx Response Targets Extension](https://htmx.org/extensions/response-targets/) you can direct error respones to targets in the DOM. 
+The server can return a response with an error code to display errors inline on the page. For more info, see [htmx](/docs/htmx). 
 
 ## Code
 </Prose>
 
 <IncludeComponents :components="{{ metadata.templates }}" />
 
-<Prose>
-## Server Code
-</Prose>
-<IncludeTemplate dir="docs/demo" template="wtform.py" language="python" />
