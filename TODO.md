@@ -21,7 +21,7 @@
 - [x] select - dropdown width in example
 - [x] checkbox disabled example
 - [x] text area examples - spacing
-- [ ] icons
+- [x] icons
 - [ ] wtform demo
 - [ ] table sorting example
 - [ ] fastapi 

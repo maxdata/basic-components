@@ -3,7 +3,7 @@
     className: str = "",
     duration: int = 30000,  # duration in milliseconds
 #}
-<div
+<div id="toast"
     x-data="{
     show: false,
     timeoutId: null,
@@ -12,6 +12,8 @@
       this.timeoutId = setTimeout(() => { this.show = false }, {{ duration }});
     },
     handleShow() {
+      console.log('this is handleShow');
+
       // If already showing, briefly hide and show again to restart animation
       if (this.show) {
         this.show = false;
@@ -21,11 +23,11 @@
         }, 100);
       } else {
         this.show = true;
-        this.resetTimeout();
+        //this.resetTimeout();
       }
     }
   }"
-    @show-toast.window="if($event.detail === '{{ id }}') { handleShow(); }"
+    @show-toast.window="console.log('TOAST'); console.log($event.detail); console.log('{{ id }}');  if($event.detail === '{{ id }}' || $event.detail.value === '{{ id }}') { handleShow(); } else { console.error('failed to show'); }"
     x-show="show"
     x-transition:enter="transition ease-out duration-300"
     x-transition:enter-start="opacity-0 transform translate-y-full"
@@ -33,7 +35,7 @@
     x-transition:leave="transition ease-in duration-200"
     x-transition:leave-start="opacity-100 transform translate-x-0"
     x-transition:leave-end="opacity-0 transform translate-x-full"
-    class="{{ className }} fixed bottom-5 right-5 z-75"
+    class="{{ className }} fixed bottom-5 right-5"
     role="alert"
 >
   {{ content }}

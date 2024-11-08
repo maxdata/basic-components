@@ -1,14 +1,17 @@
-{% set form=[] %}
-<Card className="ml-20 mr-20">
-  <CardHeader>
-    <CardTitle>WTForm component</CardTitle>
-    <CardDescription>Render all the fields in a StarletteForm</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <WTForm :form="{{ form }}">
-      <Button type="submit">
-        Submit
-      </Button>
-    </WTForm>
-  </CardContent>
-</Card>
+<WTForm
+  :form="{{ form }}"
+  hx-post="/demo/wtform"
+  hx_target_422="this"
+>
+  <Button type="submit">
+    Submit
+  </Button>
+</WTForm>
+
+<Toast id="form-info" duration="4000">
+  <ToastContent
+    type="default"
+    title="Success"
+    description={{ form }}
+  />
+</Toast>

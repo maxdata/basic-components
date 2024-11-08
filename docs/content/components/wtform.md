@@ -1,12 +1,27 @@
 ---
 title: WTForm
-description: Render a WTForm with validation, error handling and csrf protection.
+description: Render a WTForm with declarative validation, error handling and csrf protection.
 component: wtform
 templates:
   - WTForm.jinja
 ---
 
-<TabPreview component="WTForm" template="examples/wtform.html"/>
+<Card className="m-10">
+  <CardHeader>
+    <CardTitle>User Profile</CardTitle>
+    <CardDescription>Enter your profile information</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <div
+        id="wtform"
+        hx-get="/demo/wtform"
+        hx-trigger="load"
+    >
+    </div>
+  </CardContent>
+</Card>
+
+
 
 <Prose>
 
