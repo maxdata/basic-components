@@ -22,7 +22,7 @@
 - [x] checkbox disabled example
 - [x] text area examples - spacing
 - [x] icons
-- [ ] wtform demo
+- [x] wtform demo
 - [ ] table sorting example
 - [ ] fastapi 
 
