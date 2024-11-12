@@ -23,7 +23,7 @@
 - [x] text area examples - spacing
 - [x] icons
 - [x] wtform demo
-- [ ] table sorting example
+- [-] table sorting example -> htmx
 - [x] fastapi 
 
 - docs
@@ -36,11 +36,13 @@
 - [x] Typography
 - [x] About
 - [x] Contribution
-- [ ] Changelog
-- [x] github link
+- [ ] Changelog - tagging and conventional commits
+- [x] GitHub link
 - [x] site footer
 - [x] favicon
 - [ ] breadcrumb
-- [ ] package components in subdirs?
+- [ ] package components in sub dirs?
 - [ ] copier
 - [ ] copy/paste button on code blocks is sometimes off
+- [ ] AI - llms.txt
+- [ ] monetization

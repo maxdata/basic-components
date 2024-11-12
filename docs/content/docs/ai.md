@@ -15,7 +15,7 @@ an LLM.
 
 1. **Select** a component from [shadcn/ui](https://ui.shadcn.com/) to port.
 2. **Gather** information about the component (name, description, React code, usage examples).
-3. **Use AI** to assist with the initial port (see Part 2 for AI prompting guidelines).
+3. **Use AI** to assist with the initial port (see below).
 4. **Implement** the AI-provided JinjaX version in your project.
 5. **Test and iterate** on the implementation.
 6. **Refine** the component based on testing results.
@@ -25,11 +25,12 @@ an LLM.
 
 ## AI Prompting
 
-The following section can be used as a reference for prompting AI models when porting components to explain their structure and give context.. 
+The `llms.md` file contains an overview of the project and detailed information that can be provided to an LLM 
+to aide with creating components and porting components from React.   
 
 </Prose>
 
-<IncludeTemplate template="examples/ai/ai_prompt.md"/>
+<IncludeFile dir="." file_name="llms.md"/>
 
 <Prose>
 ## Effective AI Prompting
@@ -61,7 +62,7 @@ Please create a JinjaX version of this component that:
 3. Follows the project guidelines for component creation (as detailed in the Rules section)
 4. Maintains the same functionality and accessibility features as the original
 
-Explain any complex logic or Alpine.js implementations in your response.
+Explain any complex logic or Alpine.js implementations in your response. 
 
 ```
 </Prose>

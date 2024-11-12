@@ -36,21 +36,3 @@ templates:
 
 <IncludeComponents :components="{{ metadata.templates }}" />
 
-<Prose>
-
-Server side sorting is enabled via htmx using `hx-get`
-```html
-<th hx-get="/table?order_by=invoice&ascending=False" 
-    hx-swap="outerHTML" 
-    hx-target="#sorted-table">
-    ...
-</th>
-```
-
-The server side endpoint returns the html content to swap. 
-
-## Examples
-</Prose>
-
-
-[//]: # (<TabPreview component="Sorting" template="examples/table_sorting.html"/>)
