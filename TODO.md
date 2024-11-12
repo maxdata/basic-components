@@ -37,9 +37,9 @@
 - [x] About
 - [x] Contribution
 - [ ] Changelog
-- [ ] github link
-- [ ] site footer
-- [ ] favicon
+- [x] github link
+- [x] site footer
+- [x] favicon
 - [ ] breadcrumb
 - [ ] package components in subdirs?
 - [ ] copier

@@ -27,3 +27,4 @@ dist-ssr
 __pycache__/
 .python-version
 /.venv/
+/examples/fastapi/.venv/
