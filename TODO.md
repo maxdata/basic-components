@@ -36,13 +36,12 @@
 - [x] Typography
 - [x] About
 - [x] Contribution
-- [ ] Changelog - tagging and conventional commits
 - [x] GitHub link
 - [x] site footer
 - [x] favicon
-- [ ] breadcrumb
+- [x] copier
+- [x] copy/paste button on code blocks is sometimes off
+- [x] AI - llms.txt
+- [ ] Changelog - tagging and conventional commits
 - [ ] package components in sub dirs?
-- [ ] copier
-- [ ] copy/paste button on code blocks is sometimes off
-- [ ] AI - llms.txt
-- [ ] monetization
+- [ ] monetization strategy

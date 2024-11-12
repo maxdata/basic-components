@@ -3,7 +3,6 @@
 Re-usable server-side components based on shadcn/ui.
 Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 
-![hero](apps/www/public/og.jpg)
 
 ## Documentation
 

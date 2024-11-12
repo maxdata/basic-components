@@ -12,8 +12,9 @@ Thank you for considering contributing to Basic Components! Your help is greatly
 
 1. **Fork the Repo**: Fork the repository and clone your copy.
 1. **Create a Branch**: Create a new branch for your feature or fix.
+1. **Use AI assistance**: See [ai](docs/ai) for using LLMS to help create or port component code from React.
 1. **Document Your Code**: Add or update docs to demo and describe how your component behaves.
-4. **Submit a PR**: Submit a pull request with a detailed description of your changes.
+1. **Submit a PR**: Submit a pull request with a detailed description of your changes.
 
 Thank You!
 
