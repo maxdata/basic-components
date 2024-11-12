@@ -48,7 +48,6 @@ def create_markdown(examples=None):
                     "class": "language-json",
                     "format": superfences.fence_code_format,
                 },
-                # Optional: add a generic code fence that will use language hint from markdown
                 {
                     "name": "code",
                     "class": "language-",  # will be appended with the language

@@ -10,8 +10,8 @@ Built by [paul@basicmachines.co](mailto:paul@basicmachines.co). The source code 
 
 Credit goes to [shadcn](https://twitter.com/shadcn) for creating [shadcn/ui](https://ui.shadcn.com/), which this project is based on. 
 
-All code is licensed MIT. 
+All code is licensed using the MIT license. 
 
-[Contributions](/docs/contributions) are welcome. 
+[Contributions](/docs/contribution) are welcome. 
 
 </Prose>

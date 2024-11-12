@@ -24,7 +24,7 @@
 - [x] icons
 - [x] wtform demo
 - [ ] table sorting example
-- [ ] fastapi 
+- [x] fastapi 
 
 - docs
 - [x] Introduction

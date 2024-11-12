@@ -29,7 +29,7 @@ pip install copier
 ```bash
 copier copy https://github.com/basicmachines-co/basic-components.git ./path/to/destination
 ```
-Replace `./path/to/destination` with the directory where you want the components to be copied.
+Replace `./path/to/destination` with the directory in your project where you want the components to be copied.
 
 3. To preview the operation without making any changes, use the `--pretend` flag:
 

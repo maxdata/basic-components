@@ -198,9 +198,9 @@ Assuming your main css file is `src/input.css`, You could use this `package.json
     "doc": "docs"
   },
   "scripts": {
-    "build": "npx tailwindcss -i docs/static/src/input.css -o docs/static/dist/output.css",
-    "build-prod": "npx tailwindcss -i docs/static/src/input.css -o docs/static/dist/output.css --minify",
-    "watch": "npx tailwindcss -i docs/static/src/input.css -o docs/static/dist/output.css --watch"
+    "build": "npx tailwindcss -i src/input.css -o dist/output.css",
+    "build-prod": "npx tailwindcss -i src/input.css -o dist/output.css --minify",
+    "watch": "npx tailwindcss -i src/input.css -o dist/output.css --watch"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",

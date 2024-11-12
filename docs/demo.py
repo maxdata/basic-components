@@ -2,7 +2,6 @@ from fastapi import APIRouter, Request
 from starlette.responses import HTMLResponse
 
 from docs.templates import template
-from docs.site_config import site_config
 
 
 class HTMLRouter(APIRouter):
@@ -17,7 +16,4 @@ router = HTMLRouter()
 
 @router.get("/button")
 async def button(request: Request):
-    context = {
-        "config": site_config,
-    }
-    return template(request, "demo/button_docs.html", context=context)
+    return template(request, "demo/button_docs.html")

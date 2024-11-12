@@ -6,7 +6,7 @@ description: Setting up FastAPI to serve components.
 <Prose>
 
 The example app below incorporates setting up Jinja
-templates, serving static files for Tailwind CSS, and rendering JinjaX components. This is a 
+templates, serving static files for Tailwind CSS, rendering JinjaX components, and using htmx. This is a 
 working example that can be used as a reference.   
 
 The source is in `examples/fastapi`.
@@ -59,7 +59,7 @@ npm run watch
 
 ## Example page 
 
-Open your browser to http://127.0.0.1:10000. You should see the example page.
+Open your browser to [http://127.0.0.1:10000](http://127.0.0.1:10000). You should see the example page.
 
 ![img.png](/static/img/fastapi_img.png)
 

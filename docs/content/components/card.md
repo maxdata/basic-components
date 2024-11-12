@@ -23,13 +23,6 @@ templates:
 
 <Prose>
 
-## Attributes
-
-
-| Name        | Type    | Default     | Description                                            |
-|-------------|---------|-------------|--------------------------------------------------------|
-| `className` | String  |             | Additional tailwind classes to apply to the component. |
-
 ## Code
 </Prose>
 

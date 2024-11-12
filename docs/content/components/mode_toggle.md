@@ -19,7 +19,8 @@ templates:
 
 <Prose>
 
-The mode is toggled by setting a 'mode' value in localStorage and setting the `dark` utility style on the `body` tag. 
+The mode is toggled by setting a `mode` value in localStorage and setting the `dark` utility style on the `body` tag. 
+
 Add the following logic to the `html` element on the page to perform toggling logic. 
 Any component can call the `toggleMode` function to switch the mode. 
 
