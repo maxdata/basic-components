@@ -55,21 +55,21 @@
 
 ### Priority Components to Complete Next
 1. **Navigation Core**
-    - Navigation-menu
-    - Menubar
-    - Breadcrumb
+    - [ ] Navigation-menu
+    - [ ] Menubar
+    - [ ] Breadcrumb
       These form the foundation of site navigation and are commonly needed.
 
 2. **Essential UI Components**
-    - Tabs
-    - Progress
-    - Separator
+    - [ ] Tabs
+    - [ ] Progress
+    - [ ] Separator
       These provide basic UI functionality most applications need.
 
 3. **Enhancement Components**
-    - Hover-card
-    - Tooltip
-    - Toggle
+    - [ ] Hover-card
+    - [ ] Tooltip
+    - [ ] Toggle
       These add polish and improve UX.
 
 
