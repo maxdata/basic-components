@@ -37,9 +37,50 @@ Replace `./path/to/destination` with the directory in your project where you wan
 copier copy --pretend https://github.com/basic-foundation/basic-components.git ./path/to/destination
 ```
 
-### Versioning and Updates
+### Component Directory Structure
 
-**Notes:**
+Components are organized into subdirectories by type (e.g., `accordion`, `button`, `dialog`). This organization helps with maintenance but doesn't affect how you use the components in your templates.
+
+To make all components available in your JinjaX templates, add the following to your application setup:
+
+```python
+from pathlib import Path
+from jinjax import Catalog
+
+def setup_component_catalog():
+    catalog = Catalog()
+    
+    # Base UI components directory
+    components_dir = Path("path/to/destination/components/ui")
+    
+    # Register each component subdirectory first
+    for component_dir in components_dir.iterdir():
+        if component_dir.is_dir():
+            catalog.add_folder(str(component_dir))
+            
+    # Register the main components directory last
+    catalog.add_folder(str(components_dir))
+    
+    return catalog
+
+# Usage in your app setup
+catalog = setup_component_catalog()
+```
+
+This setup allows you to use components with their original names, without needing to reference the subdirectories:
+
+```html
+<!-- Components can be used directly, no need for subdirectory prefixes -->
+<Button variant="primary">Click Me</Button>
+
+<Card>
+    <CardHeader>
+        <CardTitle>Title</CardTitle>
+    </CardHeader>
+</Card>
+```
+
+### Versioning and Updates
 
 - Copier can also update code with newer revisions after it has been copied.
 - If updating, copier will preserve your existing files. It will show diffs for any conflicts and allow you to choose how to handle them.

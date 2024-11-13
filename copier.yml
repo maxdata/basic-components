@@ -12,8 +12,6 @@ _message_after_copy: |
   To use these components:
   1. Ensure JinjaX is installed in your project.
   2. Update your templates to import components from the directory you specified.
-  3. Refer to the README.md in the components directory for usage instructions.
-  4. The version of basic-components you've vendored can be found in the version.txt file.
   
   Copier has preserved your existing files. Please review any changes or conflicts manually.
   
