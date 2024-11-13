@@ -39,12 +39,12 @@
 - [x] GitHub link
 - [x] site footer
 - [x] favicon
-- [x] copier
 - [x] copy/paste button on code blocks is sometimes off
 - [x] AI - llms.txt
 - [ ] Changelog - tagging and conventional commits
 - [ ] package components in sub dirs?
 - [ ] monetization strategy
+- [ ] tool to install component via copier
 
 
 

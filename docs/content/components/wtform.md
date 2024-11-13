@@ -44,5 +44,5 @@ The server can return a response with an error code to display errors inline on 
 ## Code
 </Prose>
 
-<IncludeComponents dir="extras" :components="{{ metadata.templates }}" />
+<IncludeComponents dir="extended" :components="{{ metadata.templates }}" />
 

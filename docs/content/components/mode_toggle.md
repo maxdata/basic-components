@@ -61,7 +61,7 @@ Any component can call the `toggleMode` function to switch the mode.
 ## Code
 </Prose>
 
-<IncludeComponents dir="extras" :components="{{ metadata.templates }}" />
+<IncludeComponents dir="extended" :components="{{ metadata.templates }}" />
 
 <Prose>
 

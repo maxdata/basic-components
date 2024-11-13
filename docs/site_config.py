@@ -105,7 +105,7 @@ config = {
             ],
         },
         {
-            "title": "Extras",
+            "title": "Extended",
             "items": [
                 {"title": "Mode Toggle", "href": "/components/mode_toggle"},
                 {"title": "WTForm", "href": "/components/wtform"},
