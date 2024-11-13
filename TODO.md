@@ -50,19 +50,6 @@
 
 # Basic Components Project Roadmap
 
-## 1. Component Organization (High Priority)
-
-### Package Components in Sub-directories
-- Create logical groupings for components:
-    - Input Controls (Button, Input, Checkbox, Radio, etc.)
-    - Layout Components (Card, Dialog, Sheet, etc.)
-    - Navigation Components (Dropdown, Popover, etc.)
-    - Feedback Components (Alert, Toast, etc.)
-- Benefits:
-    - Easier maintenance and documentation
-    - Better developer experience
-    - Clearer component relationships
-    - Simplified testing organization
 
 ## 2. Component Completion Strategy
 
@@ -85,12 +72,6 @@
     - Toggle
       These add polish and improve UX.
 
-### Reasoning
-- Focus on components that:
-    - Are most commonly used in web applications
-    - Have fewer dependencies
-    - Provide immediate value to users
-    - Can be implemented with existing tools (Alpine.js, htmx)
 
 ## 3. Documentation & Examples
 
@@ -187,24 +168,6 @@ Create compelling examples showcasing:
     - Performance optimization
     - Security hardening
 
-## Implementation Timeline
-### Phase 1 (1-2 months)
-- [ ] Component sub-directory organization
-- [ ] Complete navigation components
-- [ ] Implement conventional commits
-- [ ] Create front page examples
-
-### Phase 2 (2-3 months)
-- [ ] Complete essential UI components
-- [ ] Launch monetization tier 1
-- [ ] Expand documentation
-- [ ] Add advanced examples
-
-### Phase 3 (3-4 months)
-- [ ] Complete enhancement components
-- [ ] Launch premium components
-- [ ] Implement enterprise support
-- [ ] Create training materials
 
 ## Success Metrics
 - Component adoption rate

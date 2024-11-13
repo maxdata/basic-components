@@ -3,7 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   darkMode: "class",
   content: [
-    "./components/ui/*.jinja",
+    "./components/ui/**/*.jinja",
     "./components/icons/*.jinja",
     "./docs/content/**/*.md",
     "./docs/templates/**/*.html",
