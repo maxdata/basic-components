@@ -107,7 +107,7 @@ This will automatically rebuild Tailwind CSS when you make changes to your compo
     - Working htmx button that updates on click
     - Dark mode support
 
-![Example Page](/static/img/fastapi_img.png)
+![Example Page](/static/img/example_img.png)
 
 ## Common Issues and Solutions
 
