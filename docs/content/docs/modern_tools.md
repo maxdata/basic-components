@@ -72,7 +72,7 @@ Thanks to the great work of these project creators, it's possible to combine the
 
 ### Bonus - V0.dev
 
-Since the components in this project follow patterns from [shadcn/ui](https://ui.shadcn.com/) very closely, you can copy/paste markup from React with [minimal changes](http://127.0.0.1:8000/docs/components#shadcnui-components).
+Since the components in this project follow patterns from [shadcn/ui](https://ui.shadcn.com/) very closely, you can copy/paste markup from React with [minimal changes](/docs/components#shadcnui-components).
 This means that you can use [v0](https://v0.dev/) to prototype code then copy/paste it into your app.  
 
 ## The Future is Now

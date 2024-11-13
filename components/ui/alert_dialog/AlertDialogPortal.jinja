@@ -1,0 +1,8 @@
+{#def
+    className: str = ""
+#}
+<template x-teleport="body">
+  <div x-show="open" x-cloak {{ attrs.render() }}>
+    {{ content }}
+  </div>
+</template>

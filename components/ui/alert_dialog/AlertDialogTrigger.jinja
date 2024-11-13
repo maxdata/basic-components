@@ -1,7 +1,10 @@
 {#def
-    className: str = "",
+    className: str = ""
 #}
-<!-- DialogTrigger -->
-<Button class="{{ className }}" @click="open = true">
+<div
+  x-on:click="open = true"
+  :className="{{ className }}"
+  {{ attrs.render() }}
+>
   {{ content }}
-</Button>
+</div>

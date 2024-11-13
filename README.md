@@ -69,3 +69,6 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 - [ ] toggle-group
 - [ ] toggle
 - [ ] tooltip
+
+Extended
+- [ ] Prose - https://docs.astro.build/en/recipes/tailwind-rendered-markdown/#recipe

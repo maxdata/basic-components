@@ -1,6 +1,45 @@
-{# def
-    open: bool = False
+{#def
+    className: str = ""
 #}
-<div x-data="{ open: {{ open|tojson }} }"
-     x-init="$watch('open', value => document.body.classList.toggle('overflow-hidden', value))"
-     {{ attrs.render() }}>{{ content }}</div>
+<div
+  x-data="{
+        open: false,
+        close() {
+            this.open = false;
+            document.body.classList.remove('overflow-hidden');
+        },
+        init() {
+            this.$watch('open', value => {
+                if (value) {
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    document.body.classList.remove('overflow-hidden');
+                }
+            });
+        },
+        focusables() { return [...document.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex=\'-1\'])')] },
+        handleEscape(e) {
+            if (e.key === 'Escape') this.close()
+        },
+        focusTrap(e) {
+            if (!this.open) return
+            let elements = this.focusables()
+            let first = elements[0]
+            let last = elements[elements.length - 1]
+
+            if (e.shiftKey && e.key === 'Tab' && document.activeElement === first) {
+                e.preventDefault()
+                last.focus()
+            } else if (!e.shiftKey && e.key === 'Tab' && document.activeElement === last) {
+                e.preventDefault()
+                first.focus()
+            }
+        }
+    }"
+  x-on:keydown.escape.window="handleEscape"
+  x-on:keydown.tab.prevent="focusTrap"
+  class="{{ className }}"
+  {{ attrs.render() }}
+>
+  {{ content }}
+</div>

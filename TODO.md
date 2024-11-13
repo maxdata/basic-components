@@ -48,64 +48,6 @@
 
 
 
-# Basic Components Project Roadmap
-
-
-## 2. Component Completion Strategy
-
-### Priority Components to Complete Next
-1. **Navigation Core**
-    - [ ] Navigation-menu
-    - [ ] Menubar
-    - [ ] Breadcrumb
-      These form the foundation of site navigation and are commonly needed.
-
-2. **Essential UI Components**
-    - [ ] Tabs
-    - [ ] Progress
-    - [ ] Separator
-      These provide basic UI functionality most applications need.
-
-3. **Enhancement Components**
-    - [ ] Hover-card
-    - [ ] Tooltip
-    - [ ] Toggle
-      These add polish and improve UX.
-
-
-## 3. Documentation & Examples
-
-### Front Page Examples
-Create compelling examples showcasing:
-1. **Basic Form Processing**
-```html
-<Form hx-post="/submit">
-  <Input name="email" label="Email" required />
-  <Button type="submit">Subscribe</Button>
-</Form>
-```
-
-2. **Interactive Dialog**
-```html
-<Dialog x-data="{ open: false }">
-  <Button x-on:click="open = true">Open Settings</Button>
-  <DialogContent x-show="open">
-    <h2>Settings</h2>
-    <Button x-on:click="open = false">Close</Button>
-  </DialogContent>
-</Dialog>
-```
-
-3. **Data Table with Sorting**
-```html
-<Table hx-get="/api/users" hx-trigger="sort">
-  <TableHeader>
-    <TableColumn sortable>Name</TableColumn>
-    <TableColumn sortable>Email</TableColumn>
-  </TableHeader>
-</Table>
-```
-
 ## 4. Project Management
 ### Changelog & Version Control
 1. **Implement Conventional Commits**

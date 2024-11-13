@@ -1,7 +1,9 @@
 {#def
-    className: str = "",
+    className: str = ""
 #}
-<!-- DialogDescription -->
-<p class="{{ className }} py-2 text-sm text-zinc-500 dark:text-zinc-400" {{ attrs.render() }}>
+<div
+  class="text-sm text-muted-foreground {{ className }}"
+  {{ attrs.render() }}
+>
   {{ content }}
-</p>
+</div>

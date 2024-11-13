@@ -63,8 +63,7 @@ Please create a JinjaX version of this component that:
 3. Follows the project guidelines for component creation (as detailed in the llms.md doc)
 4. Maintains the same functionality and accessibility features as the original
 5. Follows the same naming patterns for components and sub-components
-
-Explain any complex logic or Alpine.js implementations in your response. 
+6. Match the behavior and composition of react versions as possible unless there is a reason not to. Then please bring that up and we will discuss how to handle it.
 
 ```
 </Prose>

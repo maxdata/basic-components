@@ -3,16 +3,21 @@ title: Alert Dialog
 description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 templates:
   - AlertDialog.jinja
-  - AlertDialogBody.jinja
-  - AlertDialogClose.jinja
+  - AlertDialogAction.jinja
+  - AlertDialogCancel.jinja
+  - AlertDialogContent.jinja
+  - AlertDialogDescription.jinja
   - AlertDialogFooter.jinja
   - AlertDialogHeader.jinja
   - AlertDialogOverlay.jinja
-  - AlertDialogTitle.jinja
+  - AlertDialogPortal.jinja
   - AlertDialogTrigger.jinja
+  - AlertDialogTitle.jinja
 ---
 
-<TabPreview component="Dialog" template="examples/dialog.html"/>
+
+
+<TabPreview component="Alert Dialog" template="examples/alert_dialog.html"/>
 
 <Prose>
 
@@ -20,15 +25,9 @@ templates:
 
 </Prose>
 
-<IncludeFile dir="docs/templates" file_name="examples/dialog.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/alert_dialog.html"/>
 
 <Prose>
-
-## Attributes
-
-| Prop      | Type   | Default  | Description                            |
-|-----------|--------|----------|----------------------------------------|
-| `open`    | Bool   | `False`  | Controls the visibility of the dialog. |
 
 ## Code
 </Prose>
