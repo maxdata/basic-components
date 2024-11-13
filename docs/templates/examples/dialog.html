@@ -1,19 +1,38 @@
 <Dialog>
-  <DialogTrigger>Open Alert Dialog</DialogTrigger>
-  <DialogOverlay />
-  <AlertDialogContent>
+  <DialogTrigger>
+    <Button variant="outline">Edit Profile</Button>
+  </DialogTrigger>
+  <DialogContent className="sm:max-w-[425px]">
     <DialogHeader>
-      <DialogTitle>Dialog Title</DialogTitle>
+      <DialogTitle>Edit profile</DialogTitle>
       <DialogDescription>
-        This must be acknowledged and can only be closed by confirm/cancel.
+        Make changes to your profile here. Click save when you're done.
       </DialogDescription>
     </DialogHeader>
-    <DialogBody>
-      Some helpful information
-    </DialogBody>
+    <div class="grid gap-4 py-4">
+      <div class="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="name" className="text-right">
+          Name
+        </Label>
+        <Input
+          id="name"
+          defaultValue="Pedro Duarte"
+          className="col-span-3"
+        />
+      </div>
+      <div class="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="username" className="text-right">
+          Username
+        </Label>
+        <Input
+          id="username"
+          defaultValue="@peduarte"
+          className="col-span-3"
+        />
+      </div>
+    </div>
     <DialogFooter>
-      <Button variant="outline" @click="open = false">Cancel</Button>
-      <Button @click="open = false">Confirm</Button>
+      <Button type="submit">Save changes</Button>
     </DialogFooter>
-  </AlertDialogContent>
+  </DialogContent>
 </Dialog>

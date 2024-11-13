@@ -3,11 +3,13 @@ title: Dialog
 description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 templates:
   - Dialog.jinja
-  - DialogBody.jinja
   - DialogClose.jinja
+  - DialogContent.jinja
+  - DialogDescription.jinja
   - DialogFooter.jinja
   - DialogHeader.jinja
   - DialogOverlay.jinja
+  - DialogPortal.jinja
   - DialogTitle.jinja
   - DialogTrigger.jinja
 ---
@@ -34,3 +36,13 @@ templates:
 </Prose>
 
 <IncludeComponents dir="dialog" :components="{{ metadata.templates }}" />
+
+<Prose>
+
+## Examples
+
+### Custom close button
+
+</Prose>
+
+<TabPreview component="Custom close Button" template="examples/dialog_close_button.html"/>

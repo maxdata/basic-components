@@ -1,5 +1,9 @@
 {#def
-    className: str = "",
+    className: str = ""
 #}
-<!-- DialogTitle -->
-<h2 class="{{ className }} text-lg font-semibold leading-none">{{ content }}</h2>
+<h2
+  class="text-lg font-semibold leading-none tracking-tight {{ className }}"
+  {{ attrs.render() }}
+>
+  {{ content }}
+</h2>
