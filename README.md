@@ -6,11 +6,11 @@ Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 
 ## Documentation
 
-Visit https://basic-components.onrender.com/ to view the documentation.
+Visit [https://components.basicmachines.co](https://components.basicmachines.co) to view the documentation.
 
 ## Contributing
 
-Please read the [contributing guide](/CONTRIBUTING.md).
+Please read the [contributing guide](https://components.basicmachines.co/docs/contribution).
 
 ## License
 
