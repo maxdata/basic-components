@@ -21,7 +21,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/alert.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/alert.html"/>
 
 <Prose>
 
@@ -35,7 +35,7 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="sheet" :components="{{ metadata.templates }}" />
 
 <Prose>
 

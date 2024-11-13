@@ -42,6 +42,21 @@ def filename(value):
     return os.path.basename(value)
 
 
+def setup_component_catalog(catalog: jinjax.Catalog):
+    # basic components ui directory
+    components_dir = Path(f"{COMPONENT_DIR}/ui")
+
+    # Register each component subdirectory
+    for component_dir in components_dir.iterdir():
+        if component_dir.is_dir():
+            catalog.add_folder(component_dir)
+
+    # basic components icon directory
+    # icons_dir = Path(f"{COMPONENT_DIR}/icons")
+    # catalog.add_folder(icons_dir)
+    return catalog
+
+
 # configure Jinja template location
 templates = Jinja2Templates(directory=f"{TEMPLATE_DIR}")
 templates.env.add_extension(DebugExtension)
@@ -55,16 +70,17 @@ templates.env.autoescape = False
 # configure JinjaX component catalog
 templates.env.add_extension(jinjax.JinjaX)
 catalog = jinjax.Catalog(jinja_env=templates.env)
+catalog = setup_component_catalog(catalog)
 catalog.add_folder(f"{TEMPLATE_DIR}")
 catalog.add_folder(f"{COMPONENT_DIR}/ui")
+catalog.add_folder(f"{COMPONENT_DIR}/ui/button")
+catalog.add_folder(f"{COMPONENT_DIR}/ui/sheet")
 catalog.add_folder(f"{COMPONENT_DIR}/icons")
 catalog.add_folder(f"{DOCS_COMPONENT_DIR}")
 catalog.add_folder(f"{DOCS_LAYOUT_DIR}")
 
 logger.info(f"template dir: {TEMPLATE_DIR}")
-logger.info(f"layout dir: {DOCS_LAYOUT_DIR}")
-logger.info(f"component dir: {COMPONENT_DIR}")
-logger.info(f"docs component dir: {DOCS_COMPONENT_DIR}")
+logger.info(f"catalog paths: {catalog.paths}")
 
 
 def template(

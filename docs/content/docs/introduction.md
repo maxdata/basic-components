@@ -42,7 +42,7 @@ Additional behavior can be added via attributes for Alpine.js or htmx. Click the
 Components are implemented using JinjaX and contain all the info about styles and any logic required for behavior. 
  
 </Prose>
-<IncludeComponents :components="['Button.jinja']" />
+<IncludeComponents dir="button" :components="['Button.jinja']" />
 <Prose>
 Components are easily composable, allowing you to combine them to create complex layouts using Tailwind utility classes. 
 </Prose>

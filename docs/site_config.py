@@ -83,6 +83,7 @@ config = {
             "items": [
                 {"title": "Accordion", "href": "/components/accordion"},
                 {"title": "Alert", "href": "/components/alert"},
+                {"title": "Alert Dialog", "href": "/components/alert_dialog"},
                 {"title": "Badge", "href": "/components/Badge"},
                 {"title": "Button", "href": "/components/button"},
                 {"title": "Card", "href": "/components/card"},
@@ -93,7 +94,7 @@ config = {
                 {"title": "Icons", "href": "/components/icons"},
                 {"title": "Input", "href": "/components/input"},
                 {"title": "Label", "href": "/components/label"},
-                {"title": "Mode Toggle", "href": "/components/mode_toggle"},
+                {"title": "Link", "href": "/components/link"},
                 {"title": "Popover", "href": "/components/popover"},
                 {"title": "Radio Group", "href": "/components/radio_group"},
                 {"title": "Select", "href": "/components/select"},
@@ -106,6 +107,7 @@ config = {
         {
             "title": "Extras",
             "items": [
+                {"title": "Mode Toggle", "href": "/components/mode_toggle"},
                 {"title": "WTForm", "href": "/components/wtform"},
             ],
         },

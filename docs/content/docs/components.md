@@ -17,7 +17,7 @@ overview describes the basic composition of a component.
 The [Button](/components/button) component wraps options and behaviors for html buttons and provides variants for different styles, similar to the [shadcn/ui version](https://ui.shadcn.com/docs/components/button).
 
 </Prose>
-<IncludeComponents :components="['Button.jinja']" />
+<IncludeComponents dir="button" :components="['Button.jinja']" />
 <Prose>
 
 You can see there are a lot of utility styles required to render a simple HTML button with styling.
@@ -84,10 +84,6 @@ In many cases, it's possible to copy/paste code using the react versions directl
 - React code contaning `className` on regular html elements (like `div`) should be changed to `class`. Eg `<div className="mt-0">` should be changed to `<div class="mt-0">` so Tailwind will apply styles correctly. 
 - Client side state needs to be implemented via Alpine.js
 - Interactivity can be added via htmx
-
-There are many sites that offer pre-built shadcn components (blocks)
-- https://ui.shadcn.com/blocks
-- https://www.shadcnblocks.com/
 
 
 </Prose>

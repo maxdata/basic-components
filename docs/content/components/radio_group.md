@@ -15,11 +15,11 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/alert.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/alert.html"/>
 
 <Prose>
 
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="radio" :components="{{ metadata.templates }}" />

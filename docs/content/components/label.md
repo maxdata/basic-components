@@ -13,7 +13,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/label.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/label.html"/>
 
 <Prose>
 
@@ -28,5 +28,5 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="label" :components="{{ metadata.templates }}" />
 

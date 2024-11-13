@@ -15,7 +15,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/mode_toggle.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/mode_toggle.html"/>
 
 <Prose>
 
@@ -61,7 +61,7 @@ Any component can call the `toggleMode` function to switch the mode.
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="extras" :components="{{ metadata.templates }}" />
 
 <Prose>
 

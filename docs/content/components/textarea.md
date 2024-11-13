@@ -20,7 +20,7 @@ examples:
 
 </Prose>
 
-<IncludeTemplate template="examples/textarea.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/textarea.html"/>
 
 <Prose>
 
@@ -36,7 +36,7 @@ examples:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="textarea" :components="{{ metadata.templates }}" />
 
 <Prose>
 

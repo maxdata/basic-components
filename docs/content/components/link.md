@@ -13,7 +13,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/link.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/link.html"/>
 
 <Prose>
 
@@ -28,7 +28,7 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="link" :components="{{ metadata.templates }}" />
 
 <Prose>
 

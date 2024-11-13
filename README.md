@@ -21,8 +21,8 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 19/48
 
 - [x] accordion
-- [x] alert-dialog
 - [x] alert
+- [x] alert-dialog -- example cancel/action
 - [ ] aspect-ratio
 - [ ] avatar
 - [x] badge
@@ -36,7 +36,7 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 - [ ] collapsible
 - [ ] command
 - [ ] context-menu
-- [x] dialog
+- [x] dialog -- examples
 - [ ] drawer
 - [x] dropdown-menu
 - [x] form
@@ -44,6 +44,7 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 - [ ] input-otp
 - [x] input
 - [x] label
+- [x] link
 - [ ] menubar
 - [ ] navigation-menu
 - [ ] pagination

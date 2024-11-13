@@ -20,7 +20,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/dialog.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/dialog.html"/>
 
 <Prose>
 
@@ -33,4 +33,4 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="dialog" :components="{{ metadata.templates }}" />

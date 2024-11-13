@@ -19,14 +19,14 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/card.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/card.html"/>
 
 <Prose>
 
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="card" :components="{{ metadata.templates }}" />
 
 <Prose>
 

@@ -1,0 +1,6 @@
+{# def
+    open: bool = False
+#}
+<div x-data="{ open: {{ open|tojson }} }"
+     x-init="$watch('open', value => document.body.classList.toggle('overflow-hidden', value))"
+     {{ attrs.render() }}>{{ content }}</div>

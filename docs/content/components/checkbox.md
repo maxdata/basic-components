@@ -14,7 +14,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/checkbox.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/checkbox.html"/>
 
 <Prose>
 
@@ -30,7 +30,7 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="checkbox" :components="{{ metadata.templates }}" />
 
 <Prose>
 

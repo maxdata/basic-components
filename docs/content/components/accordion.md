@@ -16,12 +16,12 @@ templates:
 ## Usage
 </Prose>
 
-<IncludeTemplate template="examples/accordion.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/accordion.html"/>
 
 <Prose>
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="accordion" :components="{{ metadata.templates }}" />
 
 

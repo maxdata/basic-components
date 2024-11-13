@@ -24,11 +24,11 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/dropdown_menu.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/dropdown_menu.html"/>
 
 <Prose>
 
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="dropdown_menu" :components="{{ metadata.templates }}" />

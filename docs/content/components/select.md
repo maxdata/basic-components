@@ -21,7 +21,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/select.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/select.html"/>
 
 <Prose>
 
@@ -41,7 +41,7 @@ The value of the selected item is stored in a hidden input field.
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="select" :components="{{ metadata.templates }}" />
 
 <Prose>
 

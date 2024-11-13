@@ -20,7 +20,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/table.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/table.html"/>
 
 <Prose>
 
@@ -34,5 +34,5 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="table" :components="{{ metadata.templates }}" />
 

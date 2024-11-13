@@ -15,7 +15,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/popover.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/popover.html"/>
 
 <Prose>
 
@@ -29,7 +29,7 @@ templates:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="popover" :components="{{ metadata.templates }}" />
 
 
 

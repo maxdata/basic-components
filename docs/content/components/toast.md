@@ -15,7 +15,7 @@ templates:
 
 </Prose>
 
-<IncludeTemplate template="examples/toast.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/toast.html"/>
 
 <Prose>
 
@@ -36,7 +36,7 @@ Toast components require an `id` so that the dispatch event can call the compone
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="toast" :components="{{ metadata.templates }}" />
 
 <Prose>
 

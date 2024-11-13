@@ -17,7 +17,7 @@ examples:
 ## Usage
 </Prose>
 
-<IncludeTemplate template="examples/badge.html"/>
+<IncludeFile dir="docs/templates" file_name="examples/badge.html"/>
 
 <Prose>
 ## Attributes
@@ -29,7 +29,7 @@ examples:
 ## Code
 </Prose>
 
-<IncludeComponents :components="{{ metadata.templates }}" />
+<IncludeComponents dir="badge" :components="{{ metadata.templates }}" />
 
 <Prose>
 
