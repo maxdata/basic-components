@@ -114,22 +114,6 @@ This will automatically rebuild Tailwind CSS when you make changes to your compo
 
 ![Example Page](/static/img/example_img.png)
 
-## Key Features
-
-1. **Single-File Setup**
-    - Entire Django configuration in one file
-    - Minimal dependencies and middleware
-    - Simple component serving
-
-2. **JinjaX Integration**
-    - Direct component usage in templates
-    - Automatic subdirectory handling
-    - Clean component syntax
-
-3. **Modern Stack**
-    - Tailwind CSS for styling
-    - Alpine.js for interactivity
-    - HTMX for dynamic updates
 
 ## Common Issues and Solutions
 
@@ -156,22 +140,6 @@ This will automatically rebuild Tailwind CSS when you make changes to your compo
     - Confirm URL patterns are correct
     - Check htmx attributes on components
 
-## Benefits of Single-File Setup
-
-1. **Simplicity**
-    - Easy to understand and maintain
-    - No complex project structure
-    - Quick to get started
-
-2. **Portability**
-    - Everything in one place
-    - Easy to copy and share
-    - Minimal configuration needed
-
-3. **Development Focus**
-    - Concentrate on components
-    - Rapid prototyping
-    - Simple debugging
 
 ## Next Steps
 

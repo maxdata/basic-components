@@ -6,6 +6,7 @@ FastAPI example application demonstrating:
 - Component rendering
 """
 
+from pathlib import Path
 from typing import Any
 from fastapi import FastAPI, APIRouter, Request
 import jinjax
@@ -16,7 +17,7 @@ from starlette.templating import Jinja2Templates
 
 # Configuration
 TEMPLATE_DIR = "./templates"
-COMPONENT_DIR = "./components"
+COMPONENT_DIR = "./components/ui"
 STATIC_DIR = "./static"
 
 # Setup Jinja templates with JinjaX support
@@ -25,6 +26,14 @@ templates.env.add_extension(jinjax.JinjaX)
 
 # Configure JinjaX component catalog
 catalog = jinjax.Catalog(jinja_env=templates.env)
+
+components_dir = Path(f"{COMPONENT_DIR}")
+
+# Register each component subdirectory
+for component_dir in components_dir.iterdir():
+    if component_dir.is_dir():
+        catalog.add_folder(str(component_dir))
+
 catalog.add_folder(COMPONENT_DIR)
 
 

@@ -71,7 +71,7 @@ config = {
             ],
         },
         {
-            "title": "Installation",
+            "title": "Frameworks",
             "items": [
                 {"title": "Fastapi", "href": "/docs/fastapi"},
                 {"title": "Flask", "href": "/docs/flask"},
