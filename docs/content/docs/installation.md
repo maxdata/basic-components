@@ -6,14 +6,27 @@ description: How to install dependencies.
 <Prose>
 
 
-## JinjaX
+## Configure components in your project 
 
-Install into your project using your package manager. Basic components includes several [helper functions](/docs/utilities) to setup the 
-JinjaX template environment and merge tailwind classes within components 
+You can install `basic-components` utilities into your project using your package manager. 
+Basic components includes several [helper functions](/docs/utilities) to setup the 
+JinjaX template environment and merge tailwind classes within components. 
+
+Installing the basic-components package is **optional**.
 
 ```bash
-pip install basic-components  
+uv add basic-components  
 ```
+
+**Note**: Using `uv` is optional. You can also use install via `pip` or `poetry`. [UV](https://docs.astral.sh/uv/) is 
+used in these examples because it enables componets to be vendored directly into your project via the [components](/docs/cli) cli. 
+
+You can also add the code for the [helper functions](/docs/utilities) directly to your codebase if you want to add an
+extra dependency. 
+
+Be sure to:
+- add the `cn` global function so it is available to all Jinja templates
+- configure the `jinjax.Catalog` to load components from the directories under your `components` dir. 
 
 Configure your Jinja environment to load the components according to the [JinjaX docs](https://jinjax.scaletti.dev/guide/). You can also refer to the examples for [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
 
@@ -25,7 +38,8 @@ Follow the Tailwind CSS [installation instructions](https://tailwindcss.com/docs
 
 ### Config
 
-You will need to set the paths to your templates and components in the `tailwind.config.js` file.
+You will need to set the paths to your templates and components in the `tailwind.config.js` file. This is how tailwind
+creates a css file with the styles referenced. 
 
 ```javascript
 const { fontFamily } = require("tailwindcss/defaultTheme")
@@ -217,6 +231,6 @@ Assuming your main css file is `src/input.css`, You could use this `package.json
 
 ## Frameworks
 
-See the docs for setting your project with [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
+See the examples for setting up a project with [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
 
 </Prose>

@@ -56,7 +56,7 @@ async def button(request: Request) -> HTMLResponse:
     Example endpoint demonstrating direct component rendering.
     Used by htmx for dynamic button updates.
     """
-    return catalog.render("Button", variant="destructive", _content="HTMX IS ENABLED!")
+    return HTMLResponse(catalog.render("Button", variant="destructive", _content="HTMX IS ENABLED!"))
 
 
 # Create FastAPI application

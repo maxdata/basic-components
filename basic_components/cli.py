@@ -1,9 +1,9 @@
-import os
 from pathlib import Path
+
+import copier
 import typer
 from rich.console import Console
 from rich.panel import Panel
-import copier
 
 app = typer.Typer(
     name="components",
@@ -13,29 +13,29 @@ app = typer.Typer(
 
 console = Console()
 
-# Base REPO_URL, or default to git remp
-REPO_URL = os.getenv(
-    "REPO_URL", "https://github.com/basicmachines-co/basic-components.git"
-)
-
-# Use environment variable if set, otherwise use default
-COMPONENTS_DIR = Path(os.getenv("COMPONENTS_DIR", "components"))
-
+# Default values for REPO_URL and COMPONENTS_DIR
+DEFAULT_REPO_URL = "https://github.com/basicmachines-co/basic-components.git"
+DEFAULT_COMPONENTS_DIR = Path("components/ui")
 DEFAULT_BRANCH = "main"
+
+# typer cli arg options
+COMPONENTS_DIR_OPTION = typer.Option(DEFAULT_COMPONENTS_DIR, "--components-dir", "-d", help="Directory to update components in")
+REPO_URL_OPTION = typer.Option(DEFAULT_REPO_URL, "--repo-url", "-r", help="Repository URL to update from")
+BRANCH_OPTION = typer.Option(DEFAULT_BRANCH, "--branch", "-b", help="Branch, tag, or commit to update from")
 
 
 def add_component(
     component: str,
     dest_dir: Path,
+    repo_url: str = DEFAULT_REPO_URL,
     branch: str = DEFAULT_BRANCH,
-    force: bool = False,
 ) -> None:
     """Add a specific component to the project."""
     try:
-        console.print(f"[green]Installing {component}...[/green]")
+        console.print(f"[green]Installing {component} from '{repo_url}' ...[/green]")
 
         copier.run_copy(
-            src_path=REPO_URL,
+            src_path=repo_url,
             dst_path=str(dest_dir),
             exclude=[
                 "*",
@@ -44,7 +44,7 @@ def add_component(
             vcs_ref=branch,
         )
 
-    except copier.errors.UserMessageError as e:
+    except Exception as e:  # pyright: ignore [reportAttributeAccessIssue]
         console.print(f"[red]Error: {str(e)}[/red]")
         raise typer.Exit(1)
 
@@ -55,15 +55,21 @@ def add(
     branch: str = typer.Option(
         DEFAULT_BRANCH, "--branch", "-b", help="Branch, tag, or commit to install from"
     ),
+    repo_url: str = typer.Option(
+        DEFAULT_REPO_URL, "--repo-url", "-r", help="Repository URL to use"
+    ),
+    components_dir: Path = typer.Option(
+        DEFAULT_COMPONENTS_DIR, "--components-dir", "-d", help="Directory to install components"
+    )
 ) -> None:
     """Add a component to your project."""
     try:
-        add_component(component, COMPONENTS_DIR, branch)
+        add_component(component, components_dir, repo_url, branch)
 
         console.print(
             Panel(
                 f"[green]✓[/green] Added {component} component\n\n"
-                f"[cyan] COMPONENTS_DIR={COMPONENTS_DIR}[/cyan]",
+                f"[cyan] components-dir={components_dir}[/cyan]",
                 title="Installation Complete",
                 border_style="green",
             )
@@ -74,23 +80,18 @@ def add(
 
 
 @app.command()
-def init() -> None:
+def init(
+    components_dir: Path = COMPONENTS_DIR_OPTION,
+) -> None:
     """Initialize project for basic-components."""
     # Create components directory structure
-    COMPONENTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    # Show the actual path being used
-    components_path = (
-        "[dim](using default)[/dim]"
-        if os.getenv("COMPONENTS_DIR") is None
-        else "[dim](from COMPONENTS_DIR)[/dim]"
-    )
+    components_dir.mkdir(parents=True, exist_ok=True)
 
     console.print(
         Panel(
             "[green]✓[/green] Initialized basic-components\n\n"
             "Directory structure created:\n"
-            f"   [cyan]{COMPONENTS_DIR}[/cyan] {components_path}\n\n"
+            f"   [cyan]{components_dir}[/cyan]\n\n"
             "Next steps:\n\n"
             "1. Add the cn() utility function:\n"
             "   [cyan]components.basicmachines.co/docs/utilities#cn[/cyan]\n\n"

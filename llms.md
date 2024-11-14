@@ -19,13 +19,13 @@ This project reimagines Python server-side web development for the modern age by
   - Enhanced SEO and accessibility
   - Simplified state management
 
-2. **Modern Development Pattern**
+1. **Modern Development Pattern**
   - Component-based architecture without traditional package dependencies
   - Direct code ownership through copy/paste pattern
   - Full customization and extension capabilities
   - Integration with modern tooling
 
-3. **Technology Integration**
+1. **Technology Integration**
   - JinjaX for server-side component composition
   - htmx for dynamic HTML updates without full page refreshes
   - Alpine.js for minimal client-side state management
@@ -84,17 +84,17 @@ JinjaX components are the foundation of this project, providing a React-like com
   - Supports type hints and default values
   - Arguments passed via HTML attributes
 
-2. **Template Logic**
+1. **Template Logic**
   - Standard Jinja syntax for conditions and loops
   - Variable computation and class composition
   - Dynamic attribute handling
 
-3. **Content Slots**
+1. **Content Slots**
   - `{{ content }}` renders nested components/content
   - Supports component composition
   - Enables template reuse
 
-4. **Additional Attributes**
+1. **Additional Attributes**
   - `{{ attrs.render() }}` passes through HTML attributes
   - Supports htmx attributes
   - Handles Alpine.js directives
@@ -166,17 +166,17 @@ Components use Tailwind CSS with a structured approach:
   - Layout and positioning
   - Basic typography
 
-2. **Variant Styles**
+1. **Variant Styles**
   - Different visual variations
   - State-based styles
   - Theme-specific changes
 
-3. **Size Variants**
+1. **Size Variants**
   - Dimension modifications
   - Spacing adjustments
   - Responsive changes
 
-4. **Custom Classes**
+1. **Custom Classes**
   - Additional styles via className prop
   - Extensible through Tailwind utilities
   - Dark mode support
@@ -346,7 +346,7 @@ interface ButtonProps {
 #}
 ```
 
-2. **Component Structure**
+1. **Component Structure**
 ```jinja
 {# Each component is self-contained #}
 {#def
@@ -365,7 +365,7 @@ interface ButtonProps {
 </div>
 ```
 
-3. **State Management Conversion**
+1. **State Management Conversion**
 ```jsx
 // React state
 const [open, setOpen] = React.useState(false)
@@ -384,19 +384,19 @@ const [open, setOpen] = React.useState(false)
   - Convert TypeScript types to Python types
   - Move default values to def declarations
 
-2. **HTML Structure**
+1. **HTML Structure**
   - Keep the same basic HTML structure
   - Replace React fragments with regular HTML
   - Convert className to class on HTML elements
   - Keep className as prop name in component definition
 
-3. **Interactivity**
+1. **Interactivity**
   - Replace React state hooks with Alpine.js x-data
   - Convert React event handlers to Alpine.js directives
   - Use htmx for server interactions
   - Keep component behavior localized
 
-4. **Styling**
+1. **Styling**
   - Maintain Tailwind utility classes
   - Keep variant and size class mappings
   - Preserve dark mode classes
@@ -529,7 +529,7 @@ JinjaX/Alpine Conversion:
 </div>
 ```
 
-2. **ID Management**
+1. **ID Management**
 ```jinja
 {#def
     label: str = "",
@@ -553,7 +553,7 @@ JinjaX/Alpine Conversion:
 </div>
 ```
 
-3. **Linked Components**
+1. **Linked Components**
 ```jinja
 {#def
     label: str = "",
@@ -577,7 +577,7 @@ JinjaX/Alpine Conversion:
 </div>
 ```
 
-4. **Dynamic References**
+1. **Dynamic References**
 ```jinja
 {#def
     triggerId: str = None
@@ -709,30 +709,30 @@ Complex components often require specific composition:
   - Allows for dynamic attribute addition
   - Preserves accessibility attributes
 
-2. **Safe ID References**
+1. **Safe ID References**
   - Use attrs.get('id', '') for optional IDs
   - Generate related IDs using base ID
   - Handle cases where ID is not provided
   - Maintain ARIA relationships
 
-3. **Accessibility Connections**
+1. **Accessibility Connections**
   - Link labels to inputs
   - Connect error messages
   - Maintain ARIA attributes
   - Support screen readers
   - Support keyboard navigation
 
-4. **State Management**
+1. **State Management**
     - Use Alpine.js for component-level state
     - Manage document effects carefully
     - Clean up side effects appropriately
 
-5. **Event Handling**
+2. **Event Handling**
     - Consider click propagation
     - Handle keyboard interactions
     - Maintain accessibility features
 
-6. **Styling**
+3. **Styling**
     - Use cn() for class management
     - Preserve responsive classes
     - Maintain dark mode support
@@ -745,11 +745,69 @@ Complex components often require specific composition:
   - Check accessibility features
   - Validate dark mode support
 
-2. **Integration Testing**
+1. **Integration Testing**
   - Test htmx interactions
   - Verify Alpine.js state management
   - Check component composition
   - Validate prop passing
+
+
+## CLI Tool
+
+Basic Components provides a CLI tool for installing individual components into your project. The CLI uses copier to handle component installation, providing features like:
+
+- Single component installation
+- Dependency resolution (coming soon)
+- Smart conflict handling
+- Change previews
+
+### Installation
+
+The CLI is distributed with the basic-components package:
+
+```bash
+uv add basic-components
+```
+
+### Usage
+
+Initialize your project:
+```bash
+components init
+```
+
+This creates the components directory structure at `components/ui` (configurable via components-dir arg).
+
+Install a component:
+```bash
+components add button
+```
+
+### Component Directory Structure
+
+Components are organized in the following structure:
+
+```
+components/
+└── ui/
+    ├── button/
+    │   └── Button.jinja
+    ├── card/
+    │   ├── Card.jinja
+    │   ├── CardHeader.jinja
+    │   └── CardContent.jinja
+    └── icons/
+        └── CloseIcon.jinja
+```
+
+### Configuration
+
+Components are installed using copier, which provides:
+
+- Change previews before installation
+- Conflict resolution with diffs
+- Update capability for existing components
+- Preservation of local modifications
 
 
 ## Reference Documentation

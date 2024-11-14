@@ -23,12 +23,14 @@ This project brings the component design patterns of [shadcn/ui](https://ui.shad
 
 ## Not a Traditional Component Library
 
-This is **not a traditional component library** that you install as a dependency. Instead, it's a collection of reusable components that you can copy directly into your project.
+This is **not a traditional component library** that you install as a dependency into a virtualenv. 
+Instead, it's a collection of reusable components that you can copy directly into your project.
 
 1. Choose the components you need
-2. Use the [CLI](docs/cli) to add them to your project (or copy/paste manually)
-3. Customize the code to match your needs
-4. Build your interface using JinjaX's component system and Tailwind CSS's utility classes for styling and htmx for dynamic updates
+2. Use the [CLI](/docs/cli) to add them to your project (or copy/paste manually)
+3. [Configure](/docs/utilities) your code to use the components 
+4. Customize the code to match your needs
+5. Build your interface using JinjaX's component system and Tailwind CSS's utility classes for styling and htmx for dynamic updates
 
 **Here's a simple example**
 
@@ -50,7 +52,6 @@ Components are easily composable, allowing you to combine them to create complex
 <TabPreview component="Example" template="examples/card.html"/>
 
 <Prose>
-
 
 ## Project Status 
 
