@@ -70,7 +70,7 @@ def parse_jinja_markdown(file_path: Path):
 
         md = create_markdown(examples=examples)
         html_content = md.convert(stripped_content)
-        toc = md.toc
+        toc = md.toc  # pyright: ignore [reportAttributeAccessIssue]
 
         # Render the template with context
         template = templates.env.from_string(html_content)

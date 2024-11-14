@@ -6,6 +6,7 @@ requires-python = ">=3.10"
 packages = ["example"]
 
 dependencies = [
+    "basic-components[utils]>=0.1.0",
     "Flask>=3.0.0",
     "jinjax>=0.47",
 ]

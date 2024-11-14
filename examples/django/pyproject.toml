@@ -6,6 +6,7 @@ requires-python = ">=3.10"
 packages = ["example"]
 
 dependencies = [
+    "basic-components[utils]>=0.1.0",
     "Django>=4.2.0,<5.0.0",
     "jinjax[whitenoise]>=0.47",
 ]
