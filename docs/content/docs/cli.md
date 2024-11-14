@@ -17,7 +17,7 @@ your project. See the [JinjaX](/docs/utilities#jinjax) docs for more info.
 
 The components in this project can also be copied (vendored) directly into your project using the `components` tool 
 in the `basic-components` package via `uv`. You can then customize them as needed. This is the recommendedd way to 
-install components because it will also include any dependencies (other component dependencies) required.
+install components because it will also include any dependencies (other referenced components) required.
 
 To vendor a component into your project using the `components` tool:
 
@@ -27,24 +27,55 @@ uvx --from basic-components add <component_name>
 
 The components will be added to your project in the `components/ui/<component_name>` directory. 
 
-See the [utilities](/docs/utilities) docs for more information. 
+### Example
+
+```bash
+➜ uvx --from basic-components components add button 
+Installing button from 
+'https://github.com/basicmachines-co/basic-components.git' ...
+
+Copying from template version 0.0.0.post163.dev0+70554ca
+    create  button
+    create  button/Button.jinja
+
+
+╭─────────────────────────── Installation Complete ────────────────────────────╮
+│ ✓ Added button component                                                     │
+│                                                                              │
+│  components-dir=components/ui                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+```
+View the results
+```bash
+➜ tree components 
+components
+└── ui
+    └── button
+        └── Button.jinja
+
+2 directories, 1 file
+
+```
+
+See the [utilities](/docs/utilities) docs for more information about setting up your project to use the components. 
 
 ### Components cli tool
 
 The `components` cli tool has several options. 
 
 Add a component
-```
+```bash
 uvx --from basic-components add button
 ```
 
 Add a component, specifying the repo
-```
+```bash
 uvx --from basic-components add button --repo-url https://github.com/basicmachines-co/basic-components.git
 ```
 
 Add a component, specifying the repo and branch or tag
-```
+```bash
 uvx --from basic-components add button --repo-url https://github.com/basicmachines-co/basic-components.git --branch main
 ```
 
