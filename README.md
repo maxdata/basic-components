@@ -3,6 +3,35 @@
 Re-usable server-side components based on shadcn/ui.
 Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 
+## Installation & Usage
+
+### Quick Start with `uvx`
+
+You can use the CLI directly without installing the package:
+
+```bash
+# Add components
+uvx --from basic-components components add button
+```
+
+You will also need to configure your project to load components into the `jinjax.Catalog` and add a global `cn` function
+to the Jinja environment. See [utilities](docs/content/docs/utilities.md)
+
+### Package Installation Options
+
+Install only the utility functions for JinjaX and tailwind:
+
+```bash
+# With utility functions
+pip install basic-components[utils]
+```
+
+### Installation Groups
+
+- `utils`: Utility functions for JinjaX setup and `cn()` tailwind class helper
+- `docs`: Runs the docs site
+- `dev`: Development tools for contributing
+- `full`: All features included
 
 ## Documentation
 
