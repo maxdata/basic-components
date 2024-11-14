@@ -28,4 +28,27 @@ uvx --from basic-components add <component_name>
 The components will be added to your project in the `components/ui/<component_name>` directory. 
 
 See the [utilities](/docs/utilities) docs for more information. 
+
+### Components cli tool
+
+The `components` cli tool has several options. 
+
+Add a component
+```
+uvx --from basic-components add button
+```
+
+Add a component, specifying the repo
+```
+uvx --from basic-components add button --repo-url https://github.com/basicmachines-co/basic-components.git
+```
+
+Add a component, specifying the repo and branch or tag
+```
+uvx --from basic-components add button --repo-url https://github.com/basicmachines-co/basic-components.git --branch main
+```
+
+The `repo-url` arg can also point to a local directory if you have the project checked out. You can also pass the components 
+destination directory via the `components-dir` arg.
+
 </Prose>
