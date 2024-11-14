@@ -3,6 +3,8 @@ title: "Basic Components"
 date: 2024-11-12
 author: "Paul Hernandez"
 description: "A collection of re-usable server-side components based on shadcn/ui, built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx. This project represents a fundamental shift in Python web development by bringing modern component patterns to server-side rendering while maintaining the simplicity and performance benefits of server-first architecture."
+github: https://github.com/basicmachines-co/basic-components
+license: MIT 
 ---
 
 # Basic Components
@@ -649,7 +651,7 @@ Different components require different overlay behaviors:
 When using Lucide icons:
 ```jinja
 <button class="absolute right-4 top-4">
-    <X class="h-4 w-4"/>
+    <XIcon class="h-4 w-4"/>
     <span class="sr-only">Close</span>
 </button>
 ```
