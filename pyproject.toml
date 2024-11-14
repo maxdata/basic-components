@@ -31,7 +31,6 @@ classifiers = [
     "Framework :: FastAPI",
     "Framework :: Flask",
     "Framework :: Django",
-    "Framework :: Jinja",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
