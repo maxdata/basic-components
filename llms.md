@@ -754,33 +754,24 @@ Complex components often require specific composition:
 
 ## CLI Tool
 
-Basic Components provides a CLI tool for installing individual components into your project. The CLI uses copier to handle component installation, providing features like:
+Basic Components provides a CLI tool for installing individual components into your project. 
+It can be used via uvx without installing the `basic-components` package.
+The CLI uses `copier` to handle component installation, providing features like:
 
 - Single component installation
 - Dependency resolution (coming soon)
 - Smart conflict handling
-- Change previews
-
-### Installation
-
-The CLI is distributed with the basic-components package:
-
-```bash
-uv add basic-components
-```
 
 ### Usage
 
 Initialize your project:
 ```bash
-components init
+uvx --from basic-components components add <component>
 ```
 
-This creates the components directory structure at `components/ui` (configurable via components-dir arg).
-
-Install a component:
+Example: Install a button component
 ```bash
-components add button
+uvx --from basic-components components add button
 ```
 
 ### Component Directory Structure
@@ -799,15 +790,6 @@ components/
     └── icons/
         └── CloseIcon.jinja
 ```
-
-### Configuration
-
-Components are installed using copier, which provides:
-
-- Change previews before installation
-- Conflict resolution with diffs
-- Update capability for existing components
-- Preservation of local modifications
 
 
 ## Reference Documentation
