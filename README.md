@@ -7,7 +7,14 @@ Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 
 ### Quick Start with `uvx`
 
-You can use the CLI directly without installing the package:
+JinjaX is required.
+
+```bash
+# install jinjax
+uvx add jinjax
+````
+
+You can use the CLI directly without installing the package.
 
 ```bash
 # Add components
@@ -15,21 +22,29 @@ uvx --from basic-components components add button
 ```
 
 You will also need to configure your project to load components into the `jinjax.Catalog` and add a global `cn` function
-to the Jinja environment. See [utilities](docs/content/docs/utilities.md)
+to the Jinja environment. See [utilities](https://components.basicmachines.co/docs/utilities).
+
+Helpers for these are packed in the `basic-components[utils]` package. 
 
 ### Package Installation Options
 
-Install only the utility functions for JinjaX and tailwind:
+Install only the utility functions for JinjaX and tailwind.
 
 ```bash
 # With utility functions
 pip install basic-components[utils]
 ```
 
+Setup instructions and examples:
+- [FastAPI](https://components.basicmachines.co/docs/fastapi)
+- [Flask](https://components.basicmachines.co/docs/flask)
+- [Django](https://components.basicmachines.co/docs/django)
+
+
 ### Installation Groups
 
 - `utils`: Utility functions for JinjaX setup and `cn()` tailwind class helper
-- `docs`: Runs the docs site
+- `docs`: Requirements for the docs site
 - `dev`: Development tools for contributing
 - `full`: All features included
 
@@ -51,7 +66,7 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 
 - [x] accordion
 - [x] alert
-- [x] alert-dialog -- example cancel/action
+- [x] alert-dialog 
 - [ ] aspect-ratio
 - [ ] avatar
 - [x] badge
@@ -65,7 +80,7 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 - [ ] collapsible
 - [ ] command
 - [ ] context-menu
-- [x] dialog -- examples
+- [x] dialog 
 - [ ] drawer
 - [x] dropdown-menu
 - [x] form
@@ -100,4 +115,4 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 - [ ] tooltip
 
 Extended
-- [ ] Prose - https://docs.astro.build/en/recipes/tailwind-rendered-markdown/#recipe
+- [ ] Prose 

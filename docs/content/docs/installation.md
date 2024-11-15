@@ -28,7 +28,7 @@ directory of the project. Components should be added via the [cli](/docs/cli).
 
 <Card>
 <CardTitle className="mt-4 ml-6 text-sm">
-    Note
+    NOTE
 </CardTitle>
 <CardDescription className="my-2 ml-6">
     Using `uv` is optional  
@@ -44,12 +44,12 @@ extra dependency.
 
 <Alert variant="destructive">
     <CircleAlertIcon className="mr-2 h-4 w-4"/>
-    <AlertTitle>You must</AlertTitle>
+    <AlertTitle>IMPORTANT</AlertTitle>
     <AlertDescription>
 
-- You must configure the `jinjax.Catalog` to load components from the directories under your `components` dir.
+You must configure the `jinjax.Catalog` to load components from the directories under your `components` dir.
 
-- Add the `cn` global function so it is available to all Jinja templates.
+Also add the `cn` global function so it is available to all Jinja templates.
     </AlertDescription>
 </Alert>
 
