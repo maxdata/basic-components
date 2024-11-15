@@ -40,10 +40,14 @@ jobs:
 
     - name: Install dependencies
       run: |
+        uv venv
+        source .venv/bin/activate
         uv pip install ".[dev]"
 
     - name: Release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-      run: semantic-release publish
+      run: |
+        source .venv/bin/activate
+        semantic-release publish
