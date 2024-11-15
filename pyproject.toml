@@ -95,6 +95,7 @@ dev = [
     "isort>=5.13.0",
     "mypy>=1.8.0",
     "ruff>=0.2.0",
+    "python-semantic-release>=9.14.0",
 ]
 
 # Full install with all features
@@ -138,3 +139,15 @@ style = "default"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-ra -q"
+
+
+[tool.semantic_release]
+version_variable = "basic_components/__init__.py:__version__"
+version_toml = "pyproject.toml:project.version"
+major_on_zero = false
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "uv build"
+dist_path = "dist/"
+upload_to_pypi = true
+commit_message = "chore(release): {version} [skip ci]"
