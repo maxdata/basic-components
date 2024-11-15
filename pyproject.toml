@@ -143,7 +143,9 @@ addopts = "-ra -q"
 
 [tool.semantic_release]
 version_variable = "basic_components/__init__.py:__version__"
-version_toml = [["pyproject.toml", "project.version"]]
+version_toml = [
+    "pyproject.toml:project.version",
+]
 major_on_zero = false
 branch = "main"
 changelog_file = "CHANGELOG.md"
