@@ -26,15 +26,21 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install uv
-      run: |
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
     - name: Python Semantic Release
+      id: release
       uses: python-semantic-release/python-semantic-release@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pypi_token: ${{ secrets.PYPI_TOKEN }}
-        git_committer_name: github-actions
-        git_committer_email: github-actions@github.com
+
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@v1
+      if: steps.release.outputs.released == 'true'
+      with:
+        password: ${{ secrets.PYPI_TOKEN }}
+
+    - name: Publish to GitHub Release Assets
+      uses: python-semantic-release/publish-action@v9.8.9
+      if: steps.release.outputs.released == 'true'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ steps.release.outputs.tag }}
