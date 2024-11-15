@@ -7,15 +7,9 @@ description: Adding components to your project
 
 Be sure you have read the [installation](/docs/installation) docs and set up your project first. 
 
-## Copy/Paste
-
-Code for components can be copy/pasted directly from the example pages via the `Code` tabs. You can install components
-anywhere in you project. The rest of the information in these docs assume they are located in the `components/ui` dir in
-your project. See the [JinjaX](/docs/utilities#jinjax) docs for more info. 
-
 ## Vendoring Components
 
-The components in this project can also be copied (vendored) directly into your project using the `components` tool 
+The components in this project can be copied (vendored) directly into your project using the `components` tool 
 in the `basic-components` package via `uv`. You can then customize them as needed. This is the recommendedd way to 
 install components because it will also include any dependencies (other referenced components) required.
 
@@ -81,5 +75,39 @@ uvx --from basic-components add button --repo-url https://github.com/basicmachin
 
 The `repo-url` arg can also point to a local directory if you have the project checked out. You can also pass the components 
 destination directory via the `components-dir` arg.
+
+## Copy/Paste
+
+Code for components can also be copy/pasted directly from the example pages via the `Code` tabs. You can install components
+anywhere in you project. The rest of the information in these docs assume they are located in the `components/ui` dir in
+your project. See the [JinjaX](/docs/utilities#jinjax) docs for more info on how to set up components in your project.
+
+## Other tools
+
+If you don't want to use `uv`, then you can also use the `components` cli by installing it using `pip` or `poetry`. This
+will only install the libs needed for the cli, not the components. 
+
+### Pip
+```bash
+pip install "basic-components[cli]"
+```
+
+To use the `components` tool, you can run
+
+```bash
+pipx run components add <component>
+```
+
+### Poetry
+```bash
+poetry add "basic-components[cli]"
+```
+
+To use the `components` tool, you can run
+
+```bash
+poetry run components add <component>
+```
+
 
 </Prose>

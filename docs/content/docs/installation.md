@@ -21,26 +21,39 @@ You can install `basic-components` utilities into your project using your packag
 Installing the basic-components package is **optional**.
 
 ```bash
-uv add basic-components[utils]  
+uv add "basic-components[utils]"  
 ```
 This will only add the python functions in the [utils](https://github.com/basicmachines-co/basic-components/tree/main/basic_components) 
 directory of the project. Components should be added via the [cli](/docs/cli).
 
+<Card>
+<CardTitle className="mt-4 ml-6 text-sm">
+    Note
+</CardTitle>
+<CardDescription className="my-2 ml-6">
+    Using `uv` is optional  
+</CardDescription>
+<CardContent className="text-sm">
+    You can use `pip` or `poetry`. [UV](https://docs.astral.sh/uv/) is 
+used in these examples because it enables components to be vendored directly into your project via the [components](/docs/cli) cli.</CardContent>
+</Card>
 
-**Note**: 
-
-Using `uv` is also optional. You can also use install via `pip` or `poetry`. [UV](https://docs.astral.sh/uv/) is 
-used in these examples because it enables componets to be vendored directly into your project via the [components](/docs/cli) cli. 
 
 You can also add the code for the [helper functions](/docs/utilities) directly to your codebase if you don't want to add an
 extra dependency. 
 
-**Be sure to**:
+<Alert variant="destructive">
+    <CircleAlertIcon className="mr-2 h-4 w-4"/>
+    <AlertTitle>You must</AlertTitle>
+    <AlertDescription>
 
-- add the `cn` global function so it is available to all Jinja templates
-- configure the `jinjax.Catalog` to load components from the directories under your `components` dir. 
+- You must configure the `jinjax.Catalog` to load components from the directories under your `components` dir.
 
-You can also refer to the examples for [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
+- Add the `cn` global function so it is available to all Jinja templates.
+    </AlertDescription>
+</Alert>
+
+You can refer to the examples for [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
 
 ## Tailwind CSS
 

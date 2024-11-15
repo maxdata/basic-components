@@ -44,14 +44,17 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-# Core dependencies needed for CLI
-dependencies = [
+# Empty base dependencies since everything is optional
+dependencies = []
+
+[project.optional-dependencies]
+
+# CLI tool dependencies
+cli = [
     "copier>=9.4.1",
     "typer>=0.9.0",
     "rich>=13.7.0",
 ]
-
-[project.optional-dependencies]
 
 # For using the utility functions in basic_components/utils
 utils = [
@@ -96,6 +99,7 @@ dev = [
 
 # Full install with all features
 full = [
+    "basic-components[cli]",
     "basic-components[utils]",
     "basic-components[docs]",
     "basic-components[dev]",
