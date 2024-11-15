@@ -27,6 +27,8 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
+        ref: ${{ github.event.release.tag_name || github.ref }}
+        fetch-tags: true
 
     - name: Install uv
       run: |
@@ -43,6 +45,15 @@ jobs:
         uv venv
         source .venv/bin/activate
         uv pip install ".[dev]"
+
+    - name: Debug Info
+      run: |
+        source .venv/bin/activate
+        git status
+        git branch
+        git tag
+        echo "Current ref: ${{ github.ref }}"
+        echo "Release tag: ${{ github.event.release.tag_name }}"
 
     - name: Release
       env:
