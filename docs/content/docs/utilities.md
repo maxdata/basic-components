@@ -5,11 +5,11 @@ description: Helper functions for setting up components and merging Tailwind cla
 
 <Prose>
 
-To use the utility function below, install the `basic-components` package into your project. You can also get the code
+To use the utility functions below, install the `basic-components` package into your project. You can also get the code
 from GitHub. 
 
 ```bash
-uv add basic-machines 
+uv add "basic-machines[utils]" 
 ```
 
 ## JinjaX 
@@ -18,7 +18,7 @@ uv add basic-machines
 
 Components are organized into subdirectories by type (e.g., `accordion`, `button`, `dialog`). 
 This organization helps with maintenance but doesn't affect how you use the components in your templates. This allows 
-you to use components with their original names, without needing to reference the subdirectories:
+you to use components with their original names, without needing to reference the subdirectories.
 
 ```html
 <!-- Components can be used directly, no need for subdirectory prefixes -->

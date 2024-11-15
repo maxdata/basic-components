@@ -13,7 +13,7 @@ The components in this project can be copied (vendored) directly into your proje
 in the `basic-components` package via `uv`. You can then customize them as needed. This is the recommendedd way to 
 install components because it will also include any dependencies (other referenced components) required.
 
-To vendor a component into your project using the `components` tool:
+To vendor a component into your project using the `components` tool, run
 
 ```bash
 uvx --from basic-components add <component_name> 
