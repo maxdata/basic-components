@@ -1,0 +1,12 @@
+{# Tabs.jinja #}
+{#def
+    defaultValue: str = "",
+    className: str = ""
+#}
+<div
+    x-data="{ activeTab: '{{ defaultValue }}' }"
+    class="{{ className }}"
+    {{ attrs.render() }}
+>
+    {{ content }}
+</div>

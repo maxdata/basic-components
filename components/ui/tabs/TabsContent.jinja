@@ -1,0 +1,21 @@
+{# TabsContent.jinja #}
+{#def
+    value: str = "",
+    className: str = "",
+    id: str = ""
+#}
+{% set id = id or 'tabpanel-' + value %}
+<div
+    id="{{ id }}"
+    role="tabpanel"
+    x-show="activeTab === '{{ value }}'"
+    x-cloak
+    aria-labelledby="tab-{{ value }}"
+    class="{{ cn(
+        'mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        className
+    ) }}"
+    {{ attrs.render() }}
+>
+    {{ content }}
+</div>

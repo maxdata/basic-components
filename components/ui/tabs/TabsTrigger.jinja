@@ -1,0 +1,23 @@
+{# TabsTrigger.jinja #}
+{#def
+    value: str = "",
+    className: str = "",
+    id: str = ""
+#}
+{% set id = id or 'tab-' + value %}
+<button
+    type="button"
+    id="{{ id }}"
+    role="tab"
+    x-on:click="activeTab = '{{ value }}'"
+    :class="activeTab === '{{ value }}' ? '{{ cn('bg-background text-foreground shadow-sm') }}' : ''"
+    :aria-selected="(activeTab === '{{ value }}').toString()"
+    aria-controls="tabpanel-{{ value }}"
+    class="{{ cn(
+        'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+        className
+    ) }}"
+    {{ attrs.render() }}
+>
+    {{ content }}
+</button>

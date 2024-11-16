@@ -101,6 +101,7 @@ config = {
                 {"title": "Select", "href": "/components/select"},
                 {"title": "Sheet", "href": "/components/sheet"},
                 {"title": "Table", "href": "/components/table"},
+                {"title": "Tabs", "href": "/components/tabs"},
                 {"title": "Textarea", "href": "/components/textarea"},
                 {"title": "Toast", "href": "/components/toast"},
             ],

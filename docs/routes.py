@@ -20,7 +20,7 @@ class HTMLRouter(APIRouter):
 router = HTMLRouter()
 
 # web socket for hot reload
-router.add_websocket_route("/hot-reload", endpoint=hotreload, name="hot-reload")
+router.add_websocket_route("/hot-reload", endpoint=hotreload, name="hot-reload")  # pyright: ignore [reportArgumentType]
 
 
 async def get_markdown_file(path, default="index"):
