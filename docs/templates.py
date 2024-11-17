@@ -5,6 +5,7 @@ from pathlib import Path
 import arel
 
 import jinjax
+import markdown
 from icecream import ic
 from jinja2 import pass_context
 from jinja2.ext import DebugExtension
@@ -32,10 +33,11 @@ hotreload = arel.HotReload(
 
 
 @pass_context
-def include_file(context, path):
+def include_file(context, path, skip_lines=0):
     try:
         with open(Path(path), "r", encoding="utf-8") as f:
-            return f.read()
+            lines = f.readlines()
+            return ''.join(lines[skip_lines:])
     except FileNotFoundError:
         return f"<!-- {path} not found -->"
 
@@ -52,7 +54,7 @@ templates.env.globals["hotreload"] = hotreload
 templates.env.globals["DEBUG"] = docs.config.settings.ENVIRONMENT == "local"
 templates.env.filters["include_file"] = include_file
 templates.env.filters["filename"] = filename
-templates.env.filters["include_file"] = include_file
+templates.env.filters["markdown"] = lambda text: markdown.Markdown().convert(text)
 templates.env.autoescape = False
 
 # Add cn to globals
@@ -74,7 +76,7 @@ ic(f"catalog paths: {catalog.paths}")
 def template(
     request: Request,
     name: str,
-    context: dict,
+    context: dict = {},
     status_code: int = 200,
     headers: typing.Optional[typing.Mapping[str, str]] = None,
     **kwargs,

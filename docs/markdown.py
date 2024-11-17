@@ -7,7 +7,7 @@ from pymdownx import superfences
 from docs.templates import templates
 
 
-def create_markdown(examples=None):
+def create_markdown():
     extensions = [
         "pymdownx.superfences",
         "pymdownx.blocks.tab",
@@ -58,6 +58,7 @@ def create_markdown(examples=None):
     }
     return markdown.Markdown(extensions=extensions, extension_configs=extension_configs)
 
+md = create_markdown()
 
 def parse_jinja_markdown(file_path: Path):
     with open(file_path, "r", encoding="utf-8") as f:
@@ -66,9 +67,7 @@ def parse_jinja_markdown(file_path: Path):
 
         metadata = post.metadata
         stripped_content = post.content
-        examples = metadata.get("examples", [])
 
-        md = create_markdown(examples=examples)
         html_content = md.convert(stripped_content)
         toc = md.toc  # pyright: ignore [reportAttributeAccessIssue]
 
