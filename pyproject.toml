@@ -46,6 +46,8 @@ dependencies = [
     "copier>=9.4.1",
     "typer>=0.9.0",
     "rich>=13.7.0",
+    "tomli>=2.0.2",
+    "tomli-w>=1.1.0",
 ]
 
 [project.license]
@@ -80,8 +82,6 @@ docs = [
     "pymdown-extensions>=10.12",
     "setuptools>=75.5.0",
     "copier>=9.4.1",
-    "tomli>=2.0.2",
-    "tomli-w>=1.1.0",
 ]
 dev = [
     "black>=24.1.0",
@@ -97,7 +97,7 @@ full = [
 ]
 
 [project.scripts]
-components = "basic_components.cli:app"
+components = "basic_components.cli.components:app"
 
 [project.urls]
 Homepage = "https://github.com/basicmachines-co/basic-components"
@@ -117,14 +117,6 @@ include = [
     "basic_components/**/*.py",
     "basic_components/component_dependencies.toml",
 ]
-
-[tool.hatch.build.targets.wheel]
-packages = [
-    "basic_components",
-]
-
-[tool.hatch.build.targets.wheel.scripts]
-components = "basic_components.cli:app"
 
 [tool.pytest.ini_options]
 testpaths = [
@@ -147,8 +139,4 @@ build_command = "pip install uv && uv build"
 dist_path = "dist/"
 upload_to_pypi = true
 commit_message = "chore(release): {version} [skip ci]"
-
-
-[tool.basic-components]
-components_dir = "components"
 
