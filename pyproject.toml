@@ -1,6 +1,6 @@
 [project]
 name = "basic-components"
-version = "0.1.7"
+version = "0.2.0"
 description = "Re-usable server-side components based on shadcn/ui with JinjaX, Alpine.js and Tailwind CSS"
 authors = [
     { name = "phernandez", email = "paul@basicmachines.co" },

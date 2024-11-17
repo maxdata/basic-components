@@ -1,6 +1,43 @@
 # CHANGELOG
 
 
+## v0.2.0 (2024-11-17)
+
+### Bug Fixes
+
+- Fix dependecy groups in pyproject.toml
+  ([`b6e4fc8`](https://github.com/basicmachines-co/basic-components/commit/b6e4fc80e23410d5d0bc990d40000b4a7bfbd585))
+
+### Documentation
+
+- Add CHANGELOG to docs site
+  ([`0b35e1d`](https://github.com/basicmachines-co/basic-components/commit/0b35e1df3c154a20a64399d93a9ad363c84d90f5))
+
+### Features
+
+- Add component dependency analyzer tool
+  ([`3aa76c8`](https://github.com/basicmachines-co/basic-components/commit/3aa76c8868887e010aca4e6af925cea37988f32f))
+
+Introduce a new tool to analyze component dependencies with optional TOML and JSON output. This tool
+  can identify PascalCase component references and supports integrations, special icon cases, and
+  core components. Added a corresponding TOML file for known dependencies.
+
+### Refactoring
+
+- Adjust project configuration and file structure
+  ([`7fc49f2`](https://github.com/basicmachines-co/basic-components/commit/7fc49f272ccb9616270bd2c5142af658e22e94f2))
+
+Move dependencies and script definitions in pyproject.toml for better structure. Rename and relocate
+  cli.py to components.py to improve clarity. Update .gitignore to include .env files.
+
+- Restructure component files and update dependencies
+  ([`d74ea0e`](https://github.com/basicmachines-co/basic-components/commit/d74ea0eb55b11a9b6b403541e24de80960921751))
+
+Moved component files to new directories for better organization. Updated pyproject.toml and uv.lock
+  reflecting changes and added tomli-w dependency. Enhanced CLI tool with dependency handling and a
+  dry run feature.
+
+
 ## v0.1.7 (2024-11-15)
 
 ### Bug Fixes
@@ -16,6 +53,21 @@
 
 - Redo release workflow based on python-semantic-release docs
   ([`b03dd50`](https://github.com/basicmachines-co/basic-components/commit/b03dd504c013f8c9f1622248f43c1d7f26d92618))
+
+### Chores
+
+- **release**: 0.1.7 [skip ci]
+  ([`e7a1452`](https://github.com/basicmachines-co/basic-components/commit/e7a14526696dda306d0b332d21d2f290a4a66116))
+
+### Documentation
+
+- Add installation docs for components
+  ([`3f963aa`](https://github.com/basicmachines-co/basic-components/commit/3f963aaad07652cd3e5561f8509b4ac802e3bcca))
+
+### Features
+
+- Add tabs component and fix broken Icon references
+  ([`1d81161`](https://github.com/basicmachines-co/basic-components/commit/1d811615f92c33f248d209fdbde9903f5d0f9d25))
 
 
 ## v0.1.6 (2024-11-15)
