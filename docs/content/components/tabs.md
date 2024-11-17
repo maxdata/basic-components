@@ -11,6 +11,13 @@ templates:
 
 <TabPreview component="Tabs" template="examples/tabs.html"/>
 
+<Prose>
+
+## Installation
+
+</Prose>
+
+<Installation name="Tabs" component="tabs"/>
 
 <Prose>
 

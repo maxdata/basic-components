@@ -17,6 +17,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Sheet" component="sheet"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

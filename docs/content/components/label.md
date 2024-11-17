@@ -9,6 +9,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Label" component="label"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

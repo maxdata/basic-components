@@ -13,7 +13,7 @@ an LLM.
 
 ## AI Prompting
 
-The `llms.md` file contains an overview of the project and detailed information that can be provided to an LLM 
+The [llms.md](https://github.com/basicmachines-co/basic-components/blob/main/llms.md) file contains an overview of the project and detailed information that can be provided to an LLM 
 to aid with creating components and porting components from React.   
 
 </Prose>
@@ -24,6 +24,7 @@ to aid with creating components and porting components from React.
 
 ## Porting Process
 
+0. **Add** the [llms.md](https://github.com/basicmachines-co/basic-components/blob/main/llms.md) file as context to your chat.
 1. **Select** a component from [shadcn/ui](https://ui.shadcn.com/) to port.
 2. **Gather** information about the component (name, description, React code, usage examples).
 3. **Use AI** to assist with the initial port (see below).
@@ -35,7 +36,7 @@ to aid with creating components and porting components from React.
 9. **Contribute** your change back to the project if you like.
 
 
-## Effective AI Prompting
+## AI Prompt Template
 
 When porting a component you can use this prompt template:
 

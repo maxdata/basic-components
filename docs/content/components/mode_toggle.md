@@ -11,6 +11,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Mode Toggle" component="mode_toggle"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

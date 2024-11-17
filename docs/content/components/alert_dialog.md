@@ -21,6 +21,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Alert Dialog" component="alert_dialog"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

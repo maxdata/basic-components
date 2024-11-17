@@ -10,6 +10,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Checkbox" component="checkbox"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

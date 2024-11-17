@@ -18,6 +18,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Dialog" component="dialog"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

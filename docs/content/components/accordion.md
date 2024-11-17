@@ -13,6 +13,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Accordion" component="accordion"/>
+
+<Prose>
+
 ## Usage
 </Prose>
 

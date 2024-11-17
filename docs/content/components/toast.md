@@ -11,6 +11,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Toast" component="toast"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

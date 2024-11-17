@@ -14,6 +14,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Form" component="form"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

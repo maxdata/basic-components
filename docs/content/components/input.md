@@ -16,6 +16,14 @@ examples:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Input" component="input"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

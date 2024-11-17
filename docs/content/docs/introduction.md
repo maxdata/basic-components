@@ -70,8 +70,8 @@ components you can copy and modify:
 
 ### Which frameworks are supported?
 
-Any Python web framework that supports Jinja templates works with these components. We provide specific setup guides for
-[FastAPI](https://fastapi.tiangolo.com/), [Django](https://www.djangoproject.com/), and [Flask](https://flask.palletsprojects.com).
+Any Python web framework that supports Jinja templates works with these components. Setup guides for
+[FastAPI](https://fastapi.tiangolo.com/), [Django](https://www.djangoproject.com/), and [Flask](https://flask.palletsprojects.com) with complete examples are included.
 
 ### Can I use this in my project?
 

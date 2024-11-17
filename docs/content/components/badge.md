@@ -14,6 +14,14 @@ examples:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Badge" component="badge"/>
+
+<Prose>
+
 ## Usage
 </Prose>
 

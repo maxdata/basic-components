@@ -1,0 +1,35 @@
+{# def
+    name: str,
+    component: str,
+#}
+<Tabs defaultValue="uv">
+    <TabsList className="grid grid-cols-4">
+        <TabsTrigger value="uv">uv</TabsTrigger>
+        <TabsTrigger value="pipx">pipx</TabsTrigger>
+        <TabsTrigger value="pip">pip</TabsTrigger>
+        <TabsTrigger value="manual">manual</TabsTrigger>
+    </TabsList>
+    <TabsContent value="uv">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">uvx --from basic-components components add {{ component }}</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="pipx">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">pipx run --spec basic-components components add {{ component }}</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="pip">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">pip install basic-components && components add {{ component }}</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="manual">
+        <ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+            <li>Copy <strong>{{ name }}</strong> components below to your local environment</li>
+            <li>Place them in the <strong>components/ui/{{ component }}</strong> directory in your project</li>
+            <li>Configure your <a class="underline" href="/docs/utilities#jinjax">jinja environment</a> for JinjaX</li>
+            <li>Add the <a class="underline" href="/docs/utilities#cn">cn() helper function</a> to your global jinja environment</li>
+        </ul>
+    </TabsContent>
+</Tabs>

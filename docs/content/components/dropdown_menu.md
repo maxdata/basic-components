@@ -20,6 +20,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Dropdown Menu" component="dropdown_menu"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

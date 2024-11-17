@@ -16,7 +16,7 @@ install components because it will also include any dependencies (other referenc
 To vendor a component into your project using the `components` tool, run
 
 ```bash
-uvx --from basic-components add <component_name> 
+uvx --from basic-components components add <component_name> 
 ```
 
 The components will be added to your project in the `components/ui/<component_name>` directory. 
@@ -85,11 +85,11 @@ your project. See the [JinjaX](/docs/utilities#jinjax) docs for more info on how
 ## Other tools
 
 If you don't want to use `uv`, then you can also use the `components` cli by installing it using `pip` or `poetry`. This
-will only install the libs needed for the cli, not the components. 
+will only install the libs needed for the cli, not the actual components. 
 
 ### Pip
 ```bash
-pip install "basic-components[cli]"
+pip install basic-components
 ```
 
 To use the `components` tool, you can run
@@ -100,7 +100,7 @@ pipx run components add <component>
 
 ### Poetry
 ```bash
-poetry add "basic-components[cli]"
+poetry add basic-components
 ```
 
 To use the `components` tool, you can run

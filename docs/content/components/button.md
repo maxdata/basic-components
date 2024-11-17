@@ -10,6 +10,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Button" component="button"/>
+
+<Prose>
+
 ## Usage
 </Prose>
 

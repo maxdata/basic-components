@@ -15,6 +15,14 @@ Components are included for each of the icons in the <Link href="/https://lucide
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Icons" component="icons"/>
+
+<Prose>
+
 **Note:**
 Icon components are named `<IconName>Icon.jinja` to avoid naming conflicts with other components. Otherwise, for instance
 the `Sheet` icon would have a naming conflict with the `Sheet` component. 

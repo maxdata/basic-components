@@ -21,7 +21,13 @@ templates:
   </CardContent>
 </Card>
 
+<Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="WTForm" component="wtform"/>
 
 <Prose>
 

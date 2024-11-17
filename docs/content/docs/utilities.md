@@ -5,8 +5,8 @@ description: Helper functions for setting up components and merging Tailwind cla
 
 <Prose>
 
-To use the utility functions below, install the `basic-components` package into your project. You can also get the code
-from GitHub. 
+To use the utility functions below, install the `basic-components[utils]` package into your project. You can also get the code
+from [GitHub](https://github.com/basicmachines-co/basic-components/tree/main/basic_components/utils). 
 
 ```bash
 uv add "basic-machines[utils]" 
@@ -33,7 +33,7 @@ you to use components with their original names, without needing to reference th
 
 Basic Components includes a `setup_component_catalog()` helper function to include all components in subdirectories. 
 
-Each component is assumed to be packaged in a subdirectory within the `components` root directory. Components are under the 
+Each component is assumed to be packaged in a subdirectory within the `components` root directory. Components are placed under the 
 `components/ui` top level directory. 
 
 ```bash
@@ -86,7 +86,7 @@ You can get the code for the Jinjax helper from the [GitHub repo](https://github
 ## cn()
 
 Basic Components provides a utility function `cn()` for merging Tailwind CSS classes while handling conflicts properly. 
-This needs to be added as a global in the Jinja environment so it is available in all templates.  
+This needs to be added as a **global** in the Jinja environment so it is available in all templates.  
 
 ```python
 from starlette.templating import Jinja2Templates
@@ -128,5 +128,9 @@ The `cn()` function is then globally available in templates.
 - Preserves non-conflicting classes
 
 You can get the code for the tailwind merge from the [GitHub repo](https://github.com/basicmachines-co/basic-components/blob/main/basic_components/utils/tailwind.py).
+
+## Frameworks
+
+See the examples for setting up a project with [FastAPI](/docs/fastapi), [Django](/docs/django), or [Flask](/docs/flask).
 
 </Prose>

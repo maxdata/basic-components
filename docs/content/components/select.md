@@ -17,6 +17,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Select" component="select"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

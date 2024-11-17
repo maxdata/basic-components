@@ -16,6 +16,14 @@ examples:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Textarea" component="textarea"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

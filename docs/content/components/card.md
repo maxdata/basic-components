@@ -15,6 +15,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Card" component="card"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

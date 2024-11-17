@@ -11,6 +11,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Popover" component="popover"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>

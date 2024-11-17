@@ -11,6 +11,14 @@ templates:
 
 <Prose>
 
+## Installation
+
+</Prose>
+
+<Installation name="Radio Group" component="radio_group"/>
+
+<Prose>
+
 ## Usage
 
 </Prose>
