@@ -98,7 +98,6 @@ dev = [
 
 # Full install with all features
 full = [
-    "basic-components[cli]",
     "basic-components[utils]",
     "basic-components[docs]",
     "basic-components[dev]",
