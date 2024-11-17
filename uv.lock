@@ -56,19 +56,20 @@ wheels = [
 
 [[package]]
 name = "basic-components"
-version = "0.1.0"
+version = "0.1.7"
 source = { editable = "." }
-
-[package.optional-dependencies]
-cli = [
+dependencies = [
     { name = "copier" },
     { name = "rich" },
     { name = "typer" },
 ]
+
+[package.optional-dependencies]
 dev = [
     { name = "black" },
     { name = "isort" },
     { name = "mypy" },
+    { name = "python-semantic-release" },
     { name = "ruff" },
 ]
 docs = [
@@ -118,12 +119,11 @@ full = [
     { name = "pytest" },
     { name = "pytest-playwright" },
     { name = "python-frontmatter" },
-    { name = "rich" },
+    { name = "python-semantic-release" },
     { name = "ruff" },
     { name = "setuptools" },
     { name = "starlette-wtf" },
     { name = "tomli" },
-    { name = "typer" },
     { name = "uvicorn" },
     { name = "watchfiles" },
     { name = "websockets" },
@@ -136,18 +136,17 @@ utils = [
 
 [package.dependency-groups]
 dev = [
-    { name = "python-semantic-release" },
+    { name = "tomli-w" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "arel", marker = "extra == 'docs'", specifier = ">=0.3.0" },
-    { name = "basic-components", extras = ["cli"], marker = "extra == 'full'" },
     { name = "basic-components", extras = ["dev"], marker = "extra == 'full'" },
     { name = "basic-components", extras = ["docs"], marker = "extra == 'full'" },
     { name = "basic-components", extras = ["utils"], marker = "extra == 'full'" },
     { name = "black", marker = "extra == 'dev'", specifier = ">=24.1.0" },
-    { name = "copier", marker = "extra == 'cli'", specifier = ">=9.4.1" },
+    { name = "copier", specifier = ">=9.4.1" },
     { name = "copier", marker = "extra == 'docs'", specifier = ">=9.4.1" },
     { name = "fastapi", extras = ["standard"], marker = "extra == 'docs'", specifier = ">=0.115.4" },
     { name = "icecream", marker = "extra == 'docs'", specifier = ">=2.1.3" },
@@ -168,12 +167,13 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'docs'", specifier = ">=8.3.3" },
     { name = "pytest-playwright", marker = "extra == 'docs'", specifier = ">=0.5.2" },
     { name = "python-frontmatter", marker = "extra == 'docs'", specifier = ">=1.1.0" },
-    { name = "rich", marker = "extra == 'cli'", specifier = ">=13.7.0" },
+    { name = "python-semantic-release", marker = "extra == 'dev'", specifier = ">=9.14.0" },
+    { name = "rich", specifier = ">=13.7.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.2.0" },
     { name = "setuptools", marker = "extra == 'docs'", specifier = ">=75.5.0" },
     { name = "starlette-wtf", marker = "extra == 'docs'", specifier = ">=0.4.5" },
     { name = "tomli", marker = "extra == 'docs'", specifier = ">=2.0.2" },
-    { name = "typer", marker = "extra == 'cli'", specifier = ">=0.9.0" },
+    { name = "typer", specifier = ">=0.9.0" },
     { name = "uvicorn", marker = "extra == 'docs'", specifier = ">=0.32.0" },
     { name = "watchfiles", marker = "extra == 'docs'", specifier = ">=0.24.0" },
     { name = "websockets", marker = "extra == 'docs'", specifier = ">=13.1" },
@@ -181,7 +181,7 @@ requires-dist = [
 ]
 
 [package.metadata.dependency-groups]
-dev = [{ name = "python-semantic-release", specifier = ">=9.14.0" }]
+dev = [{ name = "tomli-w", specifier = ">=1.1.0" }]
 
 [[package]]
 name = "black"
@@ -1436,6 +1436,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/35/b9/de2a5c0144d7d75a57ff355c0c24054f965b2dc3036456ae03a51ea6264b/tomli-2.0.2.tar.gz", hash = "sha256:d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed", size = 16096 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/cf/db/ce8eda256fa131af12e0a76d481711abe4681b6923c27efb9a255c9e4594/tomli-2.0.2-py3-none-any.whl", hash = "sha256:2ebe24485c53d303f690b0ec092806a085f07af5a5aa1464f3931eec36caaa38", size = 13237 },
+]
+
+[[package]]
+name = "tomli-w"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d4/19/b65f1a088ee23e37cdea415b357843eca8b1422a7b11a9eee6e35d4ec273/tomli_w-1.1.0.tar.gz", hash = "sha256:49e847a3a304d516a169a601184932ef0f6b61623fe680f836a2aa7128ed0d33", size = 6929 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/ac/ce90573ba446a9bbe65838ded066a805234d159b4446ae9f8ec5bbd36cbd/tomli_w-1.1.0-py3-none-any.whl", hash = "sha256:1403179c78193e3184bfaade390ddbd071cba48a32a2e62ba11aae47490c63f7", size = 6440 },
 ]
 
 [[package]]
