@@ -13,7 +13,7 @@ class SVGIcon(BaseModel):
 
 class NavItem(BaseModel):
     type: str = "item"
-    group: str = None
+    group: str | None = None
     title: str
     href: str
 
@@ -57,6 +57,7 @@ config = {
             "title": "Getting Started",
             "items": [
                 {"title": "Introduction", "href": "/docs/introduction"},
+                {"title": "Quick Start", "href": "/docs/quick_start"},
                 {"title": "Modern Tools", "href": "/docs/modern_tools"},
                 {"title": "Components", "href": "/docs/components"},
                 {"title": "Installation", "href": "/docs/installation"},

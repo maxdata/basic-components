@@ -69,8 +69,7 @@ templates = Jinja2Templates(directory="templates")
 templates.env.add_extension(jinjax.JinjaX)
 catalog = jinjax.Catalog(jinja_env=templates.env)
 
-# include subdirectories in the JinjaX catalog. 
-# optionally include icons 
+# include all subdirectories in the JinjaX catalog. 
 catalog = setup_component_catalog(
     catalog, components_dir=COMPONENT_DIR
 )
