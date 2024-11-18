@@ -63,9 +63,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
     <!-- Include Prism core and language support -->
-    <script>
-        htmx.logAll();
-    </script>
+    {% if DEBUG %}
+        <script>
+            htmx.logAll();
+        </script>
+    {% endif %}
+    {% if not DEBUG %}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="7ef4e4b4-c3ca-47e3-90aa-3bc509ba5a7e"></script>
+    {% endif %}
 </head>
 <body class="min-h-screen bg-white dark:bg-black text-black dark:text-white" hx-ext="response-targets">
 {{ content }}
