@@ -1,12 +1,35 @@
 # CHANGELOG
 
 
+## v0.3.0 (2024-11-18)
+
+### Features
+
+- Include all components in dependency mapping
+  ([`0136455`](https://github.com/basicmachines-co/basic-components/commit/01364555ffb45666fa0dddcd4970b86b1359d8a9))
+
+Added empty lists for components with no dependencies in component_dependencies.toml. Refactored
+  component_analyzer.py to ensure all components are included in the dependencies mapping. Enhanced
+  error handling in components.py for better user feedback.
+
+- **docs**: Add installation tabs for multiple package managers
+  ([`d61c0ad`](https://github.com/basicmachines-co/basic-components/commit/d61c0adc865d81f1aa1c2efa698aeeae3bb723aa))
+
+Updated installation documentation to include tabs for uv, poetry, and pip commands. Also added
+  details about component dependencies with examples.
+
+
 ## v0.2.0 (2024-11-17)
 
 ### Bug Fixes
 
 - Fix dependecy groups in pyproject.toml
   ([`b6e4fc8`](https://github.com/basicmachines-co/basic-components/commit/b6e4fc80e23410d5d0bc990d40000b4a7bfbd585))
+
+### Chores
+
+- **release**: 0.2.0 [skip ci]
+  ([`1944bde`](https://github.com/basicmachines-co/basic-components/commit/1944bde1fda8e90b00a26ef99fd62de833c04b39))
 
 ### Documentation
 
