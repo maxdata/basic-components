@@ -5,6 +5,24 @@ description: Latest updates and announcements.
 
 <Prose>
 
+## v0.3.0 (2024-11-18)
+
+### Features
+
+- Include all components in dependency mapping
+  ([`0136455`](https://github.com/basicmachines-co/basic-components/commit/01364555ffb45666fa0dddcd4970b86b1359d8a9))
+
+Added empty lists for components with no dependencies in component_dependencies.toml. Refactored
+  component_analyzer.py to ensure all components are included in the dependencies mapping. Enhanced
+  error handling in components.py for better user feedback.
+
+- **docs**: Add installation tabs for multiple package managers
+  ([`d61c0ad`](https://github.com/basicmachines-co/basic-components/commit/d61c0adc865d81f1aa1c2efa698aeeae3bb723aa))
+
+Updated installation documentation to include tabs for uv, poetry, and pip commands. Also added
+  details about component dependencies with examples.
+
+
 ## v0.2.0 (2024-11-17)
 
 ### Bug Fixes
