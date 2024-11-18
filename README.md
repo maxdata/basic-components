@@ -5,6 +5,8 @@ Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 
 ## Installation & Usage
 
+![demo](/docs/static/img/components-add-demo.gif)
+
 ### Quick Start with `uvx`
 
 JinjaX is required.
@@ -32,7 +34,7 @@ Install only the utility functions for JinjaX and tailwind.
 
 ```bash
 # With utility functions
-pip install basic-components[utils]
+uv add "basic-components[utils]"
 ```
 
 Setup instructions and examples:
@@ -40,6 +42,7 @@ Setup instructions and examples:
 - [Flask](https://components.basicmachines.co/docs/flask)
 - [Django](https://components.basicmachines.co/docs/django)
 
+![demo](/docs/static/img/htmx-demo.gif)
 
 ### Installation Groups
 
