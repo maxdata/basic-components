@@ -3,6 +3,12 @@ accordion = [
     "icons/ChevronDown",
     "icons/ChevronUp",
 ]
+alert = []
+alert_dialog = []
+badge = []
+button = []
+card = []
+checkbox = []
 dialog = [
     "icons/X",
 ]
@@ -11,15 +17,22 @@ dropdown_menu = [
     "icons/ChevronRight",
     "radio",
 ]
+form = []
+icons = []
+input = []
 "integrations/wtform" = [
     "form",
 ]
+label = []
+link = []
 mode_toggle = [
     "button",
     "dropdown_menu",
     "icons/Moon",
     "icons/Sun",
 ]
+popover = []
+radio = []
 select = [
     "icons/Check",
     "icons/ChevronDown",
@@ -33,6 +46,8 @@ table = [
     "icons/ChevronUp",
     "icons/ChevronsUpDown",
 ]
+tabs = []
+textarea = []
 toast = [
     "button",
     "icons/X",

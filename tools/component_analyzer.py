@@ -86,6 +86,7 @@ def analyze_components(
     core_components, integration_mapping = get_components(components_dir)
     raw_dependencies = defaultdict(set)
     warnings = []
+    all_components = set()
 
     for template_file in components_dir.rglob("*.jinja"):
         rel_path = template_file.relative_to(components_dir)
@@ -102,6 +103,8 @@ def analyze_components(
         if component_name in {'ui', 'integrations'}:
             continue
 
+        all_components.add(component_name)
+
         content = template_file.read_text()
         refs = find_component_references(content)
 
@@ -116,11 +119,11 @@ def analyze_components(
             if normalized_ref != component_name:
                 raw_dependencies[component_name].add(normalized_ref)
 
-    dependencies = {
-        k: sorted(list(v))
-        for k, v in raw_dependencies.items()
-        if v
-    }
+    # Include all components in dependencies, mapping components with no dependencies to empty lists
+    dependencies = {}
+    for component in all_components:
+        deps = sorted(list(raw_dependencies.get(component, set())))
+        dependencies[component] = deps
 
     return dict(sorted(dependencies.items())), warnings
 

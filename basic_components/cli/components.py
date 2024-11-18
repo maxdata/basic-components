@@ -14,7 +14,6 @@ app = typer.Typer(
     help="Install and update components from basic-components",
     add_completion=False,
 )
-
 console = Console()
 
 # Default values for REPO_URL and COMPONENTS_DIR
@@ -77,13 +76,7 @@ def add_component(
         # Build exclude list - exclude everything except our pattern
         excludes = ["*", f"!{pattern}"]
 
-        # Debug output
-        # console.print("[yellow]Debug: Copying with args:[/yellow]")
-        # console.print(f"  src_path: {repo_url}")
-        # console.print(f"  dst_path: {dest_dir}")
-        # console.print(f"  exclude patterns: {excludes}")
-        # console.print(f"  vcs_ref: {branch}")
-
+        # Run copier to copy the component
         copier.run_copy(
             src_path=repo_url,
             dst_path=str(dest_dir),
@@ -93,7 +86,11 @@ def add_component(
         )
 
     except Exception as e:
-        console.print(f"[red]Error installing {component}: {str(e)}[/red]")
+        error_message = str(e)
+        if "No files or folders to copy" in error_message or "Nothing to do" in error_message:
+            console.print(f"[red]Error: Component '{component}' not found in the repository.[/red]")
+        else:
+            console.print(f"[red]Error installing {component}: {error_message}[/red]")
         raise typer.Exit(1)
 
 def display_installation_plan(component: str, dependencies: Set[str], dry_run: bool = False) -> None:
@@ -137,12 +134,16 @@ def add(
         # Normalize component name
         component = normalize_component_name(component)
 
+        # Check if component exists in dependencies
+        if component not in deps_map:
+            console.print(f"[red]Error: Component '{component}' not found.[/red]")
+            raise typer.Exit(1)
+
         # Get all dependencies if requested
         components_to_install = {component}
         if with_deps:
             dependencies = set(deps_map.get(component, []))
             if dependencies:
-                #console.print(f"\n[yellow]Debug: Found dependencies: {dependencies}[/yellow]")
                 components_to_install.update(dependencies)
         else:
             dependencies = set()
@@ -157,7 +158,6 @@ def add(
         # Install each component separately with its own exclude pattern
         installed = []
         for comp in sorted(components_to_install):
-            #console.print(f"\n[yellow]Debug: Installing component: {comp}[/yellow]")
             add_component(comp, components_dir, repo_url, branch, dry_run)
             installed.append(comp)
 
