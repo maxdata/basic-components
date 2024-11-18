@@ -15,30 +15,41 @@ install components because it will also include any dependencies (other referenc
 
 To vendor a component into your project using the `components` tool, run
 
-```bash
-uvx --from basic-components components add <component_name> 
-```
+<Tabs defaultValue="uv">
+    <TabsList className="grid grid-cols-2">
+        <TabsTrigger value="uv">uv</TabsTrigger>
+        <TabsTrigger value="pipx">pipx</TabsTrigger>
+    </TabsList>
+    <TabsContent value="uv">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">uvx --from basic-components components add [component_name] </code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="pipx">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">pipx install basic-components && components add [component_name]</code></pre>
+        </div>
+    </TabsContent>
+</Tabs>
 
 The components will be added to your project in the `components/ui/<component_name>` directory. 
 
 ### Example
 
 ```bash
-➜ uvx --from basic-components components add button 
-Installing button from 
-'https://github.com/basicmachines-co/basic-components.git' ...
+✗ components add button       
+button (will be installed)
+Installing button...
 
-Copying from template version 0.0.0.post163.dev0+70554ca
-    create  button
+Copying from template version 0.2.0
     create  button/Button.jinja
 
 
-╭─────────────────────────── Installation Complete ────────────────────────────╮
-│ ✓ Added button component                                                     │
-│                                                                              │
-│  components-dir=components/ui                                                │
-╰──────────────────────────────────────────────────────────────────────────────╯
-
+╭────────────────────────────────────────────────────────── Installation Complete ───────────────────────────────────────────────────────────╮
+│ ✓ Added button component                                                                                                                   │
+│                                                                                                                                            │
+│ components-dir=components/ui                                                                                                               │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 View the results
 ```bash
@@ -52,7 +63,64 @@ components
 
 ```
 
-See the [utilities](/docs/utilities) docs for more information about setting up your project to use the components. 
+### Dependencies
+
+Some components have dependencies on other components. When using the `components` command, any required components 
+will also be installed. 
+
+```bash
+ ✗ components add dropdown_menu
+dropdown_menu (will be installed)
+└── Dependencies
+    ├── checkbox
+    ├── icons/ChevronRight
+    └── radio
+Installing checkbox...
+
+Copying from template version 0.2.0
+    create  checkbox/Checkbox.jinja
+
+
+Installing dropdown_menu...
+
+Copying from template version 0.2.0
+    create  dropdown_menu/DropdownMenuItem.jinja
+    create  dropdown_menu/DropdownMenu.jinja
+    create  dropdown_menu/DropdownMenuSubTrigger.jinja
+    create  dropdown_menu/DropdownMenuTrigger.jinja
+    create  dropdown_menu/DropdownMenuRadioItem.jinja
+    create  dropdown_menu/DropdownMenuGroup.jinja
+    create  dropdown_menu/DropdownMenuSub.jinja
+    create  dropdown_menu/DropdownMenuSeparator.jinja
+    create  dropdown_menu/DropdownMenuContent.jinja
+    create  dropdown_menu/DropdownMenuSubContent.jinja
+    create  dropdown_menu/DropdownMenuLabel.jinja
+    create  dropdown_menu/DropdownMenuCheckboxItem.jinja
+
+
+Installing icons/ChevronRight...
+
+Copying from template version 0.2.0
+    create  icons/ChevronRightIcon.jinja
+
+
+Installing radio...
+
+Copying from template version 0.2.0
+    create  radio/RadioGroupItem.jinja
+    create  radio/RadioGroup.jinja
+
+
+╭────────────────────────────────────────────────────────── Installation Complete ───────────────────────────────────────────────────────────╮
+│ ✓ Added dropdown_menu component                                                                                                            │
+│ Installed dependencies:                                                                                                                    │
+│   - dropdown_menu                                                                                                                          │
+│   - icons/ChevronRight                                                                                                                     │
+│   - radio                                                                                                                                  │
+│                                                                                                                                            │
+│ components-dir=components/ui                                                                                                               │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
 
 ### Components cli tool
 
@@ -82,32 +150,8 @@ Code for components can also be copy/pasted directly from the example pages via 
 anywhere in you project. The rest of the information in these docs assume they are located in the `components/ui` dir in
 your project. See the [JinjaX](/docs/utilities#jinjax) docs for more info on how to set up components in your project.
 
-## Other tools
+## Next steps
 
-If you don't want to use `uv`, then you can also use the `components` cli by installing it using `pip` or `poetry`. This
-will only install the libs needed for the cli, not the actual components. 
-
-### Pip
-```bash
-pip install basic-components
-```
-
-To use the `components` tool, you can run
-
-```bash
-pipx run components add <component>
-```
-
-### Poetry
-```bash
-poetry add basic-components
-```
-
-To use the `components` tool, you can run
-
-```bash
-poetry run components add <component>
-```
-
+See the [utilities](/docs/utilities) docs for more information about setting up your project to use the components. 
 
 </Prose>

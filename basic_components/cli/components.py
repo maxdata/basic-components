@@ -78,11 +78,11 @@ def add_component(
         excludes = ["*", f"!{pattern}"]
 
         # Debug output
-        console.print("[yellow]Debug: Copying with args:[/yellow]")
-        console.print(f"  src_path: {repo_url}")
-        console.print(f"  dst_path: {dest_dir}")
-        console.print(f"  exclude patterns: {excludes}")
-        console.print(f"  vcs_ref: {branch}")
+        # console.print("[yellow]Debug: Copying with args:[/yellow]")
+        # console.print(f"  src_path: {repo_url}")
+        # console.print(f"  dst_path: {dest_dir}")
+        # console.print(f"  exclude patterns: {excludes}")
+        # console.print(f"  vcs_ref: {branch}")
 
         copier.run_copy(
             src_path=repo_url,
@@ -142,7 +142,7 @@ def add(
         if with_deps:
             dependencies = set(deps_map.get(component, []))
             if dependencies:
-                console.print(f"\n[yellow]Debug: Found dependencies: {dependencies}[/yellow]")
+                #console.print(f"\n[yellow]Debug: Found dependencies: {dependencies}[/yellow]")
                 components_to_install.update(dependencies)
         else:
             dependencies = set()
@@ -157,7 +157,7 @@ def add(
         # Install each component separately with its own exclude pattern
         installed = []
         for comp in sorted(components_to_install):
-            console.print(f"\n[yellow]Debug: Installing component: {comp}[/yellow]")
+            #console.print(f"\n[yellow]Debug: Installing component: {comp}[/yellow]")
             add_component(comp, components_dir, repo_url, branch, dry_run)
             installed.append(comp)
 

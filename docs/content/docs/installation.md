@@ -7,9 +7,29 @@ description: How to install dependencies.
 
 ## Install JinjaX
 
-```bash
-uv add jinjax
-```
+<Tabs defaultValue="uv">
+    <TabsList className="grid grid-cols-3">
+        <TabsTrigger value="uv">uv</TabsTrigger>
+        <TabsTrigger value="poetry">poetry</TabsTrigger>
+        <TabsTrigger value="pip">pip</TabsTrigger>
+    </TabsList>
+    <TabsContent value="uv">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">uv add jinjax</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="poetry">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">poetry add jinjax</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="pip">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">pip install jinjax</code></pre>
+        </div>
+    </TabsContent>
+</Tabs>
+
 
 JinjaX is the only required python dependency to use basic-components. However, the `basic-components` includes several 
 [helper functions](/docs/utilities) to set up the JinjaX template environment and merge tailwind classes within components. 
@@ -20,24 +40,32 @@ You can install `basic-components` utilities into your project using your packag
 
 Installing the basic-components package is **optional**.
 
-```bash
-uv add "basic-components[utils]"  
-```
+<Tabs defaultValue="uv">
+    <TabsList className="grid grid-cols-3">
+        <TabsTrigger value="uv">uv</TabsTrigger>
+        <TabsTrigger value="poetry">poetry</TabsTrigger>
+        <TabsTrigger value="pip">pip</TabsTrigger>
+    </TabsList>
+    <TabsContent value="uv">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">uv add "basic-components[utils]"</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="poetry">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">poetry add "basic-components[utils]"</code></pre>
+        </div>
+    </TabsContent>
+    <TabsContent value="pip">
+        <div class="relative" x-data><CopyPasteButton/>
+            <pre class="language-bash bg-zinc-50 dark:bg-zinc-900 rounded-md"><code x-ref="code" class="language-bash">pip install "basic-components[utils]"</code></pre>
+        </div>
+    </TabsContent>
+</Tabs>
+
+
 This will only add the python functions in the [utils](https://github.com/basicmachines-co/basic-components/tree/main/basic_components) 
 directory of the project. Components should be added via the [cli](/docs/cli).
-
-<Card>
-<CardTitle className="mt-4 ml-6 text-sm">
-    NOTE
-</CardTitle>
-<CardDescription className="my-2 ml-6">
-    Using `uv` is optional  
-</CardDescription>
-<CardContent className="text-sm">
-    You can use `pip` or `poetry`. [UV](https://docs.astral.sh/uv/) is 
-used in these examples because it enables components to be vendored directly into your project via the [components](/docs/cli) cli.</CardContent>
-</Card>
-
 
 You can also add the code for the [helper functions](/docs/utilities) directly to your codebase if you don't want to add an
 extra dependency. 
