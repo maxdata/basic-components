@@ -37,7 +37,7 @@ The components will be added to your project in the `components/ui/<component_na
 ### Example
 
 ```bash
-✗ components add button       
+✗ uvx --from basic-components components add button       
 button (will be installed)
 Installing button...
 
@@ -69,7 +69,7 @@ Some components have dependencies on other components. When using the `component
 will also be installed. 
 
 ```bash
- ✗ components add dropdown_menu
+ ✗ uvx --from basic-components components add dropdown_menu
 dropdown_menu (will be installed)
 └── Dependencies
     ├── checkbox
