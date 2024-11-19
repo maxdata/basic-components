@@ -42,9 +42,40 @@ Setup instructions and examples:
 - [Flask](https://components.basicmachines.co/docs/flask)
 - [Django](https://components.basicmachines.co/docs/django)
 
+## Example
+
+Use components directly in your templates, similar to React. Use Tailwind CSS classes for styles, htmx friendly also!
+
+```html
+  <!-- Card component example -->
+  <Card className="w-[350px] mb-4">
+    <CardHeader className="pb-3">
+      <CardTitle>Components!</CardTitle>
+      <CardDescription className="max-w-lg text-balance leading-relaxed">
+        Using components is fun.
+      </CardDescription>
+    </CardHeader>
+    <CardContent>
+      The button below is enabled with htmx. Click to update it.
+    </CardContent>
+    <CardFooter>
+      <!-- use htmx -->
+      <Button
+        variant="outline"
+        hx-get="/button"
+        hx-trigger="click"
+        hx-target="this"
+        hx-swap="outerHTML">htmx is enabled</Button>
+    </CardFooter>
+  </Card>
+</div>
+```
+
+Components are rendered on the server via JinjaX (a Jinja component library) and returned as html for the browser.
+
 ![demo](/docs/static/img/htmx-demo.gif)
 
-### Installation Groups
+## Installation Groups
 
 - `utils`: Utility functions for JinjaX setup and `cn()` tailwind class helper
 - `docs`: Requirements for the docs site
