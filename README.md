@@ -7,20 +7,20 @@ Built with JinjaX, Alpine.js, and Tailwind CSS, with support for htmx.
 
 ![demo](/docs/static/img/components-add-demo.gif)
 
-### Quick Start with `uvx`
+### Quick Start with `uv`
 
 JinjaX is required.
 
 ```bash
 # install jinjax
-uvx add jinjax
+uv add jinjax
 ````
 
 You can use the CLI directly without installing the package.
 
 ```bash
 # Add components
-uvx --from basic-components components add button
+uv --from basic-components components add button
 ```
 
 You will also need to configure your project to load components into the `jinjax.Catalog` and add a global `cn` function
@@ -34,7 +34,7 @@ Install only the utility functions for JinjaX and tailwind.
 
 ```bash
 # With utility functions
-uv add "basic-components[utils]"
+uv add --dev "basic-components[utils]"
 ```
 
 Setup instructions and examples:

@@ -17,8 +17,8 @@ from basic_components.utils.jinjax import setup_component_catalog
 from basic_components.utils.tailwind import tw
 
 # Configuration
-TEMPLATE_DIR = "./templates"
-STATIC_DIR = "./static"
+TEMPLATE_DIR = "examples/templates"
+STATIC_DIR = "examples/static"
 
 # Setup Jinja templates with JinjaX support
 templates = Jinja2Templates(directory=TEMPLATE_DIR)
